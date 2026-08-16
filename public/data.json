@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-16T20:20:21.525Z",
-  "dataAsOf": null,
+  "generatedAt": "2026-08-16T20:46:14.756Z",
+  "dataAsOf": "2026-08-14",
   "demo": false,
   "marketHealth": {
     "status": "GREEN",
@@ -37,6 +37,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -16.76% outside 0–10%"
     },
     {
@@ -58,6 +59,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $234.71 outside $20–$200"
     },
     {
@@ -79,6 +81,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $1085.78 outside $20–$200"
     },
     {
@@ -100,6 +103,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -7.69% outside 0–10%"
     },
     {
@@ -121,6 +125,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -9.21% outside 0–10%"
     },
     {
@@ -142,6 +147,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $507.18 outside $20–$200"
     },
     {
@@ -163,6 +169,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $392.99 outside $20–$200"
     },
     {
@@ -184,6 +191,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $345.90 outside $20–$200"
     },
     {
@@ -205,6 +213,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -5.60% outside 0–10%"
     },
     {
@@ -226,6 +235,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $279.58 outside $20–$200"
     },
     {
@@ -247,6 +257,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $589.85 outside $20–$200"
     },
     {
@@ -268,6 +279,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -0.22% outside 0–10%"
     },
     {
@@ -289,6 +301,7 @@
         "rsi": true,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $203.72 outside $20–$200"
     },
     {
@@ -310,6 +323,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $279.44 outside $20–$200"
     },
     {
@@ -331,6 +345,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $255.46 outside $20–$200"
     },
     {
@@ -352,6 +367,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension -0.13% outside 0–10%"
     },
     {
@@ -373,6 +389,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $1844.58 outside $20–$200"
     },
     {
@@ -394,6 +411,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $1402.01 outside $20–$200"
     },
     {
@@ -415,6 +433,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $262.65 outside $20–$200"
     },
     {
@@ -436,6 +455,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $222.02 outside $20–$200"
     },
     {
@@ -457,6 +477,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $514.39 outside $20–$200"
     },
     {
@@ -478,6 +499,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $389.39 outside $20–$200"
     },
     {
@@ -499,6 +521,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $426.35 outside $20–$200"
     },
     {
@@ -520,6 +543,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $332.36 outside $20–$200"
     },
     {
@@ -541,6 +565,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "RSI 54.88 outside 38–50"
     },
     {
@@ -562,6 +587,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $18.29 outside $20–$200"
     },
     {
@@ -583,6 +609,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "RSI 56.04 outside 38–50"
     },
     {
@@ -604,6 +631,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $971.66 outside $20–$200"
     },
     {
@@ -625,6 +653,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $421.50 outside $20–$200"
     },
     {
@@ -646,6 +675,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $512.82 outside $20–$200"
     },
     {
@@ -667,6 +697,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "RSI 57.94 outside 38–50"
     },
     {
@@ -688,6 +719,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $264.02 outside $20–$200"
     },
     {
@@ -709,6 +741,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $1844.08 outside $20–$200"
     },
     {
@@ -730,6 +763,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 12.69% outside 0–10%"
     },
     {
@@ -751,6 +785,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $216.95 outside $20–$200"
     },
     {
@@ -772,6 +807,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 15.31% outside 0–10%"
     },
     {
@@ -793,6 +829,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $238.20 outside $20–$200"
     },
     {
@@ -814,6 +851,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $225.16 outside $20–$200"
     },
     {
@@ -835,6 +873,7 @@
         "rsi": false,
         "earnings": false
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $251.66 outside $20–$200"
     },
     {
@@ -856,6 +895,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $315.78 outside $20–$200"
     },
     {
@@ -877,6 +917,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 20.72% outside 0–10%"
     },
     {
@@ -898,6 +939,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 22.48% outside 0–10%"
     },
     {
@@ -919,6 +961,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $217.02 outside $20–$200"
     },
     {
@@ -940,6 +983,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 28.21% outside 0–10%"
     },
     {
@@ -961,6 +1005,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $328.92 outside $20–$200"
     },
     {
@@ -982,6 +1027,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Price $460.33 outside $20–$200"
     },
     {
@@ -1003,6 +1049,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 16.71% outside 0–10%"
     },
     {
@@ -1024,6 +1071,7 @@
         "rsi": false,
         "earnings": true
       },
+      "lastBarDate": "2026-08-14",
       "failReason": "Extension 11.92% outside 0–10%"
     }
   ],
