@@ -22,6 +22,7 @@ const { spawnSync } = require('child_process');
 const { ema, rsi, extensionPct } = require('./indicators');
 const { isExcludedByBeta, evaluateFilters } = require('./filters');
 const { pullbackVerdict } = require('./verdict');
+const { classifyMarketHealth } = require('./marketHealth');
 const { WATCHLIST, NAMES } = require('./watchlist');
 
 const DEMO = process.argv.includes('--demo');
@@ -273,6 +274,35 @@ async function runLive() {
 }
 
 // ---------------------------------------------------------------------------
+// Market Health (RULES §5): QQQ vs its own EMA20/EMA50. Advisory only — a
+// failure here must never crash the whole run or block stock results, so it
+// resolves to `null` (not a thrown error) on any failure; `fetchBarsImpl` is
+// injectable so tests can exercise both paths without a real network call.
+// ---------------------------------------------------------------------------
+async function fetchMarketHealth(apiKey, { fetchBarsImpl = fetchPolygonBars } = {}) {
+  try {
+    const bars = await fetchBarsImpl('QQQ', apiKey);
+    const closes = bars.map((b) => b.close);
+    const ema20Series = ema(closes, 20);
+    const ema50Series = ema(closes, 50);
+    const i = bars.length - 1;
+    return classifyMarketHealth(closes[i], ema20Series[i], ema50Series[i]);
+  } catch (e) {
+    console.error('Market health fetch failed (advisory only, continuing without it):', e.message);
+    return null;
+  }
+}
+
+function demoMarketHealth() {
+  const bars = demoBars('QQQ');
+  const closes = bars.map((b) => b.close);
+  const ema20Series = ema(closes, 20);
+  const ema50Series = ema(closes, 50);
+  const i = bars.length - 1;
+  return classifyMarketHealth(closes[i], ema20Series[i], ema50Series[i]);
+}
+
+// ---------------------------------------------------------------------------
 // DEMO fetch: deterministic synthetic bars (fixture only; never live data.json).
 // ---------------------------------------------------------------------------
 function mulberry32(seed) {
@@ -359,7 +389,7 @@ function runDemo() {
 // ---------------------------------------------------------------------------
 // Assemble + write data.json.
 // ---------------------------------------------------------------------------
-function assemble(rows) {
+function assemble(rows, marketHealth = null) {
   const results = rows.filter((r) => r.kind === 'result');
   const rejected = rows.filter((r) => r.kind === 'rejected');
   const excluded = rows.filter((r) => r.kind === 'excluded');
@@ -380,6 +410,7 @@ function assemble(rows) {
     generatedAt: new Date().toISOString(),
     dataAsOf: lastBarDate || null,
     demo: DEMO,
+    marketHealth,
     universeCount: WATCHLIST.length,
     counts: {
       passed: results.length,
@@ -402,7 +433,8 @@ function stripChart(r) {
 
 async function main() {
   const rows = DEMO ? runDemo() : await runLive();
-  const data = assemble(rows);
+  const marketHealth = DEMO ? demoMarketHealth() : await fetchMarketHealth(process.env.POLYGON_API_KEY);
+  const data = assemble(rows, marketHealth);
 
   if (!fs.existsSync(PUBLIC_DIR)) fs.mkdirSync(PUBLIC_DIR, { recursive: true });
   const outFile = path.join(PUBLIC_DIR, DEMO ? 'data.demo.json' : 'data.json');
@@ -433,6 +465,8 @@ module.exports = {
   demoMeta,
   fetchPolygonBars,
   fetchYfinanceMeta,
+  fetchMarketHealth,
+  demoMarketHealth,
   computeThrottleWait,
   backoffMs,
   CHART_BARS,

@@ -10,7 +10,7 @@
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const suites = ['filters', 'verdict', 'data-fetch', 'rate-limit', 'network'];
+const suites = ['filters', 'verdict', 'data-fetch', 'rate-limit', 'network', 'marketHealth'];
 
 async function main() {
   let totalPassed = 0;

@@ -5,7 +5,7 @@
 // the pure scoring/assembly logic that every fetched row passes through,
 // plus the deterministic demo-data generators used for local development.
 
-const { scoreTicker, assemble, round, demoBars, demoMeta } = require('../scripts/refresh');
+const { scoreTicker, assemble, round, demoBars, demoMeta, demoMarketHealth } = require('../scripts/refresh');
 const { makeSuite } = require('./harness');
 
 // ASML is a deterministic demo ticker (scripts/refresh.js's mulberry32 fixture
@@ -178,6 +178,31 @@ function run() {
       t.check('assemble([]): dataAsOf is null, not undefined or a crash', false);
       t.check('assemble([]): universeCount still reflects the full watchlist', false);
     }
+  }
+
+  // --- assemble: marketHealth wiring (Phase 3) ----------------------------------
+  {
+    const gh = { status: 'GREEN', message: 'Market supports swing entries.', qqqPrice: 500, ema20: 490, ema50: 480 };
+    const data = assemble([], gh);
+    t.check('assemble passes marketHealth through unchanged when provided', data.marketHealth === gh);
+  }
+  {
+    const data = assemble([]); // marketHealth omitted
+    t.check('assemble defaults marketHealth to null when omitted (advisory-only degradation)', data.marketHealth === null);
+  }
+  {
+    const data = assemble([], null); // marketHealth explicitly null (a real fetch failure)
+    t.check('assemble accepts an explicit null marketHealth (fetch failure case)', data.marketHealth === null);
+  }
+
+  // --- demoMarketHealth: determinism + real classifier wiring -------------------
+  {
+    const a = demoMarketHealth();
+    const b = demoMarketHealth();
+    t.check('demoMarketHealth is deterministic (seeded by the fixed "QQQ" ticker)', JSON.stringify(a) === JSON.stringify(b));
+    t.check('demoMarketHealth.status is one of the three valid values', ['GREEN', 'YELLOW', 'RED'].includes(a.status));
+    t.check('demoMarketHealth includes a real message string', typeof a.message === 'string' && a.message.length > 0);
+    t.check('demoMarketHealth includes numeric qqqPrice/ema20/ema50', typeof a.qqqPrice === 'number' && typeof a.ema20 === 'number' && typeof a.ema50 === 'number');
   }
 
   // --- demoBars / demoMeta: determinism (same ticker -> identical fixture) -----

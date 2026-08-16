@@ -196,10 +196,108 @@ table.breakdown tr:first-child td { border-top: none; }
   border-radius: 8px;
 }
 
+/* --- Market health + staleness banners ------------------------------------- */
+
+.staleness-warning {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--yellow);
+  border-radius: 8px;
+  background: rgba(210, 153, 34, 0.12);
+  color: #f0c674;
+  font-size: 14px;
+}
+
+.market-health {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+.market-health-status {
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.market-health-green { border-color: var(--green); }
+.market-health-green .market-health-status { background: rgba(46, 160, 67, 0.18); color: #4ac26b; }
+.market-health-yellow { border-color: var(--yellow); }
+.market-health-yellow .market-health-status { background: rgba(210, 153, 34, 0.18); color: #e3b341; }
+.market-health-red { border-color: var(--red); }
+.market-health-red .market-health-status { background: rgba(218, 54, 51, 0.18); color: #ff7b72; }
+.market-health-detail { color: var(--muted); font-size: 12px; margin-left: auto; }
+.market-health-unavailable { color: var(--muted); font-style: italic; }
+
+/* --- Risk calculator --------------------------------------------------------- */
+
+.risk-calc {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.risk-calc h4 { margin: 0 0 10px; font-size: 13px; color: var(--muted); font-weight: 600; }
+
+.risk-inputs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.risk-inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+.risk-inputs input {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  width: 110px;
+}
+
+.risk-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px 16px;
+  margin: 0;
+}
+.risk-metrics div { display: flex; flex-direction: column; }
+.risk-metrics dt { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.02em; }
+.risk-metrics dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+.risk-invalid { color: var(--muted); font-size: 13px; margin: 0; }
+.risk-warning {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(210, 153, 34, 0.12);
+  color: #f0c674;
+  font-size: 13px;
+}
+
 /* --- Mobile ---------------------------------------------------------------- */
 
 @media (max-width: 480px) {
   .metrics { grid-template-columns: repeat(2, 1fr); }
   table.breakdown { display: block; overflow-x: auto; }
   .sig-detail { white-space: normal; }
+  .risk-metrics { grid-template-columns: repeat(2, 1fr); }
+  .market-health-detail { margin-left: 0; }
 }

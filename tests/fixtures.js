@@ -103,11 +103,22 @@ export function makeError(overrides = {}) {
   return { ticker: 'XYZ', name: 'XYZ Corp', reason: 'polygon returned no bars', ...overrides };
 }
 
+// dataAsOf defaults to "today" (computed at call time, not a fixed date) so
+// this fixture never drifts into accidentally-stale territory as real time
+// passes — StalenessWarning compares against the real Date.now() with no
+// injectable seam, so a hardcoded past date here would eventually start
+// failing tests that don't even care about staleness. Tests that DO want to
+// exercise staleness pass an explicit relative-to-now override.
+function today() {
+  return new Date().toISOString().slice(0, 10);
+}
+
 export function makeData(overrides = {}) {
   return {
     generatedAt: '2026-08-16T02:00:00.000Z',
-    dataAsOf: '2026-08-15',
+    dataAsOf: today(),
     demo: false,
+    marketHealth: null,
     universeCount: 75,
     counts: { passed: 1, rejected: 1, excludedLowBeta: 1, errors: 0 },
     results: [makeResult()],

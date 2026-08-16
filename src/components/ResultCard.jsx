@@ -2,6 +2,7 @@ import { useState } from 'react';
 import VerdictBadge from './VerdictBadge';
 import BreakdownTable from './BreakdownTable';
 import ChartPanel from './ChartPanel';
+import RiskCalculator from './RiskCalculator';
 
 // ResultCard — a stock that passed all six hard filters (spec §3.2 fields +
 // RULES.md §7: plain-language verdict leads, numeric breakdown table underneath).
@@ -48,6 +49,9 @@ export default function ResultCard({ r }) {
       </dl>
 
       <BreakdownTable signals={r.signals} />
+
+      {/* Position sizing shown for BUY SETUP / NOT YET only — spec §3.6. */}
+      {r.verdict !== 'AVOID' && <RiskCalculator r={r} />}
 
       <button type="button" className="view-chart-btn" onClick={() => setChartOpen((v) => !v)}>
         {chartOpen ? 'Hide Chart' : 'View Chart'}

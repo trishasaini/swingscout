@@ -130,4 +130,43 @@ describe('App', () => {
     render(<App />);
     expect(await screen.findByText(/Could not load scan data/)).toBeInTheDocument();
   });
+
+  // --- Phase 3: Market Health banner, wired at the App level --------------------
+  it('renders the GREEN market health banner and stock results together (advisory only, never hides results)', async () => {
+    const marketHealth = { status: 'GREEN', message: 'Market supports swing entries.', qqqPrice: 500, ema20: 490, ema50: 480 };
+    mockFetchOnce(makeData({ marketHealth, results: [makeResult()] }));
+    render(<App />);
+    expect(await screen.findByText('Market supports swing entries.')).toBeInTheDocument();
+    expect(screen.getByText('AAPL')).toBeInTheDocument(); // results still render, unaffected
+  });
+
+  it('renders the "unavailable" market health state when marketHealth is null, without hiding results', async () => {
+    mockFetchOnce(makeData({ marketHealth: null, results: [makeResult()] }));
+    render(<App />);
+    expect(await screen.findByText(/unavailable/i)).toBeInTheDocument();
+    expect(screen.getByText('AAPL')).toBeInTheDocument();
+  });
+
+  it('RED market health still shows valid setups below it (RULES §5: advisory only, never overrides stock filters)', async () => {
+    const marketHealth = { status: 'RED', message: 'Setup is valid, but market conditions are unfavorable.', qqqPrice: 400, ema20: 420, ema50: 430 };
+    mockFetchOnce(makeData({ marketHealth, results: [makeResult()] }));
+    render(<App />);
+    expect(await screen.findByText('Setup is valid, but market conditions are unfavorable.')).toBeInTheDocument();
+    expect(screen.getByText('AAPL')).toBeInTheDocument();
+  });
+
+  // --- Phase 3: Staleness warning, wired at the App level -----------------------
+  it('shows no staleness warning for fresh data', async () => {
+    mockFetchOnce(makeData()); // default dataAsOf is "today"
+    render(<App />);
+    await screen.findByText(/Data as of/);
+    expect(screen.queryByText(/nightly refresh may have failed/)).not.toBeInTheDocument();
+  });
+
+  it('shows the staleness warning when dataAsOf is genuinely old', async () => {
+    const weekAgo = new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+    mockFetchOnce(makeData({ dataAsOf: weekAgo }));
+    render(<App />);
+    expect(await screen.findByText(/nightly refresh may have failed/)).toBeInTheDocument();
+  });
 });

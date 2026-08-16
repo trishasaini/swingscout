@@ -16,6 +16,7 @@
     "test:data-fetch": "node tests/data-fetch.test.js",
     "test:rate-limit": "node tests/rate-limit.test.js",
     "test:network": "node tests/network.test.js",
+    "test:marketHealth": "node tests/marketHealth.test.js",
     "refresh": "node scripts/refresh.js",
     "refresh:demo": "node scripts/refresh.js --demo",
     "verify:goog": "node scripts/verify_goog.js"

@@ -26,10 +26,15 @@ vi.mock('lightweight-charts', () => ({
 
 describe('ResultCard', () => {
   it('renders ticker, name, price, RSI, beta from the fixture data', () => {
-    render(<ResultCard r={makeResult()} />);
+    const { container } = render(<ResultCard r={makeResult()} />);
     expect(screen.getByText('AAPL')).toBeInTheDocument();
     expect(screen.getByText('Apple Inc.')).toBeInTheDocument();
-    expect(screen.getByText('$123.45')).toBeInTheDocument();
+    // Scoped to the top metrics block: "$123.45" also legitimately appears
+    // again inside RiskCalculator's "Suggested entry" (entry === price), so a
+    // page-wide getByText would be ambiguous — that duplication is correct
+    // behavior, not a bug, so the test scopes rather than avoids it.
+    const metrics = container.querySelector('dl.metrics');
+    expect(metrics.textContent).toContain('$123.45');
     expect(screen.getByText('44.5')).toBeInTheDocument();
     expect(screen.getByText('1.80')).toBeInTheDocument();
   });
@@ -100,6 +105,20 @@ describe('ResultCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Hide Chart' }));
     expect(screen.queryByText(/No chart data available/)).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'View Chart' })).toBeInTheDocument();
+  });
+
+  it.each([
+    ['BUY SETUP', makeResult(), true],
+    ['NOT YET', makeNotYetResult(), true],
+    ['AVOID', makeAvoidResult(), false],
+  ])('shows RiskCalculator for %s: %s (spec §3.6 — "every BUY SETUP or NOT YET result")', (verdict, fixture, shouldShow) => {
+    const { container } = render(<ResultCard r={fixture} />);
+    const riskCalc = container.querySelector('.risk-calc');
+    if (shouldShow) {
+      expect(riskCalc).not.toBeNull();
+    } else {
+      expect(riskCalc).toBeNull();
+    }
   });
 
   it('passes real bars/series through to ChartPanel when expanded (props actually wired, not just some child rendering)', async () => {

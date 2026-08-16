@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import ResultCard from './components/ResultCard';
+import MarketHealthBanner from './components/MarketHealthBanner';
+import StalenessWarning from './components/StalenessWarning';
 
-// SwingScout SPA — Phase 1: the real results page.
-// Chart panel and risk calculator land in later phases.
+// SwingScout SPA — the real results page (Phases 1-3).
 //
 // Data-source rule (RULES.md §3): the browser only READS numbers. It never
 // invents, interpolates, or estimates price/RSI/EMA. If live data is missing we
@@ -72,6 +73,9 @@ export default function App() {
           trade on them.
         </div>
       )}
+
+      <StalenessWarning dataAsOf={data.dataAsOf} />
+      <MarketHealthBanner marketHealth={data.marketHealth} />
 
       <section className="summary">
         <p>

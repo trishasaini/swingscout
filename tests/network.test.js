@@ -4,8 +4,24 @@
 // process here — fetchImpl/sleepImpl/spawn are injected fakes, exercising the
 // REAL retry logic in scripts/refresh.js, not a reimplementation of it.
 
-const { fetchYfinanceMeta, fetchPolygonBars } = require('../scripts/refresh');
+const { fetchYfinanceMeta, fetchPolygonBars, fetchMarketHealth } = require('../scripts/refresh');
 const { makeSuite } = require('./harness');
+
+// Flat-then-one-different-final-close bars, >=50 entries (ema50 needs it).
+// Empirically verified (not hand-derived): finalClose=500 -> GREEN,
+// finalClose=300 -> RED (EMA is always bounded between the flat baseline and
+// the new price after a single step, so this shape can't produce YELLOW —
+// that's fine, YELLOW's classification logic has its own exhaustive coverage
+// in marketHealth.test.js; these tests only need to confirm the fetch->ema->
+// classify WIRING, not re-derive every branch through a real EMA calc).
+function fakeQqqBars(n, finalClose) {
+  const bars = Array.from({ length: n }, (_, i) => ({
+    time: `2026-01-${String((i % 28) + 1).padStart(2, '0')}`,
+    open: 400, high: 401, low: 399, close: 400, volume: 1000000,
+  }));
+  bars[bars.length - 1] = { ...bars[bars.length - 1], close: finalClose };
+  return bars;
+}
 
 // --- fakes -------------------------------------------------------------------
 function fakeSpawn({ status = 0, stdout = '{}', stderr = '' } = {}) {
@@ -146,6 +162,40 @@ function run() {
         threw = e;
       }
       t.check('empty results array -> throws, not silently empty', threw !== null && /no bars/.test(threw.message));
+    }
+
+    // === fetchMarketHealth ======================================================
+    {
+      const calls = [];
+      const fetchBarsImpl = async (ticker, key) => {
+        calls.push({ ticker, key });
+        return fakeQqqBars(60, 500);
+      };
+      const result = await fetchMarketHealth('api-key', { fetchBarsImpl });
+      t.check('successful fetch -> classifies via real ema()+classifyMarketHealth wiring', result.status === 'GREEN');
+      t.check('fetchBarsImpl called with ticker "QQQ" specifically', calls.length === 1 && calls[0].ticker === 'QQQ');
+      t.check('fetchBarsImpl called with the provided apiKey', calls[0].key === 'api-key');
+    }
+    {
+      const fetchBarsImpl = async () => fakeQqqBars(60, 300);
+      const result = await fetchMarketHealth('api-key', { fetchBarsImpl });
+      t.check('a different close correctly flows through to RED', result.status === 'RED');
+    }
+    {
+      // Advisory only (RULES §5) — a fetch failure must resolve to null, never throw,
+      // so the caller (main()) can proceed without market health rather than crash the run.
+      const fetchBarsImpl = async () => {
+        throw new Error('polygon HTTP 500');
+      };
+      let threw = null;
+      let result;
+      try {
+        result = await fetchMarketHealth('api-key', { fetchBarsImpl });
+      } catch (e) {
+        threw = e;
+      }
+      t.check('fetch failure does not throw upward', threw === null);
+      t.check('fetch failure resolves to null (advisory-only degradation)', result === null);
     }
   }
 
