@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
+import ResultCard from './components/ResultCard';
 
-// SwingScout SPA — Phase 1 scaffold.
-// The full Results UI / chart panel / risk calculator land in later phases.
-// For now this proves the pipeline: it loads the nightly data.json, shows the
-// mandatory "Data as of" label, and clearly flags demo (non-live) data.
+// SwingScout SPA — Phase 1: the real results page.
+// Chart panel and risk calculator land in later phases.
 //
 // Data-source rule (RULES.md §3): the browser only READS numbers. It never
 // invents, interpolates, or estimates price/RSI/EMA. If live data is missing we
@@ -64,7 +63,7 @@ export default function App() {
     <main className="app">
       <header className="topbar">
         <h1>SwingScout</h1>
-        <div className="asof">Data as of {formatAsOf(data.generatedAt)}</div>
+        <div className="asof">Data as of {formatAsOf(data.dataAsOf)}</div>
       </header>
 
       {isDemo && (
@@ -81,26 +80,62 @@ export default function App() {
           <strong>{data.rejected?.length ?? 0}</strong> rejected
           {data.errors?.length ? <> · <strong>{data.errors.length}</strong> data errors</> : null}
         </p>
-        <p className="muted">
-          Phase 1 scaffold. Results cards, chart panel, and the risk calculator
-          are coming in the next phases — this screen confirms the nightly data
-          pipeline works end to end.
-        </p>
       </section>
 
-      {data.results?.length > 0 && (
-        <ul className="peek">
-          {data.results.slice(0, 10).map((r) => (
-            <li key={r.ticker}>
-              <span className={`badge ${r.verdictColor}`}>{r.verdict}</span>
-              <span className="tk">{r.ticker}</span>
-              <span className="muted">
-                ${r.price?.toFixed(2)} · RSI {r.rsi?.toFixed(1)} · ext{' '}
-                {r.extensionPct?.toFixed(1)}%
-              </span>
-            </li>
-          ))}
-        </ul>
+      <section className="results" aria-label="Results">
+        {(data.results?.length ?? 0) === 0 ? (
+          <p className="empty-state">
+            No stocks passed all six hard filters in this scan. Check back after
+            the next nightly refresh.
+          </p>
+        ) : (
+          data.results.map((r) => <ResultCard key={r.ticker} r={r} />)
+        )}
+      </section>
+
+      {data.rejected?.length > 0 && (
+        <section className="rejected" aria-label="Rejected">
+          <h2>Rejected ({data.rejected.length})</h2>
+          <ul className="plain-list">
+            {data.rejected.map((r) => (
+              <li key={r.ticker}>
+                <span className="tk">{r.ticker}</span>
+                <span className="muted">{r.name}</span>
+                <span className="fail-reason">{r.failReason}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {data.excludedLowBeta?.length > 0 && (
+        <section className="excluded" aria-label="Excluded, low beta">
+          <h2>Excluded — Beta below 1.2 ({data.excludedLowBeta.length})</h2>
+          <ul className="plain-list">
+            {data.excludedLowBeta.map((r) => (
+              <li key={r.ticker}>
+                <span className="tk">{r.ticker}</span>
+                <span className="muted">{r.name}</span>
+                <span className="muted">beta {r.beta.toFixed(2)}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {data.errors?.length > 0 && (
+        <section className="errors" aria-label="Data errors">
+          <h2>Data errors ({data.errors.length})</h2>
+          <ul className="plain-list">
+            {data.errors.map((r) => (
+              <li key={r.ticker}>
+                <span className="tk">{r.ticker}</span>
+                <span className="muted">{r.name}</span>
+                <span className="fail-reason">{r.reason}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
     </main>
   );

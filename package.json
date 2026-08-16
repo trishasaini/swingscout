@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node tests/run-all.js",
+    "test": "node tests/run-all.js && npm run test:vitest",
+    "test:node": "node tests/run-all.js",
+    "test:vitest": "vitest run",
     "test:indicators": "node scripts/test_indicators.js",
     "test:filters": "node tests/filters.test.js",
     "test:verdict": "node tests/verdict.test.js",
@@ -24,7 +26,12 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.4",
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.2"
+    "jsdom": "^30.0.1",
+    "vite": "^5.4.2",
+    "vitest": "^4.1.10"
   }
 }
