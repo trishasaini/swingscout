@@ -1,0 +1,53 @@
+name: Nightly data refresh
+
+# Runs after US market close and commits a fresh public/data.json.
+# Vercel auto-redeploys on the push. The user never triggers this.
+on:
+  schedule:
+    - cron: '0 22 * * 1-5' # 22:00 UTC on weekdays (~after 4pm ET close)
+  workflow_dispatch: {} # manual "Run workflow" button for testing
+
+permissions:
+  contents: write # allow committing data.json back to the repo
+
+concurrency:
+  group: nightly-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Install yfinance
+        run: pip install --quiet yfinance
+
+      - name: Run scan
+        env:
+          POLYGON_API_KEY: ${{ secrets.POLYGON_API_KEY }}
+        run: node scripts/refresh.js
+
+      - name: Commit data.json if it changed
+        run: |
+          git config user.name  "swingscout-bot"
+          git config user.email "swingscout-bot@users.noreply.github.com"
+          if ! git diff --quiet -- public/data.json; then
+            git add public/data.json
+            git commit -m "chore: nightly data refresh $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No data change; nothing to commit."
+          fi

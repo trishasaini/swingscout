@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+*.log
+
+# Demo fixture is generated locally for development; not committed.
+public/data.demo.json
