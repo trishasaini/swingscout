@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, fireEvent } from '@testing-library/react';
 import App from '../src/App';
 import { makeData, makeResult, makeNotYetResult, makeAvoidResult, makeRejected, makeExcluded, makeError } from './fixtures';
 
@@ -168,5 +168,45 @@ describe('App', () => {
     mockFetchOnce(makeData({ dataAsOf: weekAgo }));
     render(<App />);
     expect(await screen.findByText(/nightly refresh may have failed/)).toBeInTheDocument();
+  });
+
+  // --- Stocks We Track / How This Works toolbar buttons --------------------------
+  it('both info panels are closed by default', async () => {
+    mockFetchOnce(makeData());
+    render(<App />);
+    await screen.findByText(/Data as of/);
+    expect(screen.queryByText(/every stock this scan looked at/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/one specific pattern/)).not.toBeInTheDocument();
+  });
+
+  it('"Stocks We Track" opens the tracked-stocks panel and can be closed again', async () => {
+    mockFetchOnce(makeData());
+    render(<App />);
+    await screen.findByText(/Data as of/);
+    fireEvent.click(screen.getByRole('button', { name: 'Stocks We Track' }));
+    expect(screen.getByText(/every stock this scan looked at/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Hide Stocks We Track' }));
+    expect(screen.queryByText(/every stock this scan looked at/)).not.toBeInTheDocument();
+  });
+
+  it('"How This Works" opens the explainer panel and can be closed again', async () => {
+    mockFetchOnce(makeData());
+    render(<App />);
+    await screen.findByText(/Data as of/);
+    fireEvent.click(screen.getByRole('button', { name: 'How This Works' }));
+    expect(screen.getByText(/one specific pattern/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Hide How This Works' }));
+    expect(screen.queryByText(/one specific pattern/)).not.toBeInTheDocument();
+  });
+
+  it('opening one panel closes the other (mutually exclusive, avoids an overwhelming page)', async () => {
+    mockFetchOnce(makeData());
+    render(<App />);
+    await screen.findByText(/Data as of/);
+    fireEvent.click(screen.getByRole('button', { name: 'Stocks We Track' }));
+    expect(screen.getByText(/every stock this scan looked at/)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'How This Works' }));
+    expect(screen.queryByText(/every stock this scan looked at/)).not.toBeInTheDocument();
+    expect(screen.getByText(/one specific pattern/)).toBeInTheDocument();
   });
 });

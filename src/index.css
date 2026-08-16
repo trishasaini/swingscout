@@ -44,6 +44,49 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+.toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.toolbar-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.toolbar-btn:hover { border-color: var(--accent); }
+.toolbar-btn[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+
+.info-panel {
+  margin: 12px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.info-panel h3 { font-size: 14px; margin: 16px 0 6px; }
+.info-panel h3:first-child { margin-top: 0; }
+.info-panel-intro { margin: 0 0 8px; }
+.info-panel-disclaimer {
+  margin: 16px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+.howitworks-list { margin: 0 0 4px; padding-left: 20px; }
+.howitworks-list li { margin: 6px 0; }
+.howitworks-list .badge { margin-right: 6px; }
+
+.tracked-list .nm { color: var(--muted); flex: 1; }
+.status-tag { font-size: 12px; white-space: nowrap; }
+
 .demo-banner {
   margin: 12px 0;
   padding: 10px 12px;

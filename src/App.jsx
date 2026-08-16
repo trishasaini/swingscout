@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import ResultCard from './components/ResultCard';
 import MarketHealthBanner from './components/MarketHealthBanner';
 import StalenessWarning from './components/StalenessWarning';
+import TrackedStocksPanel from './components/TrackedStocksPanel';
+import HowItWorksPanel from './components/HowItWorksPanel';
 
 // SwingScout SPA — the real results page (Phases 1-3).
 //
@@ -34,6 +36,11 @@ function formatAsOf(iso) {
 
 export default function App() {
   const [state, setState] = useState({ status: 'loading' });
+  // Mutually exclusive, like tabs — both are page-level static/reference
+  // panels rather than per-card detail (see ResultCard's inline-chart
+  // pattern), so keeping only one open at a time avoids an overwhelming page.
+  const [activePanel, setActivePanel] = useState(null);
+  const togglePanel = (name) => setActivePanel((cur) => (cur === name ? null : name));
 
   useEffect(() => {
     loadData()
@@ -66,6 +73,27 @@ export default function App() {
         <h1>SwingScout</h1>
         <div className="asof">Data as of {formatAsOf(data.dataAsOf)}</div>
       </header>
+
+      <nav className="toolbar">
+        <button
+          type="button"
+          className="toolbar-btn"
+          aria-pressed={activePanel === 'stocks'}
+          onClick={() => togglePanel('stocks')}
+        >
+          {activePanel === 'stocks' ? 'Hide Stocks We Track' : 'Stocks We Track'}
+        </button>
+        <button
+          type="button"
+          className="toolbar-btn"
+          aria-pressed={activePanel === 'how'}
+          onClick={() => togglePanel('how')}
+        >
+          {activePanel === 'how' ? 'Hide How This Works' : 'How This Works'}
+        </button>
+      </nav>
+      {activePanel === 'stocks' && <TrackedStocksPanel data={data} />}
+      {activePanel === 'how' && <HowItWorksPanel />}
 
       {isDemo && (
         <div className="demo-banner">
