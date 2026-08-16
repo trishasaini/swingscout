@@ -35,7 +35,14 @@ const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 // ---------------------------------------------------------------------------
 function scoreTicker(ticker, name, bars, beta, daysToEarnings) {
   if (!bars || bars.length < FETCH_BARS - 20) {
-    return { kind: 'error', ticker, name, reason: `insufficient bars (${bars ? bars.length : 0})` };
+    return {
+      kind: 'error',
+      ticker,
+      name,
+      reason: `insufficient bars (${bars ? bars.length : 0})`,
+      // Still report a freshness date if we got SOME bars, just not enough.
+      lastBarDate: bars && bars.length ? bars[bars.length - 1].time : null,
+    };
   }
 
   const closes = bars.map((b) => b.close);
@@ -56,11 +63,11 @@ function scoreTicker(ticker, name, bars, beta, daysToEarnings) {
   // Beta must be known to verify "> 1.2" — missing beta is a data error, not a
   // silent pass or hide (keeps the non-technical user's trust; RULES §7).
   if (typeof beta !== 'number' || Number.isNaN(beta)) {
-    return { kind: 'error', ticker, name, reason: 'missing Beta from yfinance' };
+    return { kind: 'error', ticker, name, reason: 'missing Beta from yfinance', lastBarDate: bars[i].time };
   }
   // Beta < 1.2 → excluded entirely, never displayed (RULES §1).
   if (isExcludedByBeta(beta)) {
-    return { kind: 'excluded', ticker, name, beta };
+    return { kind: 'excluded', ticker, name, beta, lastBarDate: bars[i].time };
   }
 
   const metrics = {
@@ -85,6 +92,7 @@ function scoreTicker(ticker, name, bars, beta, daysToEarnings) {
     avgVolume: Math.round(avgVolume),
     daysToEarnings,
     filterChecks: checks,
+    lastBarDate: bars[i].time,
   };
 
   if (!passed) {
@@ -400,9 +408,16 @@ function assemble(rows, marketHealth = null) {
   // Rejected: keep stable, most-informative first (by RSI too).
   rejected.sort((a, b) => (a.rsi ?? 999) - (b.rsi ?? 999));
 
-  // "Data as of" = latest bar date we actually scored.
+  // "Data as of" = latest bar date we actually scored, from ANY ticker we
+  // successfully fetched bars for — not just ones that passed all six
+  // filters. Only `kind: 'result'` rows carry a full `bars` array (keeps
+  // data.json small), but every other kind still stamps its own
+  // `lastBarDate`, so this must never be a lone `.bars` lookup: on a day
+  // where zero stocks pass (a real, observed outcome, not hypothetical),
+  // that would leave the pool empty and dataAsOf silently null — which also
+  // disables staleness detection entirely, since isStale(null) is always false.
   const lastBarDate = rows
-    .flatMap((r) => (r.bars ? [r.bars[r.bars.length - 1].time] : []))
+    .flatMap((r) => (r.lastBarDate ? [r.lastBarDate] : []))
     .sort()
     .pop();
 

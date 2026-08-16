@@ -138,11 +138,29 @@ function run() {
     t.check('assemble strips series even if a rejected row carries them', data.rejected[0].series === undefined);
   }
 
-  // --- assemble: dataAsOf is null when nothing produced a chart ----------------
+  // --- assemble: dataAsOf must come from ANY scored row, not just chart-bearing
+  // ("result") ones. Regression test for a real bug found on the first-ever
+  // live run: with zero stocks passing all six filters, the old
+  // `.flatMap(r => r.bars ? ... : [])` lookup only checked passing rows for a
+  // `bars` payload, found none, and silently produced dataAsOf: null — which
+  // also fully disables staleness detection, since isStale(null) is always
+  // false. Every kind now stamps its own `lastBarDate`; assemble() must read
+  // that field, not `.bars`.
   {
     const onlyRejected = scoreTicker('CCC', 'CCC Co', goodBars(), goodMeta().beta, 10);
     const data = assemble([onlyRejected]);
-    t.check('dataAsOf is null when no row has a chart payload', data.dataAsOf === null);
+    t.check('rejected-only day still gets a real dataAsOf', data.dataAsOf === onlyRejected.lastBarDate);
+    t.check('rejected-only dataAsOf is not null', data.dataAsOf !== null);
+  }
+  {
+    // Mirrors the exact real-world scenario: 0 results, only rejected/excluded/
+    // error rows — dataAsOf must still reflect the most recent bar actually seen.
+    const rejected = scoreTicker('CCC', 'CCC Co', goodBars(), goodMeta().beta, 10);
+    const excluded = scoreTicker('DDD', 'DDD Co', goodBars(), 0.5, 30); // beta < 1.2
+    const erroredNoBeta = { kind: 'error', ticker: 'EEE', name: 'EEE Co', reason: 'missing Beta', lastBarDate: null };
+    const data = assemble([rejected, excluded, erroredNoBeta]);
+    t.check('zero-results day: counts.passed is 0', data.counts.passed === 0);
+    t.check('zero-results day: dataAsOf is still a real date, not null', data.dataAsOf !== null && typeof data.dataAsOf === 'string');
   }
 
   // --- assemble([]): empty input, Phase 0 gap-fill ------------------------------
