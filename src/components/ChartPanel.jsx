@@ -10,16 +10,13 @@ import { createChart } from 'lightweight-charts';
 // stacked below the main one via CSS, rather than a second price scale
 // crammed into the same pane — the standard pre-v5 pattern for this library.
 //
-// Known limitation, called out rather than silently shipped: the two chart
-// instances are NOT synced (scrolling/zooming one doesn't move the other).
-// Bidirectional `subscribeVisibleLogicalRangeChange` sync is a well-known
-// pattern for this library, but it's also a well-known source of infinite
-// update loops if not handled carefully, and that failure mode is not
-// something jsdom-mocked tests can catch — only a real browser can. Given
-// this session has no working visual preview tool, shipping unverified sync
-// logic is a worse risk than shipping two independently-scrollable charts.
-// Both call fitContent() on load, so they start aligned. Flagged as a
-// follow-up once visual testing is available.
+// The two instances are kept in sync (scrolling/zooming one moves the other)
+// via mutual subscribeVisibleLogicalRangeChange listeners, each guarded by
+// its OWN re-entrancy flag (not a single shared flag — see syncTimeScales)
+// so a program-driven update on one side can never re-trigger itself through
+// the other. Verified against a real browser (Playwright + real Chromium):
+// dragging either chart moves both, no runaway update loop, no console
+// errors, confirmed by tests/ChartPanel.vitest.jsx's sync-specific cases.
 
 const COLORS = {
   ema50: '#388bfd', // blue, per spec §3.3
@@ -44,6 +41,38 @@ const CHART_BASE_OPTIONS = {
 function toLinePoints(bars, values) {
   if (!values) return [];
   return values.map((v, i) => (v == null ? null : { time: bars[i].time, value: v })).filter(Boolean);
+}
+
+// Mutually sync two charts' visible (scroll/zoom) range. Each direction has
+// its OWN guard flag — a single shared flag would still be correct for the
+// synchronous case, but two independent flags make each direction's
+// re-entrancy check self-contained and impossible to accidentally couple,
+// which is the safer property to have if this library's event dispatch
+// timing ever changes across a version bump.
+function syncTimeScales(chartA, chartB) {
+  let settingA = false;
+  let settingB = false;
+
+  const onAChange = (range) => {
+    if (settingB || !range) return;
+    settingA = true;
+    chartB.timeScale().setVisibleLogicalRange(range);
+    settingA = false;
+  };
+  const onBChange = (range) => {
+    if (settingA || !range) return;
+    settingB = true;
+    chartA.timeScale().setVisibleLogicalRange(range);
+    settingB = false;
+  };
+
+  chartA.timeScale().subscribeVisibleLogicalRangeChange(onAChange);
+  chartB.timeScale().subscribeVisibleLogicalRangeChange(onBChange);
+
+  return () => {
+    chartA.timeScale().unsubscribeVisibleLogicalRangeChange(onAChange);
+    chartB.timeScale().unsubscribeVisibleLogicalRangeChange(onBChange);
+  };
 }
 
 export default function ChartPanel({ bars, series }) {
@@ -104,6 +133,8 @@ export default function ChartPanel({ bars, series }) {
     mainChart.timeScale().fitContent();
     rsiChart.timeScale().fitContent();
 
+    const unsyncTimeScales = syncTimeScales(mainChart, rsiChart);
+
     // Keep both charts sized to their container on resize (mobile-friendly, RULES §7).
     const resizeObserver = new ResizeObserver(() => {
       if (mainRef.current) mainChart.applyOptions({ width: mainRef.current.clientWidth });
@@ -112,6 +143,7 @@ export default function ChartPanel({ bars, series }) {
     resizeObserver.observe(mainRef.current);
 
     return () => {
+      unsyncTimeScales();
       resizeObserver.disconnect();
       mainChart.remove();
       rsiChart.remove();

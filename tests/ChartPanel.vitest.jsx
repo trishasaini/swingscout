@@ -10,11 +10,33 @@ import ChartPanel from '../src/components/ChartPanel';
 
 let createdCharts;
 
+// A real timeScale mock: tracks subscribed handlers and actually invokes them
+// from setVisibleLogicalRange, so tests can simulate the real event cascade
+// lightweight-charts performs (this is what a re-entrancy-guard bug would
+// actually loop through). The call-count cap is a test-harness safety net —
+// if the component's own guard ever regresses, this throws instead of
+// hanging the test runner.
+function makeTimeScale() {
+  const handlers = new Set();
+  let setCallCount = 0;
+  return {
+    fitContent: vi.fn(),
+    subscribeVisibleLogicalRangeChange: vi.fn((handler) => handlers.add(handler)),
+    unsubscribeVisibleLogicalRangeChange: vi.fn((handler) => handlers.delete(handler)),
+    setVisibleLogicalRange: vi.fn((range) => {
+      setCallCount += 1;
+      if (setCallCount > 50) throw new Error('setVisibleLogicalRange exceeded 50 calls — likely infinite sync loop');
+      handlers.forEach((h) => h(range));
+    }),
+  };
+}
+
 vi.mock('lightweight-charts', () => ({
   createChart: vi.fn(() => {
     const candleSeries = { setData: vi.fn(), setMarkers: vi.fn() };
     const histogramSeries = { setData: vi.fn(), priceScale: vi.fn(() => ({ applyOptions: vi.fn() })) };
     const lineSeriesInstances = [];
+    const timeScaleApi = makeTimeScale();
     const chart = {
       addCandlestickSeries: vi.fn((opts) => {
         chart.candleOptions = opts;
@@ -29,7 +51,7 @@ vi.mock('lightweight-charts', () => ({
         lineSeriesInstances.push(s);
         return s;
       }),
-      timeScale: vi.fn(() => ({ fitContent: vi.fn() })),
+      timeScale: vi.fn(() => timeScaleApi),
       applyOptions: vi.fn(),
       remove: vi.fn(),
       candleSeries,
@@ -178,6 +200,69 @@ describe('ChartPanel — real data wiring', () => {
     expect(globalThis.ResizeObserver).toHaveBeenCalled();
     const instance = globalThis.ResizeObserver.mock.results[0].value;
     expect(instance.observe).toHaveBeenCalled();
+  });
+});
+
+describe('ChartPanel — time scale sync (main chart <-> RSI chart)', () => {
+  // The mock's setVisibleLogicalRange() invokes that chart's own subscribed
+  // handlers, same as real lightweight-charts — so calling it directly here
+  // is an accurate stand-in for "the user dragged/scrolled this chart."
+
+  it('subscribes to visibleLogicalRangeChange on both charts on mount', () => {
+    render(<ChartPanel bars={makeBars(5)} series={makeSeries(5)} />);
+    const [mainChart, rsiChart] = createdCharts;
+    expect(mainChart.timeScale().subscribeVisibleLogicalRangeChange).toHaveBeenCalledTimes(1);
+    expect(rsiChart.timeScale().subscribeVisibleLogicalRangeChange).toHaveBeenCalledTimes(1);
+  });
+
+  it('panning the main chart moves the RSI chart to the same range', () => {
+    render(<ChartPanel bars={makeBars(10)} series={makeSeries(10)} />);
+    const [mainChart, rsiChart] = createdCharts;
+    const range = { from: 2, to: 8 };
+
+    mainChart.timeScale().setVisibleLogicalRange(range); // simulated user pan on the main chart
+
+    expect(rsiChart.timeScale().setVisibleLogicalRange).toHaveBeenCalledWith(range);
+  });
+
+  it('panning the RSI chart moves the main chart to the same range', () => {
+    render(<ChartPanel bars={makeBars(10)} series={makeSeries(10)} />);
+    const [mainChart, rsiChart] = createdCharts;
+    const range = { from: 1, to: 5 };
+
+    rsiChart.timeScale().setVisibleLogicalRange(range); // simulated user pan on the RSI chart
+
+    expect(mainChart.timeScale().setVisibleLogicalRange).toHaveBeenCalledWith(range);
+  });
+
+  it('does NOT create a runaway update loop — each chart is set exactly once per pan (re-entrancy guard)', () => {
+    render(<ChartPanel bars={makeBars(10)} series={makeSeries(10)} />);
+    const [mainChart, rsiChart] = createdCharts;
+
+    mainChart.timeScale().setVisibleLogicalRange({ from: 0, to: 9 });
+
+    // The mock throws if setVisibleLogicalRange exceeds 50 calls (would have
+    // already failed above if the guard were broken); this asserts the exact,
+    // correct call counts rather than just "didn't crash".
+    expect(mainChart.timeScale().setVisibleLogicalRange).toHaveBeenCalledTimes(1); // only our simulated pan
+    expect(rsiChart.timeScale().setVisibleLogicalRange).toHaveBeenCalledTimes(1); // exactly one sync response, no bounce-back
+  });
+
+  it('ignores a null range (fires on some internal states) without calling the other chart', () => {
+    render(<ChartPanel bars={makeBars(10)} series={makeSeries(10)} />);
+    const [mainChart, rsiChart] = createdCharts;
+
+    mainChart.timeScale().setVisibleLogicalRange(null);
+
+    expect(rsiChart.timeScale().setVisibleLogicalRange).not.toHaveBeenCalled();
+  });
+
+  it('unsubscribes both sync handlers on unmount', () => {
+    const { unmount } = render(<ChartPanel bars={makeBars(5)} series={makeSeries(5)} />);
+    const [mainChart, rsiChart] = createdCharts;
+    unmount();
+    expect(mainChart.timeScale().unsubscribeVisibleLogicalRangeChange).toHaveBeenCalledTimes(1);
+    expect(rsiChart.timeScale().unsubscribeVisibleLogicalRangeChange).toHaveBeenCalledTimes(1);
   });
 });
 

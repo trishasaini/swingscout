@@ -13,7 +13,12 @@ vi.mock('lightweight-charts', () => ({
     addCandlestickSeries: vi.fn(() => ({ setData: vi.fn(), setMarkers: vi.fn() })),
     addHistogramSeries: vi.fn(() => ({ setData: vi.fn(), priceScale: vi.fn(() => ({ applyOptions: vi.fn() })) })),
     addLineSeries: vi.fn(() => ({ setData: vi.fn(), createPriceLine: vi.fn() })),
-    timeScale: vi.fn(() => ({ fitContent: vi.fn() })),
+    timeScale: vi.fn(() => ({
+      fitContent: vi.fn(),
+      subscribeVisibleLogicalRangeChange: vi.fn(),
+      unsubscribeVisibleLogicalRangeChange: vi.fn(),
+      setVisibleLogicalRange: vi.fn(),
+    })),
     applyOptions: vi.fn(),
     remove: vi.fn(),
   })),
