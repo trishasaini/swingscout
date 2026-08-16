@@ -10,3 +10,14 @@ import { cleanup } from '@testing-library/react';
 afterEach(() => {
   cleanup();
 });
+
+// jsdom does not implement ResizeObserver (used by ChartPanel to keep charts
+// sized to their container). A no-op stub is enough for tests — resize
+// behavior itself is not something jsdom can meaningfully exercise anyway.
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class ResizeObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}

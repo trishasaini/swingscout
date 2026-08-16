@@ -1,7 +1,23 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ResultCard from '../src/components/ResultCard';
 import { makeResult, makeNotYetResult, makeAvoidResult } from './fixtures';
+
+// ResultCard renders a REAL ChartPanel child when expanded, which calls the
+// real lightweight-charts unless mocked (canvas APIs jsdom doesn't support).
+// ChartPanel's own internals are already thoroughly covered in
+// ChartPanel.vitest.jsx — this file only needs to confirm ResultCard wires
+// the toggle and props through correctly, so a minimal no-op mock suffices.
+vi.mock('lightweight-charts', () => ({
+  createChart: vi.fn(() => ({
+    addCandlestickSeries: vi.fn(() => ({ setData: vi.fn(), setMarkers: vi.fn() })),
+    addHistogramSeries: vi.fn(() => ({ setData: vi.fn(), priceScale: vi.fn(() => ({ applyOptions: vi.fn() })) })),
+    addLineSeries: vi.fn(() => ({ setData: vi.fn(), createPriceLine: vi.fn() })),
+    timeScale: vi.fn(() => ({ fitContent: vi.fn() })),
+    applyOptions: vi.fn(),
+    remove: vi.fn(),
+  })),
+}));
 
 describe('ResultCard', () => {
   it('renders ticker, name, price, RSI, beta from the fixture data', () => {
@@ -66,5 +82,27 @@ describe('ResultCard', () => {
     // even though the verdict says AVOID, because it's not the component's job to reconcile that.
     const rows = screen.getAllByRole('row');
     expect(rows.every((r) => r.className.includes('sig-pass'))).toBe(true);
+  });
+
+  it('"View Chart" toggles the chart panel open and closed (spec §3.2)', () => {
+    render(<ResultCard r={makeResult()} />); // default fixture has empty bars -> "no chart data" fallback
+    expect(screen.queryByText(/No chart data available/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'View Chart' }));
+    expect(screen.getByText(/No chart data available/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Hide Chart' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Hide Chart' }));
+    expect(screen.queryByText(/No chart data available/)).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'View Chart' })).toBeInTheDocument();
+  });
+
+  it('passes real bars/series through to ChartPanel when expanded (props actually wired, not just some child rendering)', async () => {
+    const { createChart } = await import('lightweight-charts');
+    const bars = [{ time: '2026-01-01', open: 100, high: 101, low: 99, close: 100.5, volume: 1_000_000 }];
+    const r = makeResult({ bars, series: { ema50: [100], ema20: [100], rsi: [45] } });
+    render(<ResultCard r={r} />);
+    fireEvent.click(screen.getByRole('button', { name: 'View Chart' }));
+    expect(createChart).toHaveBeenCalled();
   });
 });

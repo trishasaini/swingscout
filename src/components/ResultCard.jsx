@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import VerdictBadge from './VerdictBadge';
 import BreakdownTable from './BreakdownTable';
+import ChartPanel from './ChartPanel';
 
 // ResultCard — a stock that passed all six hard filters (spec §3.2 fields +
 // RULES.md §7: plain-language verdict leads, numeric breakdown table underneath).
+// "View Chart" (spec §3.2) expands the Phase 2 chart panel inline below the
+// card rather than a separate route/modal — keeps this a true single-page app.
 export default function ResultCard({ r }) {
+  const [chartOpen, setChartOpen] = useState(false);
+
   return (
     <article className={`card card-${r.verdictColor}`}>
       <header className="card-head">
@@ -42,6 +48,11 @@ export default function ResultCard({ r }) {
       </dl>
 
       <BreakdownTable signals={r.signals} />
+
+      <button type="button" className="view-chart-btn" onClick={() => setChartOpen((v) => !v)}>
+        {chartOpen ? 'Hide Chart' : 'View Chart'}
+      </button>
+      {chartOpen && <ChartPanel bars={r.bars} series={r.series} />}
     </article>
   );
 }

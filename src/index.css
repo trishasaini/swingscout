@@ -168,6 +168,34 @@ table.breakdown tr:first-child td { border-top: none; }
 }
 .fail-reason { color: var(--muted); }
 
+/* --- Chart panel ------------------------------------------------------------ */
+
+.view-chart-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.view-chart-btn:hover { border-color: var(--accent); }
+
+.chart-panel { margin-top: 12px; }
+.chart-main, .chart-rsi { width: 100%; }
+.chart-rsi { margin-top: 4px; }
+
+.chart-empty {
+  margin-top: 12px;
+  padding: 16px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
 /* --- Mobile ---------------------------------------------------------------- */
 
 @media (max-width: 480px) {
