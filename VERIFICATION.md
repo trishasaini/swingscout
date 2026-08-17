@@ -75,11 +75,16 @@ comparison below.
 actually produces a correct `data.json`, commits it, and that Vercel
 redeploys from it.
 
-**Status: 🟡 PENDING — see session log below.**
+**Status: ✅ CONFIRMED — pipeline works end-to-end on the real repo.**
 
 | Date | Trigger | Result | Notes |
 |---|---|---|---|
-| — | — | — | — |
+| 2026-08-16 | `workflow_dispatch` (1st ever run) | ❌ Ran clean but silently skipped the commit | `git diff --quiet` doesn't see brand-new untracked files. Fixed in `c5196d7`. |
+| 2026-08-16 | `workflow_dispatch` (2nd run, commit fix live) | ✅ Committed `data.json` (`323446e`) | But `dataAsOf` came back `null` — 0 stocks passed all six filters today, and the old code only looked for a bar date on passing rows. Fixed in `34e1ef6`. |
+| 2026-08-16 | `workflow_dispatch` (3rd run, both fixes live) | ✅ Committed `data.json` (`44b8345`) | `dataAsOf: "2026-08-14"` (last trading day, Fri — correct), `counts: {passed:0, rejected:48, excludedLowBeta:25, errors:1}` sums to the full 74-ticker watchlist. Verified in a real browser: no demo banner, no false staleness warning (3-day gap is exactly the non-stale boundary), correct empty-state copy, zero console errors. |
+| 2026-08-16 | Vercel import | ✅ Deployed successfully from `44b8345`, preview shows correct live data | First-ever run against the real repo caught 2 real bugs neither unit tests nor demo-data testing could have found — both only manifest on real data shapes (untracked file, zero-passing-results day). Validates why this phase's smoke test matters, not just "green checkmark = done." |
+
+**Open follow-up:** the Vercel dashboard should show its **first automatic redeploy** shortly after this file's commit lands on `main` — confirms the GitHub→Vercel push trigger, not just the initial import. Check the Deployments tab for a new entry after this commit.
 
 ---
 
