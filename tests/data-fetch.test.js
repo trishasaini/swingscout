@@ -5,7 +5,7 @@
 // the pure scoring/assembly logic that every fetched row passes through,
 // plus the deterministic demo-data generators used for local development.
 
-const { scoreTicker, assemble, round, demoBars, demoMeta, demoMarketHealth } = require('../scripts/refresh');
+const { scoreTicker, assemble, round, demoBars, demoMeta, demoMarketHealth, toYahooSymbol } = require('../scripts/refresh');
 const { makeSuite } = require('./harness');
 
 // ASML is a deterministic demo ticker (scripts/refresh.js's mulberry32 fixture
@@ -20,6 +20,18 @@ const goodMeta = () => demoMeta(PASSING_TICKER);
 
 function run() {
   const t = makeSuite('data-fetch');
+
+  // --- toYahooSymbol: dual-share-class ticker normalization -------------------
+  // Empirically verified against the real APIs (not assumed): Polygon requires
+  // the dot form ("BRK.B"; "BRK-B" 404s as an invalid ticker), yfinance
+  // requires the dash form ("BRK-B"; "BRK.B" silently returns no data at all).
+  // WATCHLIST stays canonically dot-form (Polygon's convention); this
+  // conversion only ever applies right before a yfinance call.
+  {
+    t.check('BRK.B -> BRK-B', toYahooSymbol('BRK.B') === 'BRK-B');
+    t.check('BF.B -> BF-B', toYahooSymbol('BF.B') === 'BF-B');
+    t.check('plain ticker with no dot is unchanged', toYahooSymbol('AAPL') === 'AAPL');
+  }
 
   // --- scoreTicker: structural guards -----------------------------------------
   {

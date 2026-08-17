@@ -33,8 +33,11 @@ no exceptions, no "close enough."
 ## 2. Universe
 
 - US-listed only (NYSE, NASDAQ).
-- Sectors: Technology, Fintech, AI infrastructure.
-- **Excluded: energy, defense, biotech.**
+- **S&P 500 ∪ Nasdaq-100** (union, de-duplicated), 517 tickers as of the
+  scope expansion. No sector restriction — the prior Technology/Fintech/
+  AI-infrastructure-only scope, and its energy/defense/biotech exclusion,
+  were both deliberately dropped by explicit user decision when the
+  watchlist was expanded past the original ~74-ticker curated list.
 - Liquid only: avg daily volume > 1M shares (also filter #3).
 
 ---

@@ -135,9 +135,11 @@ const round = (n, d) => {
 
 // ---------------------------------------------------------------------------
 // LIVE fetch: polygon daily bars, rate-limited + retried (RULES.md §6:
-// polygon free tier). Polygon's free tier caps at 5 requests/minute — an
-// 80-stock refresh at 1 request/ticker takes ~16 minutes, which is fine for
-// the unattended nightly Action (spec says "under 15s" for the SCAN once
+// polygon free tier). Polygon's free tier caps at 5 requests/minute — at
+// 517 tickers (RULES §2's S&P 500 ∪ Nasdaq-100 universe) that's ~103
+// minutes/run, well under GitHub's 6-hour per-job timeout and free since
+// the repo is public (unmetered Actions minutes). Fine either way for the
+// unattended nightly Action (spec says "under 15s" for the SCAN once
 // data.json is loaded in the browser; the nightly fetch itself has no such
 // constraint).
 // ---------------------------------------------------------------------------
@@ -254,6 +256,15 @@ function fetchYfinanceMeta(tickers, { spawn = spawnSync } = {}) {
   return JSON.parse(res.stdout);
 }
 
+// Dual-share-class tickers (e.g. Berkshire's "BRK.B", Brown-Forman's "BF.B")
+// use different separators on different providers — empirically verified,
+// not assumed: Polygon requires the dot ("BRK.B"; "BRK-B" 404s as an invalid
+// ticker), yfinance requires the dash ("BRK-B"; "BRK.B" silently returns no
+// data at all, no error). WATCHLIST stays canonically dot-form (Polygon's
+// convention, and what's shown in the UI) everywhere except this one
+// conversion right before talking to yfinance.
+const toYahooSymbol = (ticker) => ticker.replace(/\./g, '-');
+
 async function runLive() {
   const apiKey = process.env.POLYGON_API_KEY;
   if (!apiKey) {
@@ -261,11 +272,11 @@ async function runLive() {
     process.exit(1);
   }
   console.error(`Fetching yfinance meta for ${WATCHLIST.length} tickers…`);
-  const meta = fetchYfinanceMeta(WATCHLIST);
+  const meta = fetchYfinanceMeta(WATCHLIST.map(toYahooSymbol));
 
   const rows = [];
   for (const ticker of WATCHLIST) {
-    const m = meta[ticker] || {};
+    const m = meta[toYahooSymbol(ticker)] || {};
     if (m.error) {
       rows.push({ kind: 'error', ticker, name: NAMES[ticker] || ticker, reason: m.error });
       continue;
@@ -482,6 +493,7 @@ module.exports = {
   fetchYfinanceMeta,
   fetchMarketHealth,
   demoMarketHealth,
+  toYahooSymbol,
   computeThrottleWait,
   backoffMs,
   CHART_BARS,
