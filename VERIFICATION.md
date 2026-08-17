@@ -86,6 +86,8 @@ redeploys from it.
 
 **Open follow-up:** the Vercel dashboard should show its **first automatic redeploy** shortly after this file's commit lands on `main` — confirms the GitHub→Vercel push trigger, not just the initial import. Check the Deployments tab for a new entry after this commit.
 
+| 2026-08-17 | `workflow_dispatch` (1st run, 74 -> 517 tickers, repo now public) | ✅ Committed `data.json` (`29e68a6`), ran 1h52m52s | `universeCount: 517`, `counts: {passed:0, rejected:141, excludedLowBeta:369, errors:7}` sums to exactly 517. Dual-share-class ticker fix (`toYahooSymbol`) confirmed correct on real data: `BRK.B` -> "Berkshire Hathaway Inc. New" (beta 0.61), `BF.B` -> "Brown Forman Inc" (beta 0.34) — both resolved correctly instead of erroring. 7/517 errors (1.4%) are expected real-world data gaps, isolated as designed, not a bug. One data-quality note: `FISV` errored — likely a stale symbol in the sourced ticker list, since Fiserv now trades as `FI` (already separately present in the watchlist); worth pruning by hand later, low priority. Verified live on production (`swingscout-eta.vercel.app`): correct summary line, correct "Data as of," all 517 rows render in "Stocks We Track," zero console errors. |
+
 ---
 
 ## How to keep this file alive
