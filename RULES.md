@@ -61,7 +61,13 @@ no exceptions, no "close enough."
 Assess the last 5–10 trading days on four checks:
 
 1. **Candle size** — recent candle range < 80% of 60-day avg range = good (small).
-2. **Candle overlap** — > 60% of consecutive body pairs overlap = good (consolidation).
+2. **Candle overlap (bullish recovery)** — for each red (down) candle in the
+   pullback window, check for a *later* green (up) candle whose close climbs
+   back above that red candle's open. ≥ 50% of red candles need such a
+   recovery = good (buyers absorbing the dip). A single strong green candle
+   can cover several earlier reds at once — not a 1:1 pairing. A pullback
+   with red candles but zero green recovery = fail. A pullback with no red
+   candles at all trivially passes (nothing to recover from).
 3. **Volume trend** — pullback vol < 80% of 20-day avg = good; > 100% = bad (distribution).
 4. **EMA direction** — EMA50 today > EMA50 5 days ago > EMA50 10 days ago = rising = good.
 

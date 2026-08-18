@@ -19,18 +19,38 @@ function scenario({ pullback, ema }) {
   return pullbackVerdict(bars, ema);
 }
 
+// Shared "healthy overlap" pullback pattern for tests A/B/C/D, which need
+// candleOverlap to PASS while isolating a different signal as the one
+// failing/passing under test. 5 red candles, 2 green — traced by hand below.
+// bodyHalf = 0.1 (tests/helpers.js), so a red day at mid M has open=M+0.1,
+// close=M-0.1; a green day at mid M has open=M-0.1, close=M+0.1.
+//   Day0 red@100 (open 100.1) -- later green day2 closes 102.1 > 100.1 -> RECOVERED
+//   Day1 red@99  (open 99.1)  -- later green day2 closes 102.1 > 99.1  -> RECOVERED
+//   Day2 green@102 (close 102.1)
+//   Day3 red@98  (open 98.1)  -- later green day5 closes 101.1 > 98.1 -> RECOVERED
+//   Day4 red@97  (open 97.1)  -- later green day5 closes 101.1 > 97.1 -> RECOVERED
+//   Day5 green@101 (close 101.1)
+//   Day6 red@96  (open 96.1)  -- no later green at all -> NOT recovered
+// redCount=5, recoveredCount=4 -> 80% >= 50% -> candleOverlap PASSES.
+const GOOD_OVERLAP = {
+  reds: [true, true, false, true, true, false, true],
+  mids: [100, 99, 102, 98, 97, 101, 96],
+};
+
 function run() {
   const t = makeSuite('verdict');
 
   // --- TEST A: all four signals pass -> BUY SETUP -----------------------------
   // baselineRange = (53*2.0 + 7*0.6)/60 = 1.837; recentRange = 0.6 < 0.8*1.837 -> pass
-  // overlap: mids all 100 -> bodies identical -> 6/6 pairs overlap -> pass
+  // overlap: GOOD_OVERLAP pattern -> 4/5 red candles recovered (80%) -> pass
   // avg20 = (13*5,000,000 + 7*2,500,000)/20 = 4,125,000; redDays mean = 2,500,000
+  //   (mean of red pullback days is still 2,500,000 regardless of how many of
+  //   the 7 are red, since volume is uniform across all pullback days here)
   //   2,500,000 < 0.8*4,125,000=3,300,000 -> pass, and not > avg20 -> not elevated
   // ema: rising array -> e0=101.8 > e5=100.8 > e10=99.8 -> pass
   {
     const r = scenario({
-      pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true },
+      pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 2_500_000 },
       ema: risingEma(N),
     });
     t.check('A: all 4 pass -> BUY SETUP', r.verdict === 'BUY SETUP');
@@ -44,10 +64,11 @@ function run() {
   // --- TEST B: sharp candles alone -> AVOID -----------------------------------
   // pullback range=5.0: baselineRange=(53*2.0+7*5.0)/60=2.35; recentRange=5.0
   //   5.0 < 0.8*2.35=1.88 is FALSE -> candleSize fails -> sharpCandles=true
-  // overlap/volume/ema left "good" (same as A) to isolate this as the sole trigger.
+  // overlap/volume/ema left "good" (GOOD_OVERLAP pattern) to isolate this as the
+  // sole trigger.
   {
     const r = scenario({
-      pullback: { mids: 100, range: 5.0, volume: 2_500_000, red: true },
+      pullback: { ...GOOD_OVERLAP, range: 5.0, volume: 2_500_000 },
       ema: risingEma(N),
     });
     t.check('B: sharp candles alone -> AVOID', r.verdict === 'AVOID');
@@ -63,7 +84,7 @@ function run() {
   //   7,500,000 > 5,875,000 -> volumeElevated=true. Range/overlap/EMA stay "good".
   {
     const r = scenario({
-      pullback: { mids: 100, range: 0.6, volume: 7_500_000, red: true },
+      pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 7_500_000 },
       ema: risingEma(N),
     });
     t.check('C: elevated volume alone -> AVOID', r.verdict === 'AVOID');
@@ -76,7 +97,7 @@ function run() {
   // decliningEma: e0=98.2 < e5=99.2 < e10=100.2 -> emaPass=false -> emaDeclining=true.
   {
     const r = scenario({
-      pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true },
+      pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 2_500_000 },
       ema: decliningEma(N),
     });
     t.check('D: declining EMA50 alone -> AVOID', r.verdict === 'AVOID');
@@ -85,39 +106,93 @@ function run() {
       r.signals.candleSize.pass && r.signals.candleOverlap.pass && r.signals.volumeTrend.pass);
   }
 
-  // --- TEST I/J: overlap boundary granularity (break-and-confirm-red finding) --
-  // With PULLBACK_WINDOW=7 (6 consecutive pairs), achievable overlap fractions
-  // are quantized to multiples of 1/6 (~16.7%): 0, 16.7, 33, 50, 66.7, 83, 100%.
-  // There is NO achievable fraction strictly between 50% and 66.7%, so no test
-  // built on this window can distinguish OVERLAP_MIN=0.6 from any other value
-  // in (0.5, 0.667) — confirmed by intentionally changing OVERLAP_MIN to 0.5 and
-  // finding zero tests went red. That's a structural granularity limit, not a
-  // gap that more tests can close without shortening PULLBACK_WINDOW. What IS
-  // meaningfully testable: the strict-inequality direction at the nearest
-  // achievable fractions either side of 0.6.
+  // --- TEST I: exactly 50% of red candles recovered -> passes (>= not >) -----
+  // 4 red candles at strictly decreasing opens (200.1, 190.1, 180.1, 170.1),
+  // then one green candle closing at 185.1 -- high enough to recover the two
+  // lowest-open reds (180.1, 170.1) but not the two highest (200.1, 190.1).
+  // Two harmless low green fillers after it recover nothing further.
+  // recoveredCount=2, redCount=4 -> exactly 50% -> must pass ("at least 50%").
+  // This also exercises one green candle recovering 2 separate reds at once.
   {
-    // Exactly 4/6 overlapping pairs (mids: 100,100,100,200,200,200,100) -> 66.7%,
-    // the nearest achievable fraction ABOVE 0.6 -> must pass.
     const r = scenario({
-      pullback: { mids: [100, 100, 100, 200, 200, 200, 100], range: 0.6, volume: 2_500_000, red: true },
+      pullback: {
+        reds: [true, true, true, true, false, false, false],
+        mids: [200, 190, 180, 170, 185, 100, 100],
+        range: 0.6,
+        volume: 2_500_000,
+      },
       ema: risingEma(N),
     });
-    t.check('I: 4/6 (66.7%) overlap, nearest achievable fraction above 0.6 -> passes', r.signals.candleOverlap.pass === true);
-    t.check('I: overlap count reported as 4/6', r.signals.candleOverlap.value === '4/6 body pairs overlap');
+    t.check('I: exactly 50% recovered -> passes', r.signals.candleOverlap.pass === true);
+    t.check('I: overlap value reports 2/4', r.signals.candleOverlap.value === '2/4 red candles recovered by a later green close');
   }
+
+  // --- TEST J: just under 50% recovered -> fails ------------------------------
+  // Same 4 decreasing-open reds, but the recovering greens now close at only
+  // 175.1 -- high enough for just the lowest-open red (170.1) but none of the
+  // other three. recoveredCount=1, redCount=4 -> 25% -> fails.
   {
-    // Exactly 3/6 overlapping pairs (mids: 100,100,200,200,300,300,400) -> 50%,
-    // the nearest achievable fraction AT/BELOW 0.6 -> must fail (strict >).
     const r = scenario({
-      pullback: { mids: [100, 100, 200, 200, 300, 300, 400], range: 0.6, volume: 2_500_000, red: true },
+      pullback: {
+        reds: [true, true, true, true, false, false, false],
+        mids: [200, 190, 180, 170, 175, 175, 100],
+        range: 0.6,
+        volume: 2_500_000,
+      },
       ema: risingEma(N),
     });
-    t.check('J: 3/6 (50%) overlap -> fails (not strictly greater than 0.6)', r.signals.candleOverlap.pass === false);
-    t.check('J: overlap count reported as 3/6', r.signals.candleOverlap.value === '3/6 body pairs overlap');
+    t.check('J: 25% recovered -> fails (below 50%)', r.signals.candleOverlap.pass === false);
+    t.check('J: overlap value reports 1/4', r.signals.candleOverlap.value === '1/4 red candles recovered by a later green close');
+  }
+
+  // --- TEST K: one strong green candle recovers 3 prior reds (not 1:1) -------
+  // Explicit spec case: "even one strong green candle overlapping 2-3 prior
+  // candles = healthy signal." Three reds at decreasing opens, then a single
+  // green candle whose close clears all three at once.
+  {
+    const r = scenario({
+      pullback: {
+        reds: [true, true, true, false, false, false, false],
+        mids: [100, 99, 98, 101, 50, 50, 50],
+        range: 0.6,
+        volume: 2_500_000,
+      },
+      ema: risingEma(N),
+    });
+    t.check('K: one green candle recovering 3 reds -> 100%, passes', r.signals.candleOverlap.pass === true);
+    t.check('K: overlap value reports 3/3', r.signals.candleOverlap.value === '3/3 red candles recovered by a later green close');
+  }
+
+  // --- TEST L: pure red, no green recovery at all -> fails --------------------
+  // Explicit spec case: "a sequence of pure red overlapping candles with no
+  // green recovery = FAIL." No green candles exist in the window at all, so
+  // no red candle can possibly be recovered, regardless of how tightly their
+  // bodies overlap geometrically.
+  {
+    const r = scenario({
+      pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true },
+      ema: risingEma(N),
+    });
+    t.check('L: all-red pullback, zero greens -> candleOverlap fails', r.signals.candleOverlap.pass === false);
+    t.check('L: overlap value reports 0/7', r.signals.candleOverlap.value === '0/7 red candles recovered by a later green close');
+  }
+
+  // --- TEST M: no red candles at all -> trivially passes ----------------------
+  // Documented interpretation (RULES.md §4, verdict.js comment): a pullback
+  // with nothing to recover from isn't unhealthy, so this is a 0/0 case that
+  // passes rather than fails.
+  {
+    const r = scenario({
+      pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: false },
+      ema: risingEma(N),
+    });
+    t.check('M: no red candles -> candleOverlap trivially passes', r.signals.candleOverlap.pass === true);
+    t.check('M: overlap value reports the no-red-candles case', r.signals.candleOverlap.value === 'no red candles in the pullback window');
   }
 
   // --- TEST E: literal "exactly 2 of 4" -> NOT YET ----------------------------
-  // mids alternate [95,105]: bodies never intersect -> overlap fails.
+  // mids alternate [95,105], all red, zero green candles -> candleOverlap fails
+  // (no possible recovery, same reasoning as TEST L).
   // volume mult 0.9 lands in the 80-100% neutral band (neither good nor elevated):
   //   avg20=(13*5,000,000+7*4,500,000)/20=4,825,000; redDays mean=4,500,000
   //   4,500,000 is not <3,860,000 (fail "good") and not >4,825,000 (not elevated).
@@ -135,7 +210,7 @@ function run() {
   }
 
   // --- TEST F: 3 of 4 pass, no AVOID trigger -> NOT YET (catch-all) ----------
-  // Same non-overlapping mids as E, but volume back to the "good" 0.5x band.
+  // Same all-red mids as E, but volume back to the "good" 0.5x band.
   // This is the confirmed interpretation of RULES §4's ambiguous "exactly 2 of 4"
   // wording: any non-AVOID case that isn't a clean 4-of-4 lands in NOT YET.
   {
@@ -152,7 +227,8 @@ function run() {
   // All pullback candles green (red:false): the "red day" pool (last 10 bars =
   // 3 baseline + 7 pullback) is empty since baseline is also green, so
   // pullbackVol must fall back to mean(last 7 bars) instead of NaN from an
-  // empty-array mean. mult 0.3 keeps it clearly "good".
+  // empty-array mean. mult 0.3 keeps it clearly "good". Also exercises the
+  // same no-red-candles case as TEST M, in a scenario feeding into BUY SETUP.
   {
     const r = scenario({
       pullback: { mids: 100, range: 0.6, volume: 1_500_000, red: false },
@@ -161,6 +237,7 @@ function run() {
     t.check('G: fallback volume calc produced a real boolean, not NaN-derived', r.signals.volumeTrend.pass === true || r.signals.volumeTrend.pass === false);
     t.check('G: fallback volume reads as good (well below 20d avg)', r.signals.volumeTrend.pass === true);
     t.check('G: no NaN leaks into any signal text', !/NaN/.test(JSON.stringify(r.signals)));
+    t.check('G: candleOverlap trivially passes (no red candles)', r.signals.candleOverlap.pass === true);
     t.check('G: falls through to BUY SETUP (all 4 pass via fallback)', r.verdict === 'BUY SETUP');
   }
 
@@ -175,7 +252,7 @@ function run() {
     let r = null;
     let threw = null;
     try {
-      r = scenario({ pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true }, ema: emaWithGap });
+      r = scenario({ pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 2_500_000 }, ema: emaWithGap });
     } catch (e) {
       threw = e;
     }
@@ -199,7 +276,7 @@ function run() {
     let r = null;
     let threw = null;
     try {
-      r = scenario({ pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true }, ema: emaWithGap });
+      r = scenario({ pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 2_500_000 }, ema: emaWithGap });
     } catch (e) {
       threw = e;
     }
@@ -209,7 +286,7 @@ function run() {
 
   // --- Signal breakdown shape (always present, RULES §4 "always show") ------
   {
-    const r = scenario({ pullback: { mids: 100, range: 0.6, volume: 2_500_000, red: true }, ema: risingEma(N) });
+    const r = scenario({ pullback: { ...GOOD_OVERLAP, range: 0.6, volume: 2_500_000 }, ema: risingEma(N) });
     for (const key of ['candleSize', 'candleOverlap', 'volumeTrend', 'emaDirection']) {
       const s = r.signals[key];
       t.check(`signals.${key} has label/pass/value/detail`, typeof s.label === 'string' && typeof s.pass === 'boolean' && typeof s.value === 'string' && typeof s.detail === 'string');

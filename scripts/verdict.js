@@ -20,14 +20,14 @@ const VOLUME_AVG_WINDOW = 20; // 20-day average volume
 const RED_LOOKBACK = 10; // look for pullback (red) days in the last 10
 
 const CANDLE_SIZE_MAX = 0.8; // recent range must be < 80% of baseline
-const OVERLAP_MIN = 0.6; // > 60% of body pairs must overlap
+const RED_RECOVERY_MIN = 0.5; // >= 50% of red candles need a later green recovery
 const VOL_GOOD = 0.8; // pullback vol < 80% of 20d avg = good
 const VOL_ELEVATED = 1.0; // pullback vol > 100% of 20d avg = distribution
 
 const mean = (a) => a.reduce((s, x) => s + x, 0) / a.length;
 const range = (b) => b.high - b.low;
-const bodyLo = (b) => Math.min(b.open, b.close);
-const bodyHi = (b) => Math.max(b.open, b.close);
+const isRed = (b) => b.close < b.open;
+const isGreen = (b) => b.close > b.open;
 
 /**
  * @param {Array<{open,high,low,close,volume}>} bars oldest-first, >= 60 bars
@@ -45,19 +45,30 @@ function pullbackVerdict(bars, ema50) {
   const recentRange = mean(bars.slice(-PULLBACK_WINDOW).map(range));
   const candleSizePass = recentRange < CANDLE_SIZE_MAX * baselineRange;
 
-  // --- 2. Candle overlap ---------------------------------------------------
+  // --- 2. Candle overlap (bullish recovery) ---------------------------------
+  // Redefined by explicit user instruction (was: generic consecutive-body
+  // overlap regardless of direction). Now checks for BULLISH recovery: for
+  // each red (down) candle in the pullback window, is there a LATER green
+  // (up) candle in the same window whose close climbs back above that red
+  // candle's open? One strong green candle can cover several earlier reds at
+  // once — this is deliberately not a 1:1 pairing (e.g. one green candle
+  // recovering 2-3 prior reds still counts each of them as recovered).
+  //
+  // Interpretation flagged, not silently decided: a pullback window with NO
+  // red candles has nothing to recover from, so it trivially passes (100%)
+  // rather than failing on a 0/0 count.
   const window = bars.slice(-PULLBACK_WINDOW);
-  let overlaps = 0;
-  const pairs = window.length - 1;
-  for (let i = 1; i < window.length; i++) {
-    const a = window[i - 1];
-    const b = window[i];
-    const intersect =
-      Math.max(bodyLo(a), bodyLo(b)) <= Math.min(bodyHi(a), bodyHi(b));
-    if (intersect) overlaps++;
+  let redCount = 0;
+  let recoveredCount = 0;
+  for (let i = 0; i < window.length; i++) {
+    if (!isRed(window[i])) continue;
+    redCount++;
+    const redOpen = window[i].open;
+    const recovered = window.slice(i + 1).some((later) => isGreen(later) && later.close > redOpen);
+    if (recovered) recoveredCount++;
   }
-  const overlapFrac = pairs > 0 ? overlaps / pairs : 0;
-  const overlapPass = overlapFrac > OVERLAP_MIN;
+  const overlapFrac = redCount > 0 ? recoveredCount / redCount : 1;
+  const overlapPass = overlapFrac >= RED_RECOVERY_MIN;
 
   // --- 3. Volume trend -----------------------------------------------------
   const avg20 = mean(bars.slice(-VOLUME_AVG_WINDOW).map((b) => b.volume));
@@ -97,12 +108,12 @@ function pullbackVerdict(bars, ema50) {
   } else if (passCount === 4) {
     verdict = 'BUY SETUP';
     color = 'green';
-    summary = 'small candles, tight consolidation, calm volume, uptrend intact';
+    summary = 'small candles, buyers absorbing dips, calm volume, uptrend intact';
   } else {
     verdict = 'NOT YET';
     color = 'yellow';
     const missing = [];
-    if (!overlapPass) missing.push('candles not yet consolidating');
+    if (!overlapPass) missing.push('buyers not yet absorbing the dip');
     if (!volumePass) missing.push('volume not yet drying up');
     summary = missing.length
       ? `${missing.join(', ')} — needs more time`
@@ -117,10 +128,13 @@ function pullbackVerdict(bars, ema50) {
       detail: `${((recentRange / baselineRange) * 100).toFixed(0)}% of baseline (want <80%)`,
     },
     candleOverlap: {
-      label: 'Overlapping candles',
+      label: 'Buyers absorbing dip',
       pass: overlapPass,
-      value: `${overlaps}/${pairs} body pairs overlap`,
-      detail: `${(overlapFrac * 100).toFixed(0)}% overlap (want >60%)`,
+      value:
+        redCount > 0
+          ? `${recoveredCount}/${redCount} red candles recovered by a later green close`
+          : 'no red candles in the pullback window',
+      detail: "green candle closes above red candle's open (want ≥50% of red candles recovered)",
     },
     volumeTrend: {
       label: 'Declining volume',
@@ -150,7 +164,7 @@ module.exports = {
     VOLUME_AVG_WINDOW,
     RED_LOOKBACK,
     CANDLE_SIZE_MAX,
-    OVERLAP_MIN,
+    RED_RECOVERY_MIN,
     VOL_GOOD,
     VOL_ELEVATED,
   },

@@ -55,7 +55,7 @@ describe('ResultCard', () => {
     // "BUY SETUP" legitimately appears twice (badge + headline) — scope to the
     // verdict-line specifically rather than searching the whole document.
     const verdictLine = container.querySelector('.verdict-line');
-    expect(verdictLine.textContent).toBe('BUY SETUP — small candles, calm volume, uptrend intact');
+    expect(verdictLine.textContent).toBe('BUY SETUP — small candles, buyers absorbing dips, calm volume, uptrend intact');
   });
 
   it('renders all 4 signal rows in the breakdown table with correct pass/fail marks', () => {
