@@ -105,11 +105,15 @@ day's data instead, one day stale, no visible failure signal.
 | 2026-08-17 | Diagnosed live: queried Polygon directly right after — `AAPL` daily bars showed Monday's close *was* available by then, just wasn't yet at 22:16 UTC when the workflow ran. Confirmed via Polygon's own docs: daily aggregates are continuously finalized as trades (including delayed dark-pool prints) keep reporting in after close, with no fixed published SLA, especially on the free/delayed tier. | Not a code bug — a real timing gap between the old 22:00 UTC cron (only ~1-2h after the 4pm ET close, not the "5-6h" originally and incorrectly estimated) and how long Polygon actually takes to finalize. |
 | 2026-08-17 | **Fix applied**: cron moved from `0 22 * * 1-5` (22:00 UTC weekdays) to `30 7 * * 2-6` (07:30 UTC, Tue-Sat) — ~10-11h after close instead of ~1-2h. Trigger weekday shifted forward one day (UTC) since it now runs past midnight ET. New IST arrival: ~1:00 PM IST Tue-Sat (was ~3:30 AM IST). | This is a generous best-effort buffer, **not a proven-safe cutoff** — Polygon publishes no exact finalization SLA. |
 
-**Next action:** watch `dataAsOf` on the next several real scheduled runs.
-It should consistently equal the actual prior trading day (e.g. a Wednesday
-run should show Tuesday's date), never lag an extra day. If it ever lags
-again even at 07:30 UTC, push the buffer later still rather than assume
-this one fix settled it permanently.
+| 2026-08-18 | Manual `workflow_dispatch` (not the scheduled cron), fired 14:30 UTC — well after 07:30 | ✅ `dataAsOf: "2026-08-17"` (Monday, the correct prior trading day), `generatedAt: 2026-08-18T16:22:26Z`. First-ever real BUY SETUP produced (`GM`) — verified live on production: chart panel, EMA overlay, RSI subpanel, and position-sizing math (`$84.37` entry / `$81.70` stop / 18 shares / `$1,518.66` capital) all rendered correctly, zero console errors. | This confirms data IS available by 14:30 UTC, but this was a **manual** trigger, not the actual 07:30 UTC scheduled cron — doesn't yet prove the new schedule's specific buffer is early-enough-but-not-too-early. Still waiting on an actual `event: "schedule"` run at 07:30 UTC to confirm the real fix. |
+
+**Next action:** watch `dataAsOf` specifically on the next `event: "schedule"`
+run (not a manual `workflow_dispatch`) — that's the one that actually tests
+whether 07:30 UTC is early enough for Polygon's data to be ready. It should
+consistently equal the actual prior trading day (e.g. a Wednesday run
+should show Tuesday's date), never lag an extra day. If it ever lags again
+even at 07:30 UTC, push the buffer later still rather than assume this one
+fix settled it permanently.
 
 ---
 
