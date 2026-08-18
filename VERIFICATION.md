@@ -90,6 +90,29 @@ redeploys from it.
 
 ---
 
+## 5. Scheduled-run timing vs Polygon data-finalization lag
+
+**What:** Does the nightly cron actually land after Polygon has finished
+finalizing that trading day's daily aggregate bar? If it fires too early,
+the fetch doesn't error — it silently succeeds with the *previous* trading
+day's data instead, one day stale, no visible failure signal.
+
+**Status: 🟡 PENDING — real fix applied, not yet confirmed over multiple nights.**
+
+| Date | What happened | Notes |
+|---|---|---|
+| 2026-08-17 | First-ever real `schedule`-triggered run (not `workflow_dispatch`) fired at 22:16 UTC Monday, completed ~00:11 UTC Tuesday | ❌ `dataAsOf` came back `2026-08-14` (Friday) instead of `2026-08-17` (Monday) — one full trading day stale, job reported `success` throughout, `StalenessWarning` correctly caught it in the UI (4 days old > 3-day threshold) since that's exactly the failure mode it exists for. |
+| 2026-08-17 | Diagnosed live: queried Polygon directly right after — `AAPL` daily bars showed Monday's close *was* available by then, just wasn't yet at 22:16 UTC when the workflow ran. Confirmed via Polygon's own docs: daily aggregates are continuously finalized as trades (including delayed dark-pool prints) keep reporting in after close, with no fixed published SLA, especially on the free/delayed tier. | Not a code bug — a real timing gap between the old 22:00 UTC cron (only ~1-2h after the 4pm ET close, not the "5-6h" originally and incorrectly estimated) and how long Polygon actually takes to finalize. |
+| 2026-08-17 | **Fix applied**: cron moved from `0 22 * * 1-5` (22:00 UTC weekdays) to `30 7 * * 2-6` (07:30 UTC, Tue-Sat) — ~10-11h after close instead of ~1-2h. Trigger weekday shifted forward one day (UTC) since it now runs past midnight ET. New IST arrival: ~1:00 PM IST Tue-Sat (was ~3:30 AM IST). | This is a generous best-effort buffer, **not a proven-safe cutoff** — Polygon publishes no exact finalization SLA. |
+
+**Next action:** watch `dataAsOf` on the next several real scheduled runs.
+It should consistently equal the actual prior trading day (e.g. a Wednesday
+run should show Tuesday's date), never lag an extra day. If it ever lags
+again even at 07:30 UTC, push the buffer later still rather than assume
+this one fix settled it permanently.
+
+---
+
 ## How to keep this file alive
 
 - Every time a `🟡 PENDING` item gets checked, update its status **and**

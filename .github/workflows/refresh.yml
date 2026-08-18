@@ -1,10 +1,25 @@
 name: Nightly data refresh
 
-# Runs after US market close and commits a fresh public/data.json.
+# Runs well after US market close and commits a fresh public/data.json.
 # Vercel auto-redeploys on the push. The user never triggers this.
+#
+# Timing note: originally 22:00 UTC (~1-2h after the 4pm ET close), but the
+# first-ever real scheduled run (2026-08-17) proved that's too tight —
+# Polygon's free/delayed tier hadn't finished finalizing that day's daily
+# aggregate bar yet, so the fetch silently landed one trading day behind
+# (got Friday's close instead of Monday's, no error, just stale-by-one-day).
+# Verified via a live Polygon query: the bar wasn't there at 22:16 UTC but
+# was there by the next check. Polygon doesn't publish an exact finalization
+# SLA, so 07:30 UTC (~10-11h after close, comfortably past midnight ET in
+# both EDT/EST) is a generous best-effort buffer, not a guaranteed cutoff —
+# watch VERIFICATION.md for whether this actually holds over real nights.
+#
+# Because this now runs after midnight ET, the trigger weekday is one day
+# LATER (UTC) than the trading day it captures: firing Tue-Sat UTC captures
+# Mon-Fri closes respectively (Tue 07:30 UTC captures Monday's close, etc.).
 on:
   schedule:
-    - cron: '0 22 * * 1-5' # 22:00 UTC on weekdays (~after 4pm ET close)
+    - cron: '30 7 * * 2-6' # 07:30 UTC Tue-Sat = ~10-11h after the prior weekday's 4pm ET close
   workflow_dispatch: {} # manual "Run workflow" button for testing
 
 permissions:
