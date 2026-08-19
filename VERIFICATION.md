@@ -97,7 +97,7 @@ finalizing that trading day's daily aggregate bar? If it fires too early,
 the fetch doesn't error — it silently succeeds with the *previous* trading
 day's data instead, one day stale, no visible failure signal.
 
-**Status: 🟡 PENDING — real fix applied, not yet confirmed over multiple nights.**
+**Status: ✅ CONFIRMED — the first real `event:"schedule"` run at 07:30 UTC landed correctly.**
 
 | Date | What happened | Notes |
 |---|---|---|
@@ -107,13 +107,39 @@ day's data instead, one day stale, no visible failure signal.
 
 | 2026-08-18 | Manual `workflow_dispatch` (not the scheduled cron), fired 14:30 UTC — well after 07:30 | ✅ `dataAsOf: "2026-08-17"` (Monday, the correct prior trading day), `generatedAt: 2026-08-18T16:22:26Z`. First-ever real BUY SETUP produced (`GM`) — verified live on production: chart panel, EMA overlay, RSI subpanel, and position-sizing math (`$84.37` entry / `$81.70` stop / 18 shares / `$1,518.66` capital) all rendered correctly, zero console errors. | This confirms data IS available by 14:30 UTC, but this was a **manual** trigger, not the actual 07:30 UTC scheduled cron — doesn't yet prove the new schedule's specific buffer is early-enough-but-not-too-early. Still waiting on an actual `event: "schedule"` run at 07:30 UTC to confirm the real fix. |
 
-**Next action:** watch `dataAsOf` specifically on the next `event: "schedule"`
-run (not a manual `workflow_dispatch`) — that's the one that actually tests
-whether 07:30 UTC is early enough for Polygon's data to be ready. It should
-consistently equal the actual prior trading day (e.g. a Wednesday run
-should show Tuesday's date), never lag an extra day. If it ever lags again
-even at 07:30 UTC, push the buffer later still rather than assume this one
-fix settled it permanently.
+| 2026-08-19 | First real `event:"schedule"` run at the new time — fired 08:00 UTC Wednesday (07:30 UTC cron + ~30min GitHub Actions queue delay, normal jitter), ran 1h52m52s, completed ~09:53 UTC | ✅ `dataAsOf: "2026-08-18"` (Tuesday, the correct prior trading day, no lag), `generatedAt: 2026-08-19T09:53:02.791Z` = 3:23 PM IST. `counts: {passed:4, rejected:137, excludedLowBeta:369, errors:7}`. This is the actual proof the fix works — not a manual trigger standing in for it. | 07:30 UTC (~10-11h after close) is confirmed sufficient, at least for this one night. Keep watching future scheduled runs rather than treat one success as permanent — Polygon still publishes no fixed SLA. |
+
+**Next action:** keep an eye on `dataAsOf` over the next several scheduled
+runs. It should consistently equal the actual prior trading day (e.g. a
+Thursday run should show Wednesday's date), never lag an extra day. If it
+ever lags again even at 07:30 UTC, push the buffer later still rather than
+assume one good night settled it permanently.
+
+---
+
+## 6. "Data as of" showed a fabricated time (found by actual use, not testing)
+
+**What happened:** the header showed "Data as of Aug 18, 5:30 AM" every
+single day, regardless of when the scan actually ran. `dataAsOf` is a bare
+trading-day *date* with no time-of-day (e.g. `"2026-08-18"`); JavaScript
+parses a date-only string as UTC midnight, which is always exactly 5:30 AM
+in IST — so the displayed "time" was never real, just a fixed artifact of
+the timezone conversion. Caught because the user, actually using the site
+day to day, noticed the displayed time didn't match when they knew the
+scan had run (~1:30-3:30 PM IST) — not caught by any test or smoke check,
+since those never assert on the *meaning* of a correctly-formatted date.
+
+**Fix:** `formatAsOf` now shows the date only, no time. A separate new
+"Last refreshed" line shows `generatedAt` (a real full timestamp, when the
+script actually ran), formatted in the viewer's own local timezone —
+verified live: showed "Last refreshed Aug 19, 2026, 3:23 PM" against a real
+`generatedAt` of `2026-08-19T09:53:02.791Z` UTC, which is correct.
+
+**Status: ✅ CONFIRMED fixed and verified live**, but worth remembering as a
+pattern: a technically-correct computation (UTC midnight, real timezone
+math) can still produce a misleading result if the underlying value never
+had the granularity being displayed. Worth a second look anywhere else in
+the app that formats a bare date with a time component.
 
 ---
 

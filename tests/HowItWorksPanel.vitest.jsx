@@ -16,9 +16,15 @@ describe('HowItWorksPanel', () => {
   it('explains all four pullback signals (RULES.md §4)', () => {
     render(<HowItWorksPanel />);
     expect(screen.getByText(/Small daily price swings/)).toBeInTheDocument();
-    expect(screen.getByText(/Overlapping days/)).toBeInTheDocument();
+    expect(screen.getByText(/Buyers absorbing the dip/)).toBeInTheDocument();
     expect(screen.getByText(/Lighter trading volume/)).toBeInTheDocument();
     expect(screen.getByText(/50-day trend line still rising/)).toBeInTheDocument();
+  });
+
+  it('explains the bullish-recovery rule in plain language (RULES.md §4 signal 2)', () => {
+    render(<HowItWorksPanel />);
+    expect(screen.getByText(/climb back above where that red day started/)).toBeInTheDocument();
+    expect(screen.getByText(/At least half of the down days need this/)).toBeInTheDocument();
   });
 
   it('shows all three verdict colors with their meaning', () => {

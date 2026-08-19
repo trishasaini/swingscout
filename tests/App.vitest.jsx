@@ -16,7 +16,7 @@ afterEach(() => {
 });
 
 describe('App', () => {
-  it('shows "Data as of" using dataAsOf (the actual market data date), not generatedAt (script run time)', async () => {
+  it('"Data as of" uses dataAsOf (the actual market data date), and shows generatedAt separately as "Last refreshed"', async () => {
     // Dates chosen 5 months apart so the assertion holds regardless of the
     // test runner's local timezone offset (a 1-day-apart pair could collide
     // near a UTC/local midnight boundary and pass either way — this can't).
@@ -24,7 +24,18 @@ describe('App', () => {
     render(<App />);
     const asof = await screen.findByText(/Data as of/);
     expect(asof.textContent).toMatch(/Jan/);
-    expect(asof.textContent).not.toMatch(/Jun/);
+    const refreshedAt = await screen.findByText(/Last refreshed/);
+    expect(refreshedAt.textContent).toMatch(/Jun/);
+  });
+
+  it('"Data as of" never shows a fabricated clock time (dataAsOf is date-only, no real time-of-day)', async () => {
+    mockFetchOnce(makeData({ dataAsOf: '2026-03-10', generatedAt: '2026-03-11T04:00:00.000Z' }));
+    render(<App />);
+    const asof = await screen.findByText(/Data as of/);
+    // Only the "Data as of ..." portion (excluding the nested "Last refreshed"
+    // line, which legitimately has a time) must not contain a clock time.
+    const asofOnly = asof.textContent.split('Last refreshed')[0];
+    expect(asofOnly).not.toMatch(/\d{1,2}:\d{2}/);
   });
 
   it('does not show the demo banner for live data (demo: false)', async () => {

@@ -33,10 +33,30 @@ export default function HowItWorksPanel() {
         of a healthy pause:
       </p>
       <ul className="howitworks-list">
-        <li><strong>Small daily price swings</strong> — not sharp, panicky drops.</li>
-        <li><strong>Overlapping days</strong> — the stock is consolidating sideways, not falling in a straight line.</li>
-        <li><strong>Lighter trading volume during the dip</strong> — no one's rushing for the exits.</li>
-        <li><strong>50-day trend line still rising</strong> — the underlying uptrend is intact.</li>
+        <li>
+          <strong>Small daily price swings</strong> — not sharp, panicky drops. A stock that's calmly
+          resting rarely makes big, scary jumps day to day; wild swings usually mean fear is driving
+          the price, not just normal profit-taking.
+        </li>
+        <li>
+          <strong>Buyers absorbing the dip</strong> — on the days the stock fell, does a later green
+          (up) day's close climb back above where that red day started? At least half of the down
+          days need this. It shows buyers stepping back in and pushing the price back up, rather than
+          the stock just falling with nobody catching it. One strong green day can "recover" several
+          earlier red days at once — a good sign, not a coincidence.
+        </li>
+        <li>
+          <strong>Lighter trading volume during the dip</strong> — no one's rushing for the exits. If
+          a lot of shares change hands while the price falls, that often means big investors are
+          quietly selling off their position — a warning sign. Quieter, lower volume during a dip is
+          a much healthier sign that it's just a normal pause.
+        </li>
+        <li>
+          <strong>50-day trend line still rising</strong> — the underlying uptrend is intact. Even
+          though the stock dipped short-term, its longer 50-day average price is still climbing,
+          meaning the bigger-picture trend hasn't broken. If that average were falling too, this
+          "pullback" might actually be the start of a real downtrend instead.
+        </li>
       </ul>
 
       <h3>Step 3 — What the colors mean</h3>

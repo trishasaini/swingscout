@@ -25,13 +25,24 @@ async function loadData() {
   throw new Error('No data.json or data.demo.json found.');
 }
 
+// dataAsOf is a bare trading-day DATE with no time-of-day (e.g. "2026-08-18"),
+// always parsed as UTC midnight — showing a clock time next to it would be
+// fabricated, not real data (it would always read the same fixed time in any
+// given timezone, e.g. always 5:30 AM in IST, regardless of when the scan
+// actually ran). Date only, on purpose.
 function formatAsOf(iso) {
   if (!iso) return 'unknown';
   const d = new Date(iso);
-  return d.toLocaleString(undefined, {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-  });
+  return d.toLocaleString(undefined, { dateStyle: 'medium' });
+}
+
+// generatedAt IS a real full timestamp (when the nightly script actually ran)
+// — this is what answers "when was this actually refreshed," in the viewer's
+// own local timezone.
+function formatRefreshedAt(iso) {
+  if (!iso) return null;
+  const d = new Date(iso);
+  return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 }
 
 export default function App() {
@@ -71,7 +82,12 @@ export default function App() {
     <main className="app">
       <header className="topbar">
         <h1>SwingScout</h1>
-        <div className="asof">Data as of {formatAsOf(data.dataAsOf)}</div>
+        <div className="asof">
+          Data as of {formatAsOf(data.dataAsOf)}
+          {data.generatedAt && (
+            <div className="refreshed-at">Last refreshed {formatRefreshedAt(data.generatedAt)}</div>
+          )}
+        </div>
       </header>
 
       <nav className="toolbar">

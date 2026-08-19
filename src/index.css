@@ -42,6 +42,12 @@ body {
   color: var(--muted);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.refreshed-at {
+  font-size: 11px;
+  opacity: 0.8;
 }
 
 .toolbar {
