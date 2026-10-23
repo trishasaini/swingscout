@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-10-22T14:53:28.235Z",
-  "dataAsOf": "2026-10-21",
+  "generatedAt": "2026-10-23T14:32:50.638Z",
+  "dataAsOf": "2026-10-22",
   "demo": false,
   "marketHealth": {
     "status": "RED",
     "message": "Setup is valid, but market conditions are unfavorable.",
-    "qqqPrice": 725.2,
-    "ema20": 732.13,
-    "ema50": 726.76
+    "qqqPrice": 704.47,
+    "ema20": 729.5,
+    "ema50": 725.87
   },
   "universeCount": 517,
   "counts": {
     "passed": 0,
-    "rejected": 132,
-    "excludedLowBeta": 355,
-    "errors": 30
+    "rejected": 134,
+    "excludedLowBeta": 347,
+    "errors": 36
   },
   "results": [],
   "rejected": [
     {
-      "ticker": "MGM",
-      "name": "MGM Resorts International",
-      "price": 28.87,
-      "ema50": 35.33,
-      "ema20": 30.98,
-      "extensionPct": -18.29,
-      "rsi": 22.3,
-      "beta": 1.35,
-      "avgVolume": 6091429,
+      "ticker": "HWM",
+      "name": "Howmet Aerospace Inc.",
+      "price": 193.29,
+      "ema50": 235.11,
+      "ema20": 220.15,
+      "extensionPct": -17.79,
+      "rsi": 22.08,
+      "beta": 1.2,
+      "avgVolume": 3049462,
       "daysToEarnings": 6,
       "filterChecks": {
         "price": true,
@@ -37,42 +37,64 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -18.29% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -17.79% outside 0–10%"
     },
     {
-      "ticker": "BAC",
-      "name": "Bank of America Corporation",
-      "price": 50.78,
-      "ema50": 56.34,
-      "ema20": 53.54,
-      "extensionPct": -9.86,
-      "rsi": 25.33,
-      "beta": 1.21,
-      "avgVolume": 42918319,
-      "daysToEarnings": 85,
+      "ticker": "KLAC",
+      "name": "KLA Corporation",
+      "price": 147.83,
+      "ema50": 185.14,
+      "ema20": 177.47,
+      "extensionPct": -20.15,
+      "rsi": 24.09,
+      "beta": 1.45,
+      "avgVolume": 10050482,
+      "daysToEarnings": 5,
       "filterChecks": {
         "price": true,
         "beta": true,
         "volume": true,
         "extension": false,
         "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -20.15% outside 0–10%"
+    },
+    {
+      "ticker": "LRCX",
+      "name": "Lam Research Corporation",
+      "price": 230.15,
+      "ema50": 301.33,
+      "ema20": 289.08,
+      "extensionPct": -23.62,
+      "rsi": 24.56,
+      "beta": 1.85,
+      "avgVolume": 9494070,
+      "daysToEarnings": 96,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -9.86% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $230.15 outside $20–$200"
     },
     {
       "ticker": "ALB",
       "name": "Albemarle Corporation",
-      "price": 94.47,
-      "ema50": 113.11,
-      "ema20": 102.21,
-      "extensionPct": -16.48,
-      "rsi": 27.33,
+      "price": 92.54,
+      "ema50": 112.32,
+      "ema20": 101.29,
+      "extensionPct": -17.61,
+      "rsi": 25.25,
       "beta": 1.36,
-      "avgVolume": 2332629,
-      "daysToEarnings": 13,
+      "avgVolume": 2320273,
+      "daysToEarnings": 12,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -81,42 +103,42 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -16.48% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -17.61% outside 0–10%"
     },
     {
-      "ticker": "HWM",
-      "name": "Howmet Aerospace Inc.",
-      "price": 208.15,
-      "ema50": 236.82,
-      "ema20": 222.97,
-      "extensionPct": -12.1,
-      "rsi": 29.4,
-      "beta": 1.2,
-      "avgVolume": 2830385,
-      "daysToEarnings": 7,
+      "ticker": "FIX",
+      "name": "Comfort Systems USA, Inc.",
+      "price": 1279.37,
+      "ema50": 1613.36,
+      "ema20": 1543.42,
+      "extensionPct": -20.7,
+      "rsi": 25.32,
+      "beta": 1.66,
+      "avgVolume": 399300,
+      "daysToEarnings": 118,
       "filterChecks": {
         "price": false,
         "beta": true,
-        "volume": true,
+        "volume": false,
         "extension": false,
         "rsi": false,
-        "earnings": false
+        "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $208.15 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1279.37 outside $20–$200"
     },
     {
       "ticker": "AMAT",
       "name": "Applied Materials, Inc.",
-      "price": 408.94,
-      "ema50": 477.27,
-      "ema20": 459.86,
-      "extensionPct": -14.32,
-      "rsi": 31.01,
+      "price": 375.58,
+      "ema50": 473.27,
+      "ema20": 451.84,
+      "extensionPct": -20.64,
+      "rsi": 25.37,
       "beta": 1.59,
-      "avgVolume": 6434554,
-      "daysToEarnings": 21,
+      "avgVolume": 6877334,
+      "daysToEarnings": 20,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -125,20 +147,548 @@
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $408.94 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $375.58 outside $20–$200"
     },
     {
-      "ticker": "FIX",
-      "name": "Comfort Systems USA, Inc.",
-      "price": 1401.27,
-      "ema50": 1626.93,
-      "ema20": 1571.21,
-      "extensionPct": -13.87,
-      "rsi": 31.39,
-      "beta": 1.66,
-      "avgVolume": 366961,
-      "daysToEarnings": 0,
+      "ticker": "VRT",
+      "name": "Vertiv Holdings, LLC",
+      "price": 195.59,
+      "ema50": 246.32,
+      "ema20": 227.41,
+      "extensionPct": -20.6,
+      "rsi": 27.98,
+      "beta": 2.05,
+      "avgVolume": 5386727,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -20.60% outside 0–10%"
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corporation",
+      "price": 51.08,
+      "ema50": 56.13,
+      "ema20": 53.3,
+      "extensionPct": -9,
+      "rsi": 28.2,
+      "beta": 1.21,
+      "avgVolume": 42740943,
+      "daysToEarnings": 84,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -9.00% outside 0–10%"
+    },
+    {
+      "ticker": "APH",
+      "name": "Amphenol Corporation",
+      "price": 73.07,
+      "ema50": 81.64,
+      "ema20": 81.77,
+      "extensionPct": -10.5,
+      "rsi": 28.81,
+      "beta": 1.24,
+      "avgVolume": 11258787,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -10.50% outside 0–10%"
+    },
+    {
+      "ticker": "PWR",
+      "name": "Quanta Services, Inc.",
+      "price": 552.44,
+      "ema50": 646.52,
+      "ema20": 639.05,
+      "extensionPct": -14.55,
+      "rsi": 29.07,
+      "beta": 1.27,
+      "avgVolume": 1055945,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $552.44 outside $20–$200"
+    },
+    {
+      "ticker": "CAT",
+      "name": "Caterpillar, Inc.",
+      "price": 704.05,
+      "ema50": 801.92,
+      "ema20": 770.07,
+      "extensionPct": -12.2,
+      "rsi": 29.24,
+      "beta": 1.58,
+      "avgVolume": 2596915,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $704.05 outside $20–$200"
+    },
+    {
+      "ticker": "MGM",
+      "name": "MGM Resorts International",
+      "price": 29.5,
+      "ema50": 35.1,
+      "ema20": 30.84,
+      "extensionPct": -15.96,
+      "rsi": 29.66,
+      "beta": 1.35,
+      "avgVolume": 5366386,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -15.96% outside 0–10%"
+    },
+    {
+      "ticker": "COHR",
+      "name": "Coherent Corp.",
+      "price": 207.82,
+      "ema50": 288.43,
+      "ema20": 269.44,
+      "extensionPct": -27.95,
+      "rsi": 29.7,
+      "beta": 2.11,
+      "avgVolume": 7303896,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $207.82 outside $20–$200"
+    },
+    {
+      "ticker": "GE",
+      "name": "GE Aerospace",
+      "price": 293.54,
+      "ema50": 320.68,
+      "ema20": 308.79,
+      "extensionPct": -8.46,
+      "rsi": 30.22,
+      "beta": 1.37,
+      "avgVolume": 4629007,
+      "daysToEarnings": 90,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $293.54 outside $20–$200"
+    },
+    {
+      "ticker": "INTC",
+      "name": "Intel Corporation",
+      "price": 85.49,
+      "ema50": 102.98,
+      "ema20": 100.73,
+      "extensionPct": -16.99,
+      "rsi": 30.47,
+      "beta": 2.23,
+      "avgVolume": 99333757,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -16.99% outside 0–10%"
+    },
+    {
+      "ticker": "FCX",
+      "name": "Freeport-McMoRan, Inc.",
+      "price": 64.59,
+      "ema50": 70.31,
+      "ema20": 70.27,
+      "extensionPct": -8.13,
+      "rsi": 31.34,
+      "beta": 1.39,
+      "avgVolume": 11079569,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -8.13% outside 0–10%"
+    },
+    {
+      "ticker": "ARM",
+      "name": "Arm Holdings plc",
+      "price": 210.1,
+      "ema50": 264.79,
+      "ema20": 253.16,
+      "extensionPct": -20.65,
+      "rsi": 31.43,
+      "beta": 3.79,
+      "avgVolume": 5122957,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $210.10 outside $20–$200"
+    },
+    {
+      "ticker": "ANET",
+      "name": "Arista Networks, Inc.",
+      "price": 171.07,
+      "ema50": 193.75,
+      "ema20": 193.73,
+      "extensionPct": -11.7,
+      "rsi": 32.41,
+      "beta": 1.61,
+      "avgVolume": 5611735,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -11.70% outside 0–10%"
+    },
+    {
+      "ticker": "DXCM",
+      "name": "DexCom, Inc.",
+      "price": 78.32,
+      "ema50": 84.59,
+      "ema20": 84.67,
+      "extensionPct": -7.41,
+      "rsi": 32.69,
+      "beta": 1.48,
+      "avgVolume": 3803769,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -7.41% outside 0–10%"
+    },
+    {
+      "ticker": "STX",
+      "name": "Seagate Technology Holdings PLC",
+      "price": 642.14,
+      "ema50": 802.3,
+      "ema20": 751.97,
+      "extensionPct": -19.96,
+      "rsi": 32.77,
+      "beta": 2.08,
+      "avgVolume": 4988939,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $642.14 outside $20–$200"
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc.",
+      "price": 320.76,
+      "ema50": 341.39,
+      "ema20": 339.14,
+      "extensionPct": -6.04,
+      "rsi": 32.79,
+      "beta": 1.21,
+      "avgVolume": 15746195,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $320.76 outside $20–$200"
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne, Inc.",
+      "price": 308.75,
+      "ema50": 373.44,
+      "ema20": 365.25,
+      "extensionPct": -17.32,
+      "rsi": 32.9,
+      "beta": 1.75,
+      "avgVolume": 2748257,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $308.75 outside $20–$200"
+    },
+    {
+      "ticker": "STT",
+      "name": "State Street Corporation",
+      "price": 167.84,
+      "ema50": 177.38,
+      "ema20": 172.7,
+      "extensionPct": -5.38,
+      "rsi": 33.14,
+      "beta": 1.42,
+      "avgVolume": 2328915,
+      "daysToEarnings": 84,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.38% outside 0–10%"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "price": 324.22,
+      "ema50": 344.62,
+      "ema20": 342.77,
+      "extensionPct": -5.92,
+      "rsi": 33.46,
+      "beta": 1.21,
+      "avgVolume": 23902162,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $324.22 outside $20–$200"
+    },
+    {
+      "ticker": "ASML",
+      "name": "ASML Holding N.V. - New York Re",
+      "price": 1560.54,
+      "ema50": 1716.81,
+      "ema20": 1698.86,
+      "extensionPct": -9.1,
+      "rsi": 33.6,
+      "beta": 1.3,
+      "avgVolume": 1510583,
+      "daysToEarnings": 96,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1560.54 outside $20–$200"
+    },
+    {
+      "ticker": "LITE",
+      "name": "Lumentum Holdings Inc.",
+      "price": 752.54,
+      "ema50": 915.83,
+      "ema20": 916.25,
+      "extensionPct": -17.83,
+      "rsi": 34.09,
+      "beta": 1.54,
+      "avgVolume": 4902273,
+      "daysToEarnings": 13,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $752.54 outside $20–$200"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 856.49,
+      "ema50": 968.31,
+      "ema20": 961.25,
+      "extensionPct": -11.55,
+      "rsi": 34.65,
+      "beta": 2.23,
+      "avgVolume": 26886321,
+      "daysToEarnings": 61,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $856.49 outside $20–$200"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "price": 323.24,
+      "ema50": 358.52,
+      "ema20": 346.92,
+      "extensionPct": -9.84,
+      "rsi": 34.78,
+      "beta": 1.48,
+      "avgVolume": 21699730,
+      "daysToEarnings": 47,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $323.24 outside $20–$200"
+    },
+    {
+      "ticker": "JBL",
+      "name": "Jabil Inc.",
+      "price": 267.41,
+      "ema50": 305.13,
+      "ema20": 293.42,
+      "extensionPct": -12.36,
+      "rsi": 35,
+      "beta": 1.3,
+      "avgVolume": 1569429,
+      "daysToEarnings": 54,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $267.41 outside $20–$200"
+    },
+    {
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 507.93,
+      "ema50": 550.99,
+      "ema20": 568.36,
+      "extensionPct": -7.81,
+      "rsi": 36.51,
+      "beta": 2.45,
+      "avgVolume": 19609992,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $507.93 outside $20–$200"
+    },
+    {
+      "ticker": "MPWR",
+      "name": "Monolithic Power Systems, Inc.",
+      "price": 1167.93,
+      "ema50": 1308.94,
+      "ema20": 1291.55,
+      "extensionPct": -10.77,
+      "rsi": 36.98,
+      "beta": 1.68,
+      "avgVolume": 707478,
+      "daysToEarnings": 6,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -147,746 +697,152 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1401.27 outside $20–$200"
-    },
-    {
-      "ticker": "KLAC",
-      "name": "KLA Corporation",
-      "price": 163.43,
-      "ema50": 186.66,
-      "ema20": 180.59,
-      "extensionPct": -12.44,
-      "rsi": 31.43,
-      "beta": 1.45,
-      "avgVolume": 9403428,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -12.44% outside 0–10%"
-    },
-    {
-      "ticker": "LRCX",
-      "name": "Lam Research Corporation",
-      "price": 260.81,
-      "ema50": 304.25,
-      "ema20": 295.28,
-      "extensionPct": -14.28,
-      "rsi": 31.78,
-      "beta": 1.85,
-      "avgVolume": 8739361,
-      "daysToEarnings": 97,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $260.81 outside $20–$200"
-    },
-    {
-      "ticker": "APO",
-      "name": "Apollo Global Management, Inc. ",
-      "price": 111.69,
-      "ema50": 121.15,
-      "ema20": 116.09,
-      "extensionPct": -7.81,
-      "rsi": 33.05,
-      "beta": 1.58,
-      "avgVolume": 3489461,
-      "daysToEarnings": 12,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -7.81% outside 0–10%"
-    },
-    {
-      "ticker": "VRT",
-      "name": "Vertiv Holdings, LLC",
-      "price": 212.15,
-      "ema50": 248.39,
-      "ema20": 230.76,
-      "extensionPct": -14.59,
-      "rsi": 34.17,
-      "beta": 2.05,
-      "avgVolume": 5171439,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $212.15 outside $20–$200"
-    },
-    {
-      "ticker": "STT",
-      "name": "State Street Corporation",
-      "price": 168.95,
-      "ema50": 177.76,
-      "ema20": 173.21,
-      "extensionPct": -4.96,
-      "rsi": 34.94,
-      "beta": 1.42,
-      "avgVolume": 2415196,
-      "daysToEarnings": 85,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -4.96% outside 0–10%"
-    },
-    {
-      "ticker": "COHR",
-      "name": "Coherent Corp.",
-      "price": 237.53,
-      "ema50": 291.72,
-      "ema20": 275.93,
-      "extensionPct": -18.58,
-      "rsi": 35.51,
-      "beta": 2.11,
-      "avgVolume": 6926774,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $237.53 outside $20–$200"
-    },
-    {
-      "ticker": "ARM",
-      "name": "Arm Holdings plc",
-      "price": 226.59,
-      "ema50": 267.07,
-      "ema20": 257.69,
-      "extensionPct": -15.16,
-      "rsi": 35.65,
-      "beta": 3.79,
-      "avgVolume": 5313558,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $226.59 outside $20–$200"
-    },
-    {
-      "ticker": "CAT",
-      "name": "Caterpillar, Inc.",
-      "price": 740.21,
-      "ema50": 805.89,
-      "ema20": 777.02,
-      "extensionPct": -8.15,
-      "rsi": 35.81,
-      "beta": 1.58,
-      "avgVolume": 2552106,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $740.21 outside $20–$200"
-    },
-    {
-      "ticker": "F",
-      "name": "Ford Motor Company",
-      "price": 11.9,
-      "ema50": 12.94,
-      "ema20": 12.37,
-      "extensionPct": -8.03,
-      "rsi": 35.91,
-      "beta": 1.94,
-      "avgVolume": 40230801,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $11.90 outside $20–$200"
-    },
-    {
-      "ticker": "DXCM",
-      "name": "DexCom, Inc.",
-      "price": 80.26,
-      "ema50": 84.85,
-      "ema20": 85.34,
-      "extensionPct": -5.41,
-      "rsi": 36.05,
-      "beta": 1.48,
-      "avgVolume": 3371154,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.41% outside 0–10%"
-    },
-    {
-      "ticker": "INTC",
-      "name": "Intel Corporation",
-      "price": 92.96,
-      "ema50": 103.69,
-      "ema20": 102.33,
-      "extensionPct": -10.35,
-      "rsi": 36.4,
-      "beta": 2.23,
-      "avgVolume": 98592189,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -10.35% outside 0–10%"
-    },
-    {
-      "ticker": "PWR",
-      "name": "Quanta Services, Inc.",
-      "price": 601.14,
-      "ema50": 650.34,
-      "ema20": 648.17,
-      "extensionPct": -7.57,
-      "rsi": 36.82,
-      "beta": 1.27,
-      "avgVolume": 1002443,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $601.14 outside $20–$200"
-    },
-    {
-      "ticker": "STX",
-      "name": "Seagate Technology Holdings PLC",
-      "price": 696.89,
-      "ema50": 808.88,
-      "ema20": 763.53,
-      "extensionPct": -13.85,
-      "rsi": 37.88,
-      "beta": 2.08,
-      "avgVolume": 4853105,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $696.89 outside $20–$200"
-    },
-    {
-      "ticker": "BX",
-      "name": "Blackstone Inc.",
-      "price": 109.57,
-      "ema50": 120.24,
-      "ema20": 113.16,
-      "extensionPct": -8.87,
-      "rsi": 38.58,
-      "beta": 1.59,
-      "avgVolume": 5597289,
-      "daysToEarnings": 0,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -8.87% outside 0–10%"
-    },
-    {
-      "ticker": "APP",
-      "name": "Applovin Corporation",
-      "price": 267.9,
-      "ema50": 312.34,
-      "ema20": 282.12,
-      "extensionPct": -14.23,
-      "rsi": 38.76,
-      "beta": 2.56,
-      "avgVolume": 4537688,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $267.90 outside $20–$200"
-    },
-    {
-      "ticker": "UBER",
-      "name": "Uber Technologies, Inc.",
-      "price": 67.62,
-      "ema50": 71.27,
-      "ema20": 70.01,
-      "extensionPct": -5.12,
-      "rsi": 39.31,
-      "beta": 1.26,
-      "avgVolume": 14848776,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.12% outside 0–10%"
-    },
-    {
-      "ticker": "AXON",
-      "name": "Axon Enterprise, Inc.",
-      "price": 402.6,
-      "ema50": 459.96,
-      "ema20": 419.49,
-      "extensionPct": -12.47,
-      "rsi": 39.44,
-      "beta": 1.44,
-      "avgVolume": 1047080,
-      "daysToEarnings": 12,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $402.60 outside $20–$200"
-    },
-    {
-      "ticker": "APH",
-      "name": "Amphenol Corporation",
-      "price": 79.2,
-      "ema50": 81.99,
-      "ema20": 82.68,
-      "extensionPct": -3.4,
-      "rsi": 39.48,
-      "beta": 1.24,
-      "avgVolume": 10923087,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -3.40% outside 0–10%"
-    },
-    {
-      "ticker": "GOOG",
-      "name": "Alphabet Inc.",
-      "price": 330.95,
-      "ema50": 342.23,
-      "ema20": 341.07,
-      "extensionPct": -3.29,
-      "rsi": 39.53,
-      "beta": 1.21,
-      "avgVolume": 15489741,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $330.95 outside $20–$200"
-    },
-    {
-      "ticker": "ANET",
-      "name": "Arista Networks, Inc.",
-      "price": 184.33,
-      "ema50": 194.68,
-      "ema20": 196.12,
-      "extensionPct": -5.31,
-      "rsi": 39.57,
-      "beta": 1.61,
-      "avgVolume": 5374340,
-      "daysToEarnings": 12,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.31% outside 0–10%"
-    },
-    {
-      "ticker": "JBL",
-      "name": "Jabil Inc.",
-      "price": 280.99,
-      "ema50": 306.66,
-      "ema20": 296.15,
-      "extensionPct": -8.37,
-      "rsi": 40.15,
-      "beta": 1.3,
-      "avgVolume": 1541391,
-      "daysToEarnings": 55,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $280.99 outside $20–$200"
-    },
-    {
-      "ticker": "GOOGL",
-      "name": "Alphabet Inc.",
-      "price": 334.76,
-      "ema50": 345.45,
-      "ema20": 344.73,
-      "extensionPct": -3.09,
-      "rsi": 40.25,
-      "beta": 1.21,
-      "avgVolume": 23703615,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $334.76 outside $20–$200"
-    },
-    {
-      "ticker": "CVNA",
-      "name": "Carvana Co.",
-      "price": 59.19,
-      "ema50": 64.93,
-      "ema20": 61.91,
-      "extensionPct": -8.83,
-      "rsi": 40.37,
-      "beta": 3.55,
-      "avgVolume": 8334073,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -8.83% outside 0–10%"
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology, Inc.",
-      "price": 913.67,
-      "ema50": 973.01,
-      "ema20": 972.28,
-      "extensionPct": -6.1,
-      "rsi": 40.45,
-      "beta": 2.23,
-      "avgVolume": 26381017,
-      "daysToEarnings": 62,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $913.67 outside $20–$200"
-    },
-    {
-      "ticker": "BLDR",
-      "name": "Builders FirstSource, Inc.",
-      "price": 53.51,
-      "ema50": 60.2,
-      "ema20": 55.11,
-      "extensionPct": -11.11,
-      "rsi": 40.58,
-      "beta": 1.45,
-      "avgVolume": 2348951,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -11.11% outside 0–10%"
-    },
-    {
-      "ticker": "TER",
-      "name": "Teradyne, Inc.",
-      "price": 345.49,
-      "ema50": 376.07,
-      "ema20": 371.2,
-      "extensionPct": -8.13,
-      "rsi": 40.73,
-      "beta": 1.75,
-      "avgVolume": 2521237,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $345.49 outside $20–$200"
-    },
-    {
-      "ticker": "FSLR",
-      "name": "First Solar, Inc.",
-      "price": 174.82,
-      "ema50": 192.75,
-      "ema20": 180.27,
-      "extensionPct": -9.3,
-      "rsi": 41.01,
-      "beta": 1.79,
-      "avgVolume": 2286589,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -9.30% outside 0–10%"
-    },
-    {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "price": 337.8,
-      "ema50": 359.97,
-      "ema20": 349.41,
-      "extensionPct": -6.16,
-      "rsi": 41.05,
-      "beta": 1.48,
-      "avgVolume": 21339295,
-      "daysToEarnings": 48,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $337.80 outside $20–$200"
-    },
-    {
-      "ticker": "LITE",
-      "name": "Lumentum Holdings Inc.",
-      "price": 850.7,
-      "ema50": 922.48,
-      "ema20": 933.48,
-      "extensionPct": -7.78,
-      "rsi": 41.07,
-      "beta": 1.54,
-      "avgVolume": 4778261,
-      "daysToEarnings": 14,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $850.70 outside $20–$200"
-    },
-    {
-      "ticker": "ORCL",
-      "name": "Oracle Corporation",
-      "price": 129.13,
-      "ema50": 141.76,
-      "ema20": 136.78,
-      "extensionPct": -8.91,
-      "rsi": 41.07,
-      "beta": 1.77,
-      "avgVolume": 30587352,
-      "daysToEarnings": 53,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -8.91% outside 0–10%"
-    },
-    {
-      "ticker": "FCX",
-      "name": "Freeport-McMoRan, Inc.",
-      "price": 68.9,
-      "ema50": 70.54,
-      "ema20": 70.87,
-      "extensionPct": -2.32,
-      "rsi": 41.82,
-      "beta": 1.39,
-      "avgVolume": 10859118,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -2.32% outside 0–10%"
-    },
-    {
-      "ticker": "PLD",
-      "name": "Prologis, Inc.",
-      "price": 127.6,
-      "ema50": 133.62,
-      "ema20": 129.73,
-      "extensionPct": -4.51,
-      "rsi": 41.85,
-      "beta": 1.32,
-      "avgVolume": 4246279,
-      "daysToEarnings": 90,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -4.51% outside 0–10%"
-    },
-    {
-      "ticker": "DASH",
-      "name": "DoorDash, Inc.",
-      "price": 184.45,
-      "ema50": 195.35,
-      "ema20": 191.77,
-      "extensionPct": -5.58,
-      "rsi": 42.22,
-      "beta": 1.89,
-      "avgVolume": 3491602,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.58% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1167.93 outside $20–$200"
     },
     {
       "ticker": "DELL",
       "name": "Dell Technologies Inc.",
-      "price": 485.88,
-      "ema50": 505.58,
-      "ema20": 517.99,
-      "extensionPct": -3.9,
-      "rsi": 42.44,
+      "price": 452.95,
+      "ema50": 503.45,
+      "ema20": 511.8,
+      "extensionPct": -10.03,
+      "rsi": 37,
       "beta": 1.44,
-      "avgVolume": 6854207,
-      "daysToEarnings": 36,
+      "avgVolume": 6786571,
+      "daysToEarnings": 35,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $452.95 outside $20–$200"
+    },
+    {
+      "ticker": "F",
+      "name": "Ford Motor Company",
+      "price": 11.94,
+      "ema50": 12.9,
+      "ema20": 12.33,
+      "extensionPct": -7.43,
+      "rsi": 37.03,
+      "beta": 1.94,
+      "avgVolume": 39518632,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $11.94 outside $20–$200"
+    },
+    {
+      "ticker": "APP",
+      "name": "Applovin Corporation",
+      "price": 264.28,
+      "ema50": 310.41,
+      "ema20": 280.42,
+      "extensionPct": -14.86,
+      "rsi": 37.31,
+      "beta": 2.56,
+      "avgVolume": 4481887,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $264.28 outside $20–$200"
+    },
+    {
+      "ticker": "WDC",
+      "name": "Western Digital Corporation",
+      "price": 354.19,
+      "ema50": 428.11,
+      "ema20": 391.17,
+      "extensionPct": -17.27,
+      "rsi": 37.68,
+      "beta": 2.17,
+      "avgVolume": 9494005,
+      "daysToEarnings": 104,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $354.19 outside $20–$200"
+    },
+    {
+      "ticker": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "price": 96.58,
+      "ema50": 106.7,
+      "ema20": 105.68,
+      "extensionPct": -9.48,
+      "rsi": 37.78,
+      "beta": 2.35,
+      "avgVolume": 18607581,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -9.48% outside 0–10%"
+    },
+    {
+      "ticker": "FSLR",
+      "name": "First Solar, Inc.",
+      "price": 171.25,
+      "ema50": 191.88,
+      "ema20": 179.41,
+      "extensionPct": -10.75,
+      "rsi": 38.15,
+      "beta": 1.79,
+      "avgVolume": 2088223,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -10.75% outside 0–10%"
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology, Inc.",
+      "price": 223.47,
+      "ema50": 243.35,
+      "ema20": 249.33,
+      "extensionPct": -8.17,
+      "rsi": 38.34,
+      "beta": 2.26,
+      "avgVolume": 20439482,
+      "daysToEarnings": 39,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -895,20 +851,20 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $485.88 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $223.47 outside $20–$200"
     },
     {
-      "ticker": "DAL",
-      "name": "Delta Air Lines, Inc.",
-      "price": 77.67,
-      "ema50": 81.26,
-      "ema20": 79.59,
-      "extensionPct": -4.42,
-      "rsi": 42.53,
-      "beta": 1.34,
-      "avgVolume": 7434667,
-      "daysToEarnings": 83,
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "price": 125.54,
+      "ema50": 141.1,
+      "ema20": 135.71,
+      "extensionPct": -11.03,
+      "rsi": 38.39,
+      "beta": 1.77,
+      "avgVolume": 29586890,
+      "daysToEarnings": 52,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -917,41 +873,19 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -4.42% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -11.03% outside 0–10%"
     },
     {
-      "ticker": "WDC",
-      "name": "Western Digital Corporation",
-      "price": 378.51,
-      "ema50": 431.15,
-      "ema20": 395.07,
-      "extensionPct": -12.21,
-      "rsi": 42.6,
-      "beta": 2.17,
-      "avgVolume": 9176751,
-      "daysToEarnings": 0,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $378.51 outside $20–$200"
-    },
-    {
-      "ticker": "UAL",
-      "name": "United Airlines Holdings, Inc.",
-      "price": 101.67,
-      "ema50": 109.16,
-      "ema20": 104.55,
-      "extensionPct": -6.86,
-      "rsi": 42.71,
-      "beta": 1.3,
-      "avgVolume": 4902361,
+      "ticker": "GM",
+      "name": "General Motors Company",
+      "price": 77.21,
+      "ema50": 82.36,
+      "ema20": 81.13,
+      "extensionPct": -6.26,
+      "rsi": 38.8,
+      "beta": 1.4,
+      "avgVolume": 7964110,
       "daysToEarnings": 96,
       "filterChecks": {
         "price": true,
@@ -961,20 +895,20 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -6.86% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.26% outside 0–10%"
     },
     {
       "ticker": "MS",
       "name": "Morgan Stanley",
-      "price": 187.01,
-      "ema50": 197.63,
-      "ema20": 188.76,
-      "extensionPct": -5.38,
-      "rsi": 42.72,
+      "price": 183.97,
+      "ema50": 197.1,
+      "ema20": 188.3,
+      "extensionPct": -6.66,
+      "rsi": 38.92,
       "beta": 1.21,
-      "avgVolume": 6097717,
-      "daysToEarnings": 84,
+      "avgVolume": 6152326,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -983,19 +917,63 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.38% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.66% outside 0–10%"
     },
     {
-      "ticker": "HOOD",
-      "name": "Robinhood Markets, Inc.",
-      "price": 101.93,
-      "ema50": 107.12,
-      "ema20": 106.63,
-      "extensionPct": -4.84,
-      "rsi": 42.9,
-      "beta": 2.35,
-      "avgVolume": 18397355,
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 212.21,
+      "ema50": 221.2,
+      "ema20": 222.68,
+      "extensionPct": -4.07,
+      "rsi": 39.06,
+      "beta": 2.22,
+      "avgVolume": 105792598,
+      "daysToEarnings": 25,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $212.21 outside $20–$200"
+    },
+    {
+      "ticker": "SNPS",
+      "name": "Synopsys, Inc.",
+      "price": 422.48,
+      "ema50": 441.27,
+      "ema20": 456.68,
+      "extensionPct": -4.26,
+      "rsi": 39.16,
+      "beta": 1.21,
+      "avgVolume": 2664143,
+      "daysToEarnings": 47,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $422.48 outside $20–$200"
+    },
+    {
+      "ticker": "CVNA",
+      "name": "Carvana Co.",
+      "price": 58.72,
+      "ema50": 64.69,
+      "ema20": 61.6,
+      "extensionPct": -9.22,
+      "rsi": 39.4,
+      "beta": 3.55,
+      "avgVolume": 8385021,
       "daysToEarnings": 5,
       "filterChecks": {
         "price": true,
@@ -1005,42 +983,20 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -4.84% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -9.22% outside 0–10%"
     },
     {
-      "ticker": "KKR",
-      "name": "KKR & Co. Inc.",
-      "price": 89.87,
-      "ema50": 95.58,
-      "ema20": 90.96,
-      "extensionPct": -5.97,
-      "rsi": 43.16,
-      "beta": 1.83,
-      "avgVolume": 5872219,
-      "daysToEarnings": 18,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.97% outside 0–10%"
-    },
-    {
-      "ticker": "SMCI",
-      "name": "Super Micro Computer, Inc.",
-      "price": 35.57,
-      "ema50": 37.5,
-      "ema20": 37.76,
-      "extensionPct": -5.14,
-      "rsi": 43.39,
-      "beta": 2.01,
-      "avgVolume": 35980393,
-      "daysToEarnings": 12,
+      "ticker": "GNRC",
+      "name": "Generac Holdlings Inc.",
+      "price": 188.02,
+      "ema50": 205.94,
+      "ema20": 203.12,
+      "extensionPct": -8.7,
+      "rsi": 39.43,
+      "beta": 1.92,
+      "avgVolume": 1045727,
+      "daysToEarnings": 5,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -1049,20 +1005,42 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.14% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -8.70% outside 0–10%"
     },
     {
-      "ticker": "HPE",
-      "name": "Hewlett Packard Enterprise Comp",
-      "price": 58.17,
-      "ema50": 59.27,
-      "ema20": 62.13,
-      "extensionPct": -1.85,
-      "rsi": 43.49,
-      "beta": 1.4,
-      "avgVolume": 20594452,
-      "daysToEarnings": 42,
+      "ticker": "SMCI",
+      "name": "Super Micro Computer, Inc.",
+      "price": 33.72,
+      "ema50": 37.34,
+      "ema20": 37.38,
+      "extensionPct": -9.7,
+      "rsi": 39.52,
+      "beta": 2.01,
+      "avgVolume": 36436478,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -9.70% outside 0–10%"
+    },
+    {
+      "ticker": "NFLX",
+      "name": "Netflix, Inc.",
+      "price": 67.05,
+      "ema50": 72.73,
+      "ema20": 70.05,
+      "extensionPct": -7.81,
+      "rsi": 39.59,
+      "beta": 1.61,
+      "avgVolume": 41651350,
+      "daysToEarnings": 88,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -1071,41 +1049,261 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -1.85% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -7.81% outside 0–10%"
     },
     {
-      "ticker": "JBHT",
-      "name": "J.B. Hunt Transport Services, I",
-      "price": 228.59,
-      "ema50": 243.98,
-      "ema20": 231.85,
-      "extensionPct": -6.31,
-      "rsi": 43.54,
-      "beta": 1.31,
-      "avgVolume": 984291,
-      "daysToEarnings": 85,
+      "ticker": "CIEN",
+      "name": "Ciena Corporation",
+      "price": 322.64,
+      "ema50": 378.12,
+      "ema20": 367.84,
+      "extensionPct": -14.67,
+      "rsi": 39.64,
+      "beta": 1.29,
+      "avgVolume": 3059809,
+      "daysToEarnings": 48,
       "filterChecks": {
         "price": false,
         "beta": true,
-        "volume": false,
+        "volume": true,
         "extension": false,
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $228.59 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $322.64 outside $20–$200"
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise Comp",
+      "price": 55.47,
+      "ema50": 59.12,
+      "ema20": 61.5,
+      "extensionPct": -6.17,
+      "rsi": 39.64,
+      "beta": 1.4,
+      "avgVolume": 20260948,
+      "daysToEarnings": 41,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.17% outside 0–10%"
+    },
+    {
+      "ticker": "PLD",
+      "name": "Prologis, Inc.",
+      "price": 126.66,
+      "ema50": 133.35,
+      "ema20": 129.43,
+      "extensionPct": -5.02,
+      "rsi": 39.95,
+      "beta": 1.32,
+      "avgVolume": 4320048,
+      "daysToEarnings": 89,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.02% outside 0–10%"
+    },
+    {
+      "ticker": "IBKR",
+      "name": "Interactive Brokers Group, Inc.",
+      "price": 82.28,
+      "ema50": 88.07,
+      "ema20": 86.01,
+      "extensionPct": -6.58,
+      "rsi": 40.36,
+      "beta": 1.37,
+      "avgVolume": 4029317,
+      "daysToEarnings": 95,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.58% outside 0–10%"
+    },
+    {
+      "ticker": "JCI",
+      "name": "Johnson Controls International ",
+      "price": 143,
+      "ema50": 148.06,
+      "ema20": 149.7,
+      "extensionPct": -3.42,
+      "rsi": 40.98,
+      "beta": 1.28,
+      "avgVolume": 3391001,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -3.42% outside 0–10%"
+    },
+    {
+      "ticker": "BA",
+      "name": "Boeing Company (The)",
+      "price": 187.55,
+      "ema50": 199.62,
+      "ema20": 191.65,
+      "extensionPct": -6.04,
+      "rsi": 41.02,
+      "beta": 1.26,
+      "avgVolume": 8069084,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.04% outside 0–10%"
+    },
+    {
+      "ticker": "IVZ",
+      "name": "Invesco Ltd",
+      "price": 28.79,
+      "ema50": 30.09,
+      "ema20": 29.49,
+      "extensionPct": -4.33,
+      "rsi": 41.12,
+      "beta": 1.63,
+      "avgVolume": 4645316,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -4.33% outside 0–10%"
     },
     {
       "ticker": "TPR",
       "name": "Tapestry, Inc.",
-      "price": 115.16,
-      "ema50": 122.13,
-      "ema20": 117.09,
-      "extensionPct": -5.7,
-      "rsi": 43.76,
+      "price": 113.92,
+      "ema50": 121.81,
+      "ema20": 116.78,
+      "extensionPct": -6.47,
+      "rsi": 41.45,
       "beta": 1.43,
-      "avgVolume": 2437189,
+      "avgVolume": 2480652,
+      "daysToEarnings": 13,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.47% outside 0–10%"
+    },
+    {
+      "ticker": "GS",
+      "name": "Goldman Sachs Group, Inc. (The)",
+      "price": 891.3,
+      "ema50": 944.73,
+      "ema20": 903.88,
+      "extensionPct": -5.66,
+      "rsi": 41.57,
+      "beta": 1.28,
+      "avgVolume": 2316315,
+      "daysToEarnings": 88,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $891.30 outside $20–$200"
+    },
+    {
+      "ticker": "CMI",
+      "name": "Cummins Inc.",
+      "price": 519.53,
+      "ema50": 552.39,
+      "ema20": 530.32,
+      "extensionPct": -5.95,
+      "rsi": 42.68,
+      "beta": 1.24,
+      "avgVolume": 1130879,
+      "daysToEarnings": 13,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $519.53 outside $20–$200"
+    },
+    {
+      "ticker": "APO",
+      "name": "Apollo Global Management, Inc. ",
+      "price": 114.83,
+      "ema50": 120.91,
+      "ema20": 115.97,
+      "extensionPct": -5.03,
+      "rsi": 43.01,
+      "beta": 1.58,
+      "avgVolume": 3507514,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.03% outside 0–10%"
+    },
+    {
+      "ticker": "VST",
+      "name": "Vistra Corp.",
+      "price": 140.83,
+      "ema50": 148.34,
+      "ema20": 150.16,
+      "extensionPct": -5.06,
+      "rsi": 43.02,
+      "beta": 1.38,
+      "avgVolume": 7798293,
       "daysToEarnings": 14,
       "filterChecks": {
         "price": true,
@@ -1115,20 +1313,64 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.70% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.06% outside 0–10%"
     },
     {
-      "ticker": "ASML",
-      "name": "ASML Holding N.V. - New York Re",
-      "price": 1676.69,
-      "ema50": 1723.22,
-      "ema20": 1713.42,
-      "extensionPct": -2.7,
-      "rsi": 44.19,
+      "ticker": "UAL",
+      "name": "United Airlines Holdings, Inc.",
+      "price": 102,
+      "ema50": 108.87,
+      "ema20": 104.3,
+      "extensionPct": -6.31,
+      "rsi": 43.33,
       "beta": 1.3,
-      "avgVolume": 1472057,
-      "daysToEarnings": 97,
+      "avgVolume": 5034787,
+      "daysToEarnings": 95,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -6.31% outside 0–10%"
+    },
+    {
+      "ticker": "DASH",
+      "name": "DoorDash, Inc.",
+      "price": 185.94,
+      "ema50": 194.98,
+      "ema20": 191.22,
+      "extensionPct": -4.64,
+      "rsi": 43.71,
+      "beta": 1.89,
+      "avgVolume": 3420697,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -4.64% outside 0–10%"
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices, Inc.",
+      "price": 385.76,
+      "ema50": 390.53,
+      "ema20": 398.07,
+      "extensionPct": -1.22,
+      "rsi": 43.82,
+      "beta": 1.23,
+      "avgVolume": 3208202,
+      "daysToEarnings": 32,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -1137,20 +1379,20 @@
         "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1676.69 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $385.76 outside $20–$200"
     },
     {
-      "ticker": "ARES",
-      "name": "Ares Management Corporation",
-      "price": 117.01,
-      "ema50": 123.21,
-      "ema20": 117.84,
-      "extensionPct": -5.03,
-      "rsi": 44.27,
-      "beta": 1.55,
-      "avgVolume": 2266965,
-      "daysToEarnings": 7,
+      "ticker": "BEN",
+      "name": "Franklin Templeton, Inc.",
+      "price": 31.52,
+      "ema50": 32.5,
+      "ema20": 31.88,
+      "extensionPct": -3.02,
+      "rsi": 43.9,
+      "beta": 1.58,
+      "avgVolume": 4000789,
+      "daysToEarnings": 14,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -1159,20 +1401,20 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.03% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -3.02% outside 0–10%"
     },
     {
-      "ticker": "IVZ",
-      "name": "Invesco Ltd",
-      "price": 29.25,
-      "ema50": 30.15,
-      "ema20": 29.56,
-      "extensionPct": -2.98,
-      "rsi": 44.6,
-      "beta": 1.63,
-      "avgVolume": 4689863,
-      "daysToEarnings": 5,
+      "ticker": "COIN",
+      "name": "Coinbase Global, Inc.",
+      "price": 169.09,
+      "ema50": 177.62,
+      "ema20": 178.25,
+      "extensionPct": -4.8,
+      "rsi": 43.9,
+      "beta": 3.41,
+      "avgVolume": 7821347,
+      "daysToEarnings": 6,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -1181,20 +1423,42 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -2.98% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -4.80% outside 0–10%"
     },
     {
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 552.72,
-      "ema50": 552.76,
-      "ema20": 574.73,
-      "extensionPct": -0.01,
-      "rsi": 45.07,
-      "beta": 2.45,
-      "avgVolume": 19475568,
-      "daysToEarnings": 12,
+      "ticker": "ROK",
+      "name": "Rockwell Automation, Inc.",
+      "price": 423.87,
+      "ema50": 434.32,
+      "ema20": 431.31,
+      "extensionPct": -2.41,
+      "rsi": 44.24,
+      "beta": 1.5,
+      "avgVolume": 825455,
+      "daysToEarnings": 13,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $423.87 outside $20–$200"
+    },
+    {
+      "ticker": "AXON",
+      "name": "Axon Enterprise, Inc.",
+      "price": 414.6,
+      "ema50": 458.12,
+      "ema20": 419.03,
+      "extensionPct": -9.5,
+      "rsi": 44.33,
+      "beta": 1.44,
+      "avgVolume": 1031962,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -1203,8 +1467,96 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $552.72 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $414.60 outside $20–$200"
+    },
+    {
+      "ticker": "QCOM",
+      "name": "QUALCOMM Incorporated",
+      "price": 172.83,
+      "ema50": 177.5,
+      "ema20": 177.64,
+      "extensionPct": -2.63,
+      "rsi": 44.49,
+      "beta": 1.65,
+      "avgVolume": 10652199,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.63% outside 0–10%"
+    },
+    {
+      "ticker": "ON",
+      "name": "ON Semiconductor Corporation",
+      "price": 73.23,
+      "ema50": 77.75,
+      "ema20": 75.95,
+      "extensionPct": -5.81,
+      "rsi": 44.5,
+      "beta": 2.05,
+      "avgVolume": 10582467,
+      "daysToEarnings": 10,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.81% outside 0–10%"
+    },
+    {
+      "ticker": "APTV",
+      "name": "Aptiv PLC",
+      "price": 43.81,
+      "ema50": 46.34,
+      "ema20": 44.39,
+      "extensionPct": -5.47,
+      "rsi": 44.89,
+      "beta": 1.37,
+      "avgVolume": 2687396,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -5.47% outside 0–10%"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "price": 250.38,
+      "ema50": 254.91,
+      "ema20": 255.85,
+      "extensionPct": -1.78,
+      "rsi": 45.11,
+      "beta": 1.46,
+      "avgVolume": 36252831,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $250.38 outside $20–$200"
     },
     {
       "ticker": "PSKY",
@@ -1216,7 +1568,7 @@
       "rsi": 45.22,
       "beta": 1.55,
       "avgVolume": 28193480,
-      "daysToEarnings": 18,
+      "daysToEarnings": 17,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -1229,213 +1581,15 @@
       "failReason": "Price $9.78 outside $20–$200"
     },
     {
-      "ticker": "BEN",
-      "name": "Franklin Templeton, Inc.",
-      "price": 31.68,
-      "ema50": 32.54,
-      "ema20": 31.92,
-      "extensionPct": -2.65,
-      "rsi": 45.28,
-      "beta": 1.58,
-      "avgVolume": 4108035,
-      "daysToEarnings": 15,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -2.65% outside 0–10%"
-    },
-    {
-      "ticker": "GS",
-      "name": "Goldman Sachs Group, Inc. (The)",
-      "price": 904.72,
-      "ema50": 946.92,
-      "ema20": 905.21,
-      "extensionPct": -4.46,
-      "rsi": 45.59,
-      "beta": 1.28,
-      "avgVolume": 2332360,
-      "daysToEarnings": 89,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $904.72 outside $20–$200"
-    },
-    {
-      "ticker": "IBKR",
-      "name": "Interactive Brokers Group, Inc.",
-      "price": 85.33,
-      "ema50": 88.31,
-      "ema20": 86.4,
-      "extensionPct": -3.37,
-      "rsi": 45.95,
-      "beta": 1.37,
-      "avgVolume": 4020346,
-      "daysToEarnings": 96,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -3.37% outside 0–10%"
-    },
-    {
-      "ticker": "GEN",
-      "name": "Gen Digital Inc.",
-      "price": 24.12,
-      "ema50": 25.51,
-      "ema20": 24.19,
-      "extensionPct": -5.43,
-      "rsi": 46.38,
+      "ticker": "UBER",
+      "name": "Uber Technologies, Inc.",
+      "price": 69.07,
+      "ema50": 71.19,
+      "ema20": 69.92,
+      "extensionPct": -2.97,
+      "rsi": 45.47,
       "beta": 1.26,
-      "avgVolume": 12607629,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -5.43% outside 0–10%"
-    },
-    {
-      "ticker": "MRVL",
-      "name": "Marvell Technology, Inc.",
-      "price": 244.76,
-      "ema50": 244.17,
-      "ema20": 252.05,
-      "extensionPct": 0.24,
-      "rsi": 46.82,
-      "beta": 2.26,
-      "avgVolume": 19862642,
-      "daysToEarnings": 40,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $244.76 outside $20–$200"
-    },
-    {
-      "ticker": "CIEN",
-      "name": "Ciena Corporation",
-      "price": 361.34,
-      "ema50": 380.38,
-      "ema20": 372.6,
-      "extensionPct": -5,
-      "rsi": 47.03,
-      "beta": 1.29,
-      "avgVolume": 2933948,
-      "daysToEarnings": 49,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $361.34 outside $20–$200"
-    },
-    {
-      "ticker": "BA",
-      "name": "Boeing Company (The)",
-      "price": 192.28,
-      "ema50": 200.1,
-      "ema20": 192.09,
-      "extensionPct": -3.91,
-      "rsi": 47.13,
-      "beta": 1.26,
-      "avgVolume": 8226246,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -3.91% outside 0–10%"
-    },
-    {
-      "ticker": "MPWR",
-      "name": "Monolithic Power Systems, Inc.",
-      "price": 1283.32,
-      "ema50": 1314.61,
-      "ema20": 1304.56,
-      "extensionPct": -2.38,
-      "rsi": 47.15,
-      "beta": 1.68,
-      "avgVolume": 658095,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": false,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1283.32 outside $20–$200"
-    },
-    {
-      "ticker": "TROW",
-      "name": "T. Rowe Price Group, Inc.",
-      "price": 103.29,
-      "ema50": 105.8,
-      "ema20": 103.23,
-      "extensionPct": -2.37,
-      "rsi": 47.67,
-      "beta": 1.47,
-      "avgVolume": 1913662,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -2.37% outside 0–10%"
-    },
-    {
-      "ticker": "APTV",
-      "name": "Aptiv PLC",
-      "price": 44.34,
-      "ema50": 46.45,
-      "ema20": 44.46,
-      "extensionPct": -4.55,
-      "rsi": 47.73,
-      "beta": 1.37,
-      "avgVolume": 2683848,
+      "avgVolume": 15091239,
       "daysToEarnings": 12,
       "filterChecks": {
         "price": true,
@@ -1445,613 +1599,305 @@
         "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -4.55% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.97% outside 0–10%"
     },
     {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 221.97,
-      "ema50": 221.57,
-      "ema20": 223.78,
-      "extensionPct": 0.18,
-      "rsi": 47.91,
-      "beta": 2.22,
-      "avgVolume": 103395710,
-      "daysToEarnings": 26,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $221.97 outside $20–$200"
-    },
-    {
-      "ticker": "LEN",
-      "name": "Lennar Corporation",
-      "price": 77.7,
-      "ema50": 80.44,
-      "ema20": 77.91,
-      "extensionPct": -3.4,
-      "rsi": 48.03,
-      "beta": 1.38,
-      "avgVolume": 5582468,
-      "daysToEarnings": 54,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -3.40% outside 0–10%"
-    },
-    {
-      "ticker": "COIN",
-      "name": "Coinbase Global, Inc.",
-      "price": 177.08,
-      "ema50": 177.97,
-      "ema20": 179.22,
-      "extensionPct": -0.5,
-      "rsi": 48.4,
-      "beta": 3.41,
-      "avgVolume": 7861299,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -0.50% outside 0–10%"
-    },
-    {
-      "ticker": "SNPS",
-      "name": "Synopsys, Inc.",
-      "price": 451.19,
-      "ema50": 442.04,
-      "ema20": 460.28,
-      "extensionPct": 2.07,
-      "rsi": 48.64,
-      "beta": 1.21,
-      "avgVolume": 2620530,
-      "daysToEarnings": 48,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": true,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $451.19 outside $20–$200"
-    },
-    {
-      "ticker": "GNRC",
-      "name": "Generac Holdlings Inc.",
-      "price": 203.14,
-      "ema50": 206.67,
-      "ema20": 204.71,
-      "extensionPct": -1.71,
-      "rsi": 48.74,
-      "beta": 1.92,
-      "avgVolume": 1031517,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $203.14 outside $20–$200"
-    },
-    {
-      "ticker": "FICO",
-      "name": "Fair Isaac Corporation",
-      "price": 795.21,
-      "ema50": 883.67,
-      "ema20": 777.1,
-      "extensionPct": -10.01,
-      "rsi": 48.92,
-      "beta": 1.34,
-      "avgVolume": 1311371,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $795.21 outside $20–$200"
-    },
-    {
-      "ticker": "QCOM",
-      "name": "QUALCOMM Incorporated",
-      "price": 177.96,
-      "ema50": 177.7,
-      "ema20": 178.14,
-      "extensionPct": 0.15,
-      "rsi": 49.59,
-      "beta": 1.65,
-      "avgVolume": 10352859,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": true,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Earnings in 13 day(s) (≤14)"
-    },
-    {
-      "ticker": "CBRE",
-      "name": "CBRE Group Inc",
-      "price": 134.65,
-      "ema50": 136.77,
-      "ema20": 133.19,
-      "extensionPct": -1.55,
-      "rsi": 50.82,
-      "beta": 1.23,
-      "avgVolume": 2270932,
-      "daysToEarnings": 0,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -1.55% outside 0–10%"
-    },
-    {
-      "ticker": "ON",
-      "name": "ON Semiconductor Corporation",
-      "price": 76.94,
-      "ema50": 77.93,
-      "ema20": 76.24,
-      "extensionPct": -1.27,
-      "rsi": 51.12,
-      "beta": 2.05,
-      "avgVolume": 10479646,
-      "daysToEarnings": 11,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -1.27% outside 0–10%"
-    },
-    {
-      "ticker": "DHI",
-      "name": "D.R. Horton, Inc.",
-      "price": 138.98,
-      "ema50": 140.41,
-      "ema20": 137.65,
-      "extensionPct": -1.02,
-      "rsi": 51.22,
-      "beta": 1.35,
-      "avgVolume": 3064345,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -1.02% outside 0–10%"
-    },
-    {
-      "ticker": "SYF",
-      "name": "Synchrony Financial",
-      "price": 74.11,
-      "ema50": 74.4,
-      "ema20": 73.45,
-      "extensionPct": -0.38,
-      "rsi": 51.72,
-      "beta": 1.34,
-      "avgVolume": 3176486,
-      "daysToEarnings": 96,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -0.38% outside 0–10%"
-    },
-    {
-      "ticker": "JCI",
-      "name": "Johnson Controls International ",
-      "price": 151.02,
-      "ema50": 148.26,
-      "ema20": 150.41,
-      "extensionPct": 1.86,
-      "rsi": 51.94,
-      "beta": 1.28,
-      "avgVolume": 3343299,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 51.94 outside 38–50"
-    },
-    {
-      "ticker": "MELI",
-      "name": "MercadoLibre, Inc.",
-      "price": 1854.88,
-      "ema50": 1839.01,
-      "ema20": 1841.68,
-      "extensionPct": 0.86,
-      "rsi": 51.96,
+      "ticker": "JBHT",
+      "name": "J.B. Hunt Transport Services, I",
+      "price": 230.59,
+      "ema50": 243.45,
+      "ema20": 231.73,
+      "extensionPct": -5.28,
+      "rsi": 45.71,
       "beta": 1.31,
-      "avgVolume": 507078,
-      "daysToEarnings": 13,
+      "avgVolume": 965559,
+      "daysToEarnings": 84,
       "filterChecks": {
         "price": false,
         "beta": true,
         "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1854.88 outside $20–$200"
-    },
-    {
-      "ticker": "FDX",
-      "name": "FedEx Corporation",
-      "price": 298.23,
-      "ema50": 303.38,
-      "ema20": 294.92,
-      "extensionPct": -1.7,
-      "rsi": 52.34,
-      "beta": 1.33,
-      "avgVolume": 1360417,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
         "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $298.23 outside $20–$200"
-    },
-    {
-      "ticker": "SPG",
-      "name": "Simon Property Group, Inc.",
-      "price": 205.55,
-      "ema50": 207.23,
-      "ema20": 203.43,
-      "extensionPct": -0.81,
-      "rsi": 52.63,
-      "beta": 1.33,
-      "avgVolume": 1239779,
-      "daysToEarnings": 14,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $205.55 outside $20–$200"
-    },
-    {
-      "ticker": "XYZ",
-      "name": "Block, Inc.",
-      "price": 78.21,
-      "ema50": 77.58,
-      "ema20": 77.17,
-      "extensionPct": 0.82,
-      "rsi": 53.19,
-      "beta": 2.55,
-      "avgVolume": 4450629,
-      "daysToEarnings": 12,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 53.19 outside 38–50"
-    },
-    {
-      "ticker": "CARR",
-      "name": "Carrier Global Corporation",
-      "price": 56.47,
-      "ema50": 57.57,
-      "ema20": 55.66,
-      "extensionPct": -1.92,
-      "rsi": 53.24,
-      "beta": 1.29,
-      "avgVolume": 5223326,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -1.92% outside 0–10%"
-    },
-    {
-      "ticker": "NTAP",
-      "name": "NetApp, Inc.",
-      "price": 217.21,
-      "ema50": 203.34,
-      "ema20": 215.44,
-      "extensionPct": 6.82,
-      "rsi": 53.25,
-      "beta": 1.45,
-      "avgVolume": 2578328,
-      "daysToEarnings": 40,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
+        "rsi": true,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $217.21 outside $20–$200"
-    },
-    {
-      "ticker": "EXPE",
-      "name": "Expedia Group, Inc.",
-      "price": 285.64,
-      "ema50": 281.72,
-      "ema20": 279.94,
-      "extensionPct": 1.39,
-      "rsi": 53.36,
-      "beta": 1.36,
-      "avgVolume": 1713388,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $285.64 outside $20–$200"
-    },
-    {
-      "ticker": "SWKS",
-      "name": "Skyworks Solutions, Inc.",
-      "price": 82.22,
-      "ema50": 78.28,
-      "ema20": 80.91,
-      "extensionPct": 5.04,
-      "rsi": 53.41,
-      "beta": 1.48,
-      "avgVolume": 7075412,
-      "daysToEarnings": 12,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 53.41 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $230.59 outside $20–$200"
     },
     {
       "ticker": "MCHP",
       "name": "Microchip Technology Incorporat",
-      "price": 77.15,
-      "ema50": 76.54,
-      "ema20": 75.66,
-      "extensionPct": 0.8,
-      "rsi": 53.75,
+      "price": 74.52,
+      "ema50": 76.46,
+      "ema20": 75.55,
+      "extensionPct": -2.54,
+      "rsi": 47.11,
       "beta": 1.76,
-      "avgVolume": 9277139,
-      "daysToEarnings": 14,
+      "avgVolume": 9694437,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": true,
         "beta": true,
         "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.54% outside 0–10%"
+    },
+    {
+      "ticker": "DAL",
+      "name": "Delta Air Lines, Inc.",
+      "price": 79.26,
+      "ema50": 81.18,
+      "ema20": 79.56,
+      "extensionPct": -2.37,
+      "rsi": 47.5,
+      "beta": 1.34,
+      "avgVolume": 7490952,
+      "daysToEarnings": 82,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.37% outside 0–10%"
+    },
+    {
+      "ticker": "MELI",
+      "name": "MercadoLibre, Inc.",
+      "price": 1824.96,
+      "ema50": 1838.48,
+      "ema20": 1840.09,
+      "extensionPct": -0.74,
+      "rsi": 47.88,
+      "beta": 1.31,
+      "avgVolume": 482945,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": false,
+        "rsi": true,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1824.95 outside $20–$200"
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog, Inc.",
+      "price": 257.75,
+      "ema50": 254.66,
+      "ema20": 264.29,
+      "extensionPct": 1.21,
+      "rsi": 48.07,
+      "beta": 1.51,
+      "avgVolume": 2902865,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
         "extension": true,
-        "rsi": false,
+        "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 53.75 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $257.75 outside $20–$200"
     },
     {
-      "ticker": "NCLH",
-      "name": "Norwegian Cruise Line Holdings ",
-      "price": 15.59,
-      "ema50": 15.85,
-      "ema20": 15.23,
-      "extensionPct": -1.65,
-      "rsi": 53.87,
-      "beta": 1.96,
-      "avgVolume": 20737533,
-      "daysToEarnings": 7,
+      "ticker": "TROW",
+      "name": "T. Rowe Price Group, Inc.",
+      "price": 103.45,
+      "ema50": 105.71,
+      "ema20": 103.25,
+      "extensionPct": -2.14,
+      "rsi": 48.24,
+      "beta": 1.47,
+      "avgVolume": 1956661,
+      "daysToEarnings": 6,
       "filterChecks": {
-        "price": false,
+        "price": true,
         "beta": true,
         "volume": true,
         "extension": false,
-        "rsi": false,
+        "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $15.59 outside $20–$200"
-    },
-    {
-      "ticker": "CMI",
-      "name": "Cummins Inc.",
-      "price": 542.21,
-      "ema50": 553.7,
-      "ema20": 531.46,
-      "extensionPct": -2.08,
-      "rsi": 54.01,
-      "beta": 1.24,
-      "avgVolume": 1124872,
-      "daysToEarnings": 14,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $542.21 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.14% outside 0–10%"
     },
     {
       "ticker": "MSTR",
       "name": "Strategy Inc",
-      "price": 153.48,
-      "ema50": 139.95,
-      "ema20": 148.4,
-      "extensionPct": 9.67,
-      "rsi": 54.51,
+      "price": 145.8,
+      "ema50": 140.18,
+      "ema20": 148.15,
+      "extensionPct": 4.01,
+      "rsi": 49.37,
       "beta": 3.57,
-      "avgVolume": 19170394,
-      "daysToEarnings": 7,
+      "avgVolume": 19353491,
+      "daysToEarnings": 6,
       "filterChecks": {
         "price": true,
         "beta": true,
         "volume": true,
         "extension": true,
-        "rsi": false,
+        "rsi": true,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 54.51 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Earnings in 6 day(s) (≤14)"
     },
     {
-      "ticker": "CSX",
-      "name": "CSX Corporation",
-      "price": 48.4,
-      "ema50": 48.21,
-      "ema20": 47.89,
-      "extensionPct": 0.39,
-      "rsi": 54.65,
-      "beta": 1.2,
-      "avgVolume": 9206465,
-      "daysToEarnings": 98,
+      "ticker": "NTAP",
+      "name": "NetApp, Inc.",
+      "price": 212.51,
+      "ema50": 203.67,
+      "ema20": 215.16,
+      "extensionPct": 4.34,
+      "rsi": 49.86,
+      "beta": 1.45,
+      "avgVolume": 2543025,
+      "daysToEarnings": 39,
       "filterChecks": {
-        "price": true,
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": true,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $212.51 outside $20–$200"
+    },
+    {
+      "ticker": "TXN",
+      "name": "Texas Instruments Incorporated",
+      "price": 279.5,
+      "ema50": 277.34,
+      "ema20": 280.16,
+      "extensionPct": 0.78,
+      "rsi": 50.38,
+      "beta": 1.34,
+      "avgVolume": 6051688,
+      "daysToEarnings": 95,
+      "filterChecks": {
+        "price": false,
         "beta": true,
         "volume": true,
         "extension": true,
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 54.65 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $279.50 outside $20–$200"
     },
     {
-      "ticker": "ROK",
-      "name": "Rockwell Automation, Inc.",
-      "price": 438.51,
-      "ema50": 434.75,
-      "ema20": 432.1,
-      "extensionPct": 0.87,
-      "rsi": 54.9,
-      "beta": 1.5,
-      "avgVolume": 771994,
-      "daysToEarnings": 14,
+      "ticker": "STLD",
+      "name": "Steel Dynamics, Inc.",
+      "price": 239.9,
+      "ema50": 238.94,
+      "ema20": 239.45,
+      "extensionPct": 0.4,
+      "rsi": 51.01,
+      "beta": 1.49,
+      "avgVolume": 943464,
+      "daysToEarnings": 94,
       "filterChecks": {
         "price": false,
         "beta": true,
         "volume": false,
         "extension": true,
         "rsi": false,
-        "earnings": false
+        "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $438.51 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $239.90 outside $20–$200"
     },
     {
-      "ticker": "DDOG",
-      "name": "Datadog, Inc.",
-      "price": 273.09,
-      "ema50": 254.57,
-      "ema20": 264.98,
-      "extensionPct": 7.27,
-      "rsi": 55.34,
-      "beta": 1.51,
-      "avgVolume": 2886759,
-      "daysToEarnings": 13,
+      "ticker": "KKR",
+      "name": "KKR & Co. Inc.",
+      "price": 93.09,
+      "ema50": 95.48,
+      "ema20": 91.17,
+      "extensionPct": -2.51,
+      "rsi": 51.41,
+      "beta": 1.83,
+      "avgVolume": 5971924,
+      "daysToEarnings": 17,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.51% outside 0–10%"
+    },
+    {
+      "ticker": "GEN",
+      "name": "Gen Digital Inc.",
+      "price": 24.89,
+      "ema50": 25.48,
+      "ema20": 24.26,
+      "extensionPct": -2.31,
+      "rsi": 51.68,
+      "beta": 1.26,
+      "avgVolume": 11365740,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -2.31% outside 0–10%"
+    },
+    {
+      "ticker": "FICO",
+      "name": "Fair Isaac Corporation",
+      "price": 823.27,
+      "ema50": 881.22,
+      "ema20": 781.5,
+      "extensionPct": -6.58,
+      "rsi": 52.66,
+      "beta": 1.34,
+      "avgVolume": 1307077,
+      "daysToEarnings": 12,
       "filterChecks": {
         "price": false,
         "beta": true,
         "volume": true,
-        "extension": true,
+        "extension": false,
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $273.09 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $823.27 outside $20–$200"
     },
     {
-      "ticker": "TXN",
-      "name": "Texas Instruments Incorporated",
-      "price": 284.65,
-      "ema50": 277.24,
-      "ema20": 280.23,
-      "extensionPct": 2.67,
-      "rsi": 55.8,
-      "beta": 1.34,
-      "avgVolume": 5525176,
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 374.58,
+      "ema50": 366.65,
+      "ema20": 370.72,
+      "extensionPct": 2.16,
+      "rsi": 52.8,
+      "beta": 1.92,
+      "avgVolume": 36818194,
       "daysToEarnings": 96,
       "filterChecks": {
         "price": false,
@@ -2061,217 +1907,41 @@
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $284.65 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $374.58 outside $20–$200"
     },
     {
-      "ticker": "URI",
-      "name": "United Rentals, Inc.",
-      "price": 1068.98,
-      "ema50": 1045.07,
-      "ema20": 1044.3,
-      "extensionPct": 2.29,
-      "rsi": 55.96,
-      "beta": 1.83,
-      "avgVolume": 544936,
-      "daysToEarnings": 97,
+      "ticker": "NCLH",
+      "name": "Norwegian Cruise Line Holdings ",
+      "price": 15.54,
+      "ema50": 15.84,
+      "ema20": 15.26,
+      "extensionPct": -1.89,
+      "rsi": 53.16,
+      "beta": 1.96,
+      "avgVolume": 20451762,
+      "daysToEarnings": 6,
       "filterChecks": {
         "price": false,
         "beta": true,
-        "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1068.98 outside $20–$200"
-    },
-    {
-      "ticker": "VST",
-      "name": "Vistra Corp.",
-      "price": 156.14,
-      "ema50": 148.65,
-      "ema20": 151.14,
-      "extensionPct": 5.04,
-      "rsi": 56.09,
-      "beta": 1.38,
-      "avgVolume": 7357074,
-      "daysToEarnings": 15,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
         "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 56.09 outside 38–50"
-    },
-    {
-      "ticker": "ALGN",
-      "name": "Align Technology, Inc.",
-      "price": 151.37,
-      "ema50": 152.49,
-      "ema20": 147.04,
-      "extensionPct": -0.74,
-      "rsi": 56.19,
-      "beta": 1.67,
-      "avgVolume": 929043,
-      "daysToEarnings": 6,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": false,
         "extension": false,
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Avg volume 929,043 not above 1M"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $15.54 outside $20–$200"
     },
     {
-      "ticker": "CRM",
-      "name": "Salesforce, Inc.",
-      "price": 241.78,
-      "ema50": 227.87,
-      "ema20": 236.91,
-      "extensionPct": 6.1,
-      "rsi": 56.31,
-      "beta": 1.26,
-      "avgVolume": 8195305,
-      "daysToEarnings": 41,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $241.78 outside $20–$200"
-    },
-    {
-      "ticker": "ADBE",
-      "name": "Adobe Inc.",
-      "price": 255.06,
-      "ema50": 248.04,
-      "ema20": 245.94,
-      "extensionPct": 2.83,
-      "rsi": 56.74,
-      "beta": 1.42,
-      "avgVolume": 4176996,
-      "daysToEarnings": 48,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $255.06 outside $20–$200"
-    },
-    {
-      "ticker": "ADI",
-      "name": "Analog Devices, Inc.",
-      "price": 405.96,
-      "ema50": 390.71,
-      "ema20": 399.37,
-      "extensionPct": 3.9,
-      "rsi": 56.93,
-      "beta": 1.23,
-      "avgVolume": 2997543,
-      "daysToEarnings": 33,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $405.96 outside $20–$200"
-    },
-    {
-      "ticker": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "price": 262.37,
-      "ema50": 255.08,
-      "ema20": 256.43,
-      "extensionPct": 2.86,
-      "rsi": 57.1,
-      "beta": 1.46,
-      "avgVolume": 35464132,
-      "daysToEarnings": 7,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $262.37 outside $20–$200"
-    },
-    {
-      "ticker": "ABNB",
-      "name": "Airbnb, Inc.",
-      "price": 173.69,
-      "ema50": 166.32,
-      "ema20": 168.33,
-      "extensionPct": 4.43,
-      "rsi": 58.59,
-      "beta": 1.24,
-      "avgVolume": 3975166,
-      "daysToEarnings": 14,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 58.59 outside 38–50"
-    },
-    {
-      "ticker": "NXPI",
-      "name": "NXP Semiconductors N.V.",
-      "price": 242.36,
-      "ema50": 235.83,
-      "ema20": 232.89,
-      "extensionPct": 2.77,
-      "rsi": 58.62,
-      "beta": 1.81,
-      "avgVolume": 3090078,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $242.36 outside $20–$200"
-    },
-    {
-      "ticker": "ODFL",
-      "name": "Old Dominion Freight Line, Inc.",
-      "price": 188.9,
-      "ema50": 189.12,
-      "ema20": 183.81,
-      "extensionPct": -0.12,
-      "rsi": 58.89,
-      "beta": 1.2,
-      "avgVolume": 1694783,
+      "ticker": "BLDR",
+      "name": "Builders FirstSource, Inc.",
+      "price": 57.54,
+      "ema50": 60.1,
+      "ema20": 55.34,
+      "extensionPct": -4.25,
+      "rsi": 53.17,
+      "beta": 1.45,
+      "avgVolume": 2361328,
       "daysToEarnings": 6,
       "filterChecks": {
         "price": true,
@@ -2281,328 +1951,64 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension -0.12% outside 0–10%"
-    },
-    {
-      "ticker": "PLTR",
-      "name": "Palantir Technologies Inc.",
-      "price": 201.72,
-      "ema50": 182.05,
-      "ema20": 193.9,
-      "extensionPct": 10.8,
-      "rsi": 59.16,
-      "beta": 1.6,
-      "avgVolume": 22185395,
-      "daysToEarnings": 11,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $201.72 outside $20–$200"
-    },
-    {
-      "ticker": "EL",
-      "name": "Estee Lauder Companies, Inc. (T",
-      "price": 103.66,
-      "ema50": 96.48,
-      "ema20": 99.99,
-      "extensionPct": 7.45,
-      "rsi": 59.63,
-      "beta": 1.26,
-      "avgVolume": 2869534,
-      "daysToEarnings": 11,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 59.63 outside 38–50"
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 386.47,
-      "ema50": 366.33,
-      "ema20": 370.31,
-      "extensionPct": 5.5,
-      "rsi": 59.77,
-      "beta": 1.92,
-      "avgVolume": 35545938,
-      "daysToEarnings": 97,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $386.47 outside $20–$200"
-    },
-    {
-      "ticker": "TECH",
-      "name": "Bio-Techne Corp",
-      "price": 72.64,
-      "ema50": 71.69,
-      "ema20": 72.49,
-      "extensionPct": 1.32,
-      "rsi": 60.05,
-      "beta": 1.3,
-      "avgVolume": 2826453,
-      "daysToEarnings": 18,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 60.05 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -4.25% outside 0–10%"
     },
     {
       "ticker": "EMR",
       "name": "Emerson Electric Company",
-      "price": 163.11,
-      "ema50": 156.16,
-      "ema20": 159.73,
-      "extensionPct": 4.45,
-      "rsi": 60.38,
+      "price": 160.29,
+      "ema50": 156.32,
+      "ema20": 159.78,
+      "extensionPct": 2.54,
+      "rsi": 53.21,
       "beta": 1.21,
-      "avgVolume": 2754304,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 60.38 outside 38–50"
-    },
-    {
-      "ticker": "BBY",
-      "name": "Best Buy Co., Inc.",
-      "price": 94.12,
-      "ema50": 88.15,
-      "ema20": 90.24,
-      "extensionPct": 6.78,
-      "rsi": 60.6,
-      "beta": 1.28,
-      "avgVolume": 2842394,
-      "daysToEarnings": 33,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 60.60 outside 38–50"
-    },
-    {
-      "ticker": "NSC",
-      "name": "Norfolk Southern Corporation",
-      "price": 328.09,
-      "ema50": 323.11,
-      "ema20": 321.41,
-      "extensionPct": 1.54,
-      "rsi": 60.63,
-      "beta": 1.28,
-      "avgVolume": 753527,
-      "daysToEarnings": 0,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $328.09 outside $20–$200"
-    },
-    {
-      "ticker": "RL",
-      "name": "Ralph Lauren Corporation",
-      "price": 380.66,
-      "ema50": 365.91,
-      "ema20": 370.34,
-      "extensionPct": 4.03,
-      "rsi": 60.98,
-      "beta": 1.36,
-      "avgVolume": 531102,
-      "daysToEarnings": 14,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $380.66 outside $20–$200"
-    },
-    {
-      "ticker": "IDXX",
-      "name": "IDEXX Laboratories, Inc.",
-      "price": 553.48,
-      "ema50": 535.7,
-      "ema20": 534.77,
-      "extensionPct": 3.32,
-      "rsi": 61.04,
-      "beta": 1.55,
-      "avgVolume": 510240,
-      "daysToEarnings": 11,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $553.48 outside $20–$200"
-    },
-    {
-      "ticker": "STLD",
-      "name": "Steel Dynamics, Inc.",
-      "price": 247.97,
-      "ema50": 238.9,
-      "ema20": 239.41,
-      "extensionPct": 3.79,
-      "rsi": 61.07,
-      "beta": 1.49,
-      "avgVolume": 902145,
-      "daysToEarnings": 95,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": false,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $247.97 outside $20–$200"
-    },
-    {
-      "ticker": "PYPL",
-      "name": "PayPal Holdings, Inc.",
-      "price": 57.2,
-      "ema50": 54.93,
-      "ema20": 55.62,
-      "extensionPct": 4.13,
-      "rsi": 61.77,
-      "beta": 1.28,
-      "avgVolume": 11092335,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": true,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 61.77 outside 38–50"
-    },
-    {
-      "ticker": "RCL",
-      "name": "Royal Caribbean Cruises Ltd.",
-      "price": 288.45,
-      "ema50": 275.75,
-      "ema20": 276.01,
-      "extensionPct": 4.61,
-      "rsi": 61.84,
-      "beta": 1.82,
-      "avgVolume": 2555649,
-      "daysToEarnings": 5,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $288.45 outside $20–$200"
-    },
-    {
-      "ticker": "ADSK",
-      "name": "Autodesk, Inc.",
-      "price": 244.84,
-      "ema50": 229.69,
-      "ema20": 232.5,
-      "extensionPct": 6.59,
-      "rsi": 62.7,
-      "beta": 1.33,
-      "avgVolume": 1885583,
-      "daysToEarnings": 36,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": true,
-        "rsi": false,
-        "earnings": true
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $244.84 outside $20–$200"
-    },
-    {
-      "ticker": "ZBRA",
-      "name": "Zebra Technologies Corporation",
-      "price": 391,
-      "ema50": 358.82,
-      "ema20": 376.66,
-      "extensionPct": 8.97,
-      "rsi": 63.62,
-      "beta": 1.58,
-      "avgVolume": 453578,
+      "avgVolume": 2849428,
       "daysToEarnings": 12,
       "filterChecks": {
-        "price": false,
+        "price": true,
         "beta": true,
-        "volume": false,
+        "volume": true,
         "extension": true,
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $391.00 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 53.21 outside 38–50"
     },
     {
-      "ticker": "TRMB",
-      "name": "Trimble Inc.",
-      "price": 62.59,
-      "ema50": 58.79,
-      "ema20": 59.81,
-      "extensionPct": 6.46,
-      "rsi": 63.67,
-      "beta": 1.34,
-      "avgVolume": 1993197,
-      "daysToEarnings": 13,
+      "ticker": "CARR",
+      "name": "Carrier Global Corporation",
+      "price": 56.48,
+      "ema50": 57.53,
+      "ema20": 55.74,
+      "extensionPct": -1.83,
+      "rsi": 53.3,
+      "beta": 1.29,
+      "avgVolume": 5270828,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension -1.83% outside 0–10%"
+    },
+    {
+      "ticker": "SWKS",
+      "name": "Skyworks Solutions, Inc.",
+      "price": 82.39,
+      "ema50": 78.44,
+      "ema20": 81.05,
+      "extensionPct": 5.04,
+      "rsi": 53.75,
+      "beta": 1.48,
+      "avgVolume": 7055587,
+      "daysToEarnings": 11,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2611,19 +2017,41 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 63.67 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 53.75 outside 38–50"
     },
     {
-      "ticker": "NUE",
-      "name": "Nucor Corporation",
-      "price": 264.54,
-      "ema50": 251.43,
-      "ema20": 253.63,
-      "extensionPct": 5.21,
-      "rsi": 63.72,
-      "beta": 1.85,
-      "avgVolume": 1157170,
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "price": 196.19,
+      "ema50": 182.59,
+      "ema20": 194.12,
+      "extensionPct": 7.45,
+      "rsi": 53.98,
+      "beta": 1.6,
+      "avgVolume": 22198288,
+      "daysToEarnings": 10,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 53.98 outside 38–50"
+    },
+    {
+      "ticker": "NXPI",
+      "name": "NXP Semiconductors N.V.",
+      "price": 237.79,
+      "ema50": 235.91,
+      "ema20": 233.36,
+      "extensionPct": 0.8,
+      "rsi": 54.07,
+      "beta": 1.81,
+      "avgVolume": 3290400,
       "daysToEarnings": 4,
       "filterChecks": {
         "price": false,
@@ -2633,20 +2061,108 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $264.54 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $237.79 outside $20–$200"
+    },
+    {
+      "ticker": "NUE",
+      "name": "Nucor Corporation",
+      "price": 258.06,
+      "ema50": 251.69,
+      "ema20": 254.05,
+      "extensionPct": 2.53,
+      "rsi": 55.25,
+      "beta": 1.85,
+      "avgVolume": 1179709,
+      "daysToEarnings": 3,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $258.06 outside $20–$200"
+    },
+    {
+      "ticker": "XYZ",
+      "name": "Block, Inc.",
+      "price": 79.02,
+      "ema50": 77.63,
+      "ema20": 77.35,
+      "extensionPct": 1.79,
+      "rsi": 55.69,
+      "beta": 2.55,
+      "avgVolume": 4459915,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 55.69 outside 38–50"
+    },
+    {
+      "ticker": "ARES",
+      "name": "Ares Management Corporation",
+      "price": 123.7,
+      "ema50": 123.23,
+      "ema20": 118.39,
+      "extensionPct": 0.38,
+      "rsi": 56.99,
+      "beta": 1.55,
+      "avgVolume": 2241721,
+      "daysToEarnings": 6,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 56.99 outside 38–50"
+    },
+    {
+      "ticker": "ZBRA",
+      "name": "Zebra Technologies Corporation",
+      "price": 384.16,
+      "ema50": 359.82,
+      "ema20": 377.37,
+      "extensionPct": 6.77,
+      "rsi": 57.63,
+      "beta": 1.58,
+      "avgVolume": 455653,
+      "daysToEarnings": 11,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $384.16 outside $20–$200"
     },
     {
       "ticker": "SHOP",
       "name": "Shopify Inc.",
-      "price": 174.29,
-      "ema50": 151.75,
-      "ema20": 163.97,
-      "extensionPct": 14.85,
-      "rsi": 64.17,
+      "price": 168.81,
+      "ema50": 152.41,
+      "ema20": 164.43,
+      "extensionPct": 10.76,
+      "rsi": 57.78,
       "beta": 2.63,
-      "avgVolume": 8155964,
-      "daysToEarnings": 12,
+      "avgVolume": 8230027,
+      "daysToEarnings": 11,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2655,20 +2171,20 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension 14.85% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension 10.76% outside 0–10%"
     },
     {
-      "ticker": "CCL",
-      "name": "Carnival Corporation Ltd.",
-      "price": 27.3,
-      "ema50": 25.37,
-      "ema20": 25.72,
+      "ticker": "A",
+      "name": "Agilent Technologies, Inc.",
+      "price": 173.89,
+      "ema50": 161.6,
+      "ema20": 170.31,
       "extensionPct": 7.61,
-      "rsi": 64.88,
-      "beta": 2.38,
-      "avgVolume": 24533090,
-      "daysToEarnings": 57,
+      "rsi": 58.68,
+      "beta": 1.21,
+      "avgVolume": 2220361,
+      "daysToEarnings": 33,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2677,20 +2193,174 @@
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 64.88 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 58.68 outside 38–50"
+    },
+    {
+      "ticker": "TECH",
+      "name": "Bio-Techne Corp",
+      "price": 72.62,
+      "ema50": 71.73,
+      "ema20": 72.51,
+      "extensionPct": 1.24,
+      "rsi": 58.92,
+      "beta": 1.3,
+      "avgVolume": 2885221,
+      "daysToEarnings": 17,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 58.92 outside 38–50"
+    },
+    {
+      "ticker": "FDX",
+      "name": "FedEx Corporation",
+      "price": 303.92,
+      "ema50": 303.42,
+      "ema20": 295.78,
+      "extensionPct": 0.16,
+      "rsi": 59.4,
+      "beta": 1.33,
+      "avgVolume": 1283350,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $303.92 outside $20–$200"
+    },
+    {
+      "ticker": "RCL",
+      "name": "Royal Caribbean Cruises Ltd.",
+      "price": 286.13,
+      "ema50": 276.15,
+      "ema20": 276.97,
+      "extensionPct": 3.61,
+      "rsi": 59.47,
+      "beta": 1.82,
+      "avgVolume": 2375781,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $286.13 outside $20–$200"
+    },
+    {
+      "ticker": "EXPE",
+      "name": "Expedia Group, Inc.",
+      "price": 298.49,
+      "ema50": 282.38,
+      "ema20": 281.7,
+      "extensionPct": 5.71,
+      "rsi": 59.86,
+      "beta": 1.36,
+      "avgVolume": 1666887,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $298.49 outside $20–$200"
+    },
+    {
+      "ticker": "LEN",
+      "name": "Lennar Corporation",
+      "price": 84.45,
+      "ema50": 80.59,
+      "ema20": 78.53,
+      "extensionPct": 4.78,
+      "rsi": 60.26,
+      "beta": 1.38,
+      "avgVolume": 5667945,
+      "daysToEarnings": 53,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 60.26 outside 38–50"
+    },
+    {
+      "ticker": "ODFL",
+      "name": "Old Dominion Freight Line, Inc.",
+      "price": 189.89,
+      "ema50": 189.15,
+      "ema20": 184.39,
+      "extensionPct": 0.39,
+      "rsi": 60.41,
+      "beta": 1.2,
+      "avgVolume": 1718666,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 60.41 outside 38–50"
+    },
+    {
+      "ticker": "ABNB",
+      "name": "Airbnb, Inc.",
+      "price": 175.76,
+      "ema50": 166.69,
+      "ema20": 169.03,
+      "extensionPct": 5.44,
+      "rsi": 60.99,
+      "beta": 1.24,
+      "avgVolume": 3724253,
+      "daysToEarnings": 13,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 60.99 outside 38–50"
     },
     {
       "ticker": "BLK",
       "name": "BlackRock, Inc.",
-      "price": 1149.6,
-      "ema50": 1091.77,
-      "ema20": 1097.99,
-      "extensionPct": 5.3,
-      "rsi": 65.5,
+      "price": 1137.29,
+      "ema50": 1093.58,
+      "ema20": 1101.73,
+      "extensionPct": 4,
+      "rsi": 61.19,
       "beta": 1.42,
-      "avgVolume": 641790,
-      "daysToEarnings": 84,
+      "avgVolume": 653374,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -2699,63 +2369,85 @@
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $1149.60 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1137.29 outside $20–$200"
     },
     {
-      "ticker": "A",
-      "name": "Agilent Technologies, Inc.",
-      "price": 177.75,
-      "ema50": 161.1,
-      "ema20": 169.93,
-      "extensionPct": 10.33,
-      "rsi": 65.89,
-      "beta": 1.21,
-      "avgVolume": 2240306,
-      "daysToEarnings": 34,
+      "ticker": "RL",
+      "name": "Ralph Lauren Corporation",
+      "price": 381.95,
+      "ema50": 366.55,
+      "ema20": 371.44,
+      "extensionPct": 4.2,
+      "rsi": 61.82,
+      "beta": 1.36,
+      "avgVolume": 504137,
+      "daysToEarnings": 13,
       "filterChecks": {
-        "price": true,
+        "price": false,
         "beta": true,
-        "volume": true,
-        "extension": false,
+        "volume": false,
+        "extension": true,
         "rsi": false,
-        "earnings": true
+        "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension 10.33% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $381.95 outside $20–$200"
     },
     {
-      "ticker": "DIS",
-      "name": "Walt Disney Company (The)",
-      "price": 111.83,
-      "ema50": 105.95,
-      "ema20": 107.97,
-      "extensionPct": 5.55,
-      "rsi": 66.49,
-      "beta": 1.42,
-      "avgVolume": 8467626,
-      "daysToEarnings": 26,
+      "ticker": "MCO",
+      "name": "Moody's Corporation",
+      "price": 491.05,
+      "ema50": 473.04,
+      "ema20": 472.02,
+      "extensionPct": 3.81,
+      "rsi": 61.95,
+      "beta": 1.35,
+      "avgVolume": 952494,
+      "daysToEarnings": 117,
       "filterChecks": {
-        "price": true,
+        "price": false,
         "beta": true,
-        "volume": true,
+        "volume": false,
         "extension": true,
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 66.49 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $491.05 outside $20–$200"
     },
     {
-      "ticker": "MAS",
-      "name": "Masco Corporation",
-      "price": 74.56,
-      "ema50": 71.1,
-      "ema20": 70.93,
-      "extensionPct": 4.87,
-      "rsi": 67.24,
-      "beta": 1.29,
-      "avgVolume": 1996578,
+      "ticker": "ALGN",
+      "name": "Align Technology, Inc.",
+      "price": 155.51,
+      "ema50": 152.61,
+      "ema20": 147.85,
+      "extensionPct": 1.9,
+      "rsi": 62.01,
+      "beta": 1.67,
+      "avgVolume": 947764,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": false,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Avg volume 947,764 not above 1M"
+    },
+    {
+      "ticker": "DHI",
+      "name": "D.R. Horton, Inc.",
+      "price": 147.66,
+      "ema50": 140.7,
+      "ema20": 138.6,
+      "extensionPct": 4.95,
+      "rsi": 62.06,
+      "beta": 1.35,
+      "avgVolume": 3118675,
       "daysToEarnings": 6,
       "filterChecks": {
         "price": true,
@@ -2765,42 +2457,42 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 67.24 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 62.06 outside 38–50"
     },
     {
-      "ticker": "WSM",
-      "name": "Williams-Sonoma, Inc.",
-      "price": 253.32,
-      "ema50": 235.59,
-      "ema20": 241.97,
-      "extensionPct": 7.52,
-      "rsi": 67.61,
-      "beta": 1.47,
-      "avgVolume": 1099069,
-      "daysToEarnings": 27,
+      "ticker": "SPG",
+      "name": "Simon Property Group, Inc.",
+      "price": 212.04,
+      "ema50": 207.42,
+      "ema20": 204.25,
+      "extensionPct": 2.23,
+      "rsi": 62.62,
+      "beta": 1.33,
+      "avgVolume": 1260274,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": false,
         "beta": true,
         "volume": true,
         "extension": true,
         "rsi": false,
-        "earnings": true
+        "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $253.32 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $212.04 outside $20–$200"
     },
     {
-      "ticker": "EFX",
-      "name": "Equifax, Inc.",
-      "price": 175.57,
-      "ema50": 161.93,
-      "ema20": 157.27,
-      "extensionPct": 8.42,
-      "rsi": 69,
-      "beta": 1.34,
-      "avgVolume": 2208100,
-      "daysToEarnings": 104,
+      "ticker": "CCL",
+      "name": "Carnival Corporation Ltd.",
+      "price": 27.08,
+      "ema50": 25.44,
+      "ema20": 25.85,
+      "extensionPct": 6.46,
+      "rsi": 62.64,
+      "beta": 2.38,
+      "avgVolume": 24003637,
+      "daysToEarnings": 56,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2809,20 +2501,152 @@
         "rsi": false,
         "earnings": true
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "RSI 69.00 outside 38–50"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 62.64 outside 38–50"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "price": 250.29,
+      "ema50": 228.74,
+      "ema20": 238.18,
+      "extensionPct": 9.42,
+      "rsi": 62.64,
+      "beta": 1.26,
+      "avgVolume": 8129054,
+      "daysToEarnings": 40,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $250.29 outside $20–$200"
+    },
+    {
+      "ticker": "URI",
+      "name": "United Rentals, Inc.",
+      "price": 1111.02,
+      "ema50": 1047.66,
+      "ema20": 1050.66,
+      "extensionPct": 6.05,
+      "rsi": 63.32,
+      "beta": 1.83,
+      "avgVolume": 578693,
+      "daysToEarnings": 96,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $1111.02 outside $20–$200"
+    },
+    {
+      "ticker": "PYPL",
+      "name": "PayPal Holdings, Inc.",
+      "price": 57.54,
+      "ema50": 55.04,
+      "ema20": 55.8,
+      "extensionPct": 4.54,
+      "rsi": 63.4,
+      "beta": 1.28,
+      "avgVolume": 11040644,
+      "daysToEarnings": 4,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 63.40 outside 38–50"
+    },
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "price": 270.55,
+      "ema50": 248.91,
+      "ema20": 248.28,
+      "extensionPct": 8.7,
+      "rsi": 65.36,
+      "beta": 1.42,
+      "avgVolume": 4335550,
+      "daysToEarnings": 47,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $270.55 outside $20–$200"
+    },
+    {
+      "ticker": "EL",
+      "name": "Estee Lauder Companies, Inc. (T",
+      "price": 107.72,
+      "ema50": 96.91,
+      "ema20": 100.73,
+      "extensionPct": 11.15,
+      "rsi": 65.46,
+      "beta": 1.26,
+      "avgVolume": 2850772,
+      "daysToEarnings": 10,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension 11.15% outside 0–10%"
+    },
+    {
+      "ticker": "IDXX",
+      "name": "IDEXX Laboratories, Inc.",
+      "price": 566.76,
+      "ema50": 536.92,
+      "ema20": 537.81,
+      "extensionPct": 5.56,
+      "rsi": 66,
+      "beta": 1.55,
+      "avgVolume": 515331,
+      "daysToEarnings": 10,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $566.76 outside $20–$200"
     },
     {
       "ticker": "TEAM",
       "name": "Atlassian Corporation",
-      "price": 225.51,
-      "ema50": 182.57,
-      "ema20": 203.73,
-      "extensionPct": 23.52,
-      "rsi": 69.49,
+      "price": 223.16,
+      "ema50": 184.14,
+      "ema20": 205.58,
+      "extensionPct": 21.19,
+      "rsi": 67.19,
       "beta": 1.23,
-      "avgVolume": 2502982,
-      "daysToEarnings": 14,
+      "avgVolume": 2532702,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -2831,30 +2655,272 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $225.50 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $223.16 outside $20–$200"
     },
     {
-      "ticker": "EBAY",
-      "name": "eBay Inc.",
-      "price": 122.9,
-      "ema50": 111,
-      "ema20": 114.65,
-      "extensionPct": 10.72,
-      "rsi": 73.45,
-      "beta": 1.32,
-      "avgVolume": 3569765,
-      "daysToEarnings": 6,
+      "ticker": "TRMB",
+      "name": "Trimble Inc.",
+      "price": 64.01,
+      "ema50": 59,
+      "ema20": 60.21,
+      "extensionPct": 8.5,
+      "rsi": 67.71,
+      "beta": 1.34,
+      "avgVolume": 2018082,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 67.71 outside 38–50"
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "price": 443.85,
+      "ema50": 404.33,
+      "ema20": 418.99,
+      "extensionPct": 9.78,
+      "rsi": 67.92,
+      "beta": 1.46,
+      "avgVolume": 2247739,
+      "daysToEarnings": 90,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $443.85 outside $20–$200"
+    },
+    {
+      "ticker": "ADSK",
+      "name": "Autodesk, Inc.",
+      "price": 254.95,
+      "ema50": 230.68,
+      "ema20": 234.63,
+      "extensionPct": 10.52,
+      "rsi": 68.56,
+      "beta": 1.33,
+      "avgVolume": 1888559,
+      "daysToEarnings": 35,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $254.95 outside $20–$200"
+    },
+    {
+      "ticker": "BBY",
+      "name": "Best Buy Co., Inc.",
+      "price": 99.83,
+      "ema50": 88.6,
+      "ema20": 91.15,
+      "extensionPct": 12.67,
+      "rsi": 69.23,
+      "beta": 1.28,
+      "avgVolume": 2809587,
+      "daysToEarnings": 32,
       "filterChecks": {
         "price": true,
         "beta": true,
         "volume": true,
         "extension": false,
         "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension 12.67% outside 0–10%"
+    },
+    {
+      "ticker": "DIS",
+      "name": "Walt Disney Company (The)",
+      "price": 113.13,
+      "ema50": 106.23,
+      "ema20": 108.46,
+      "extensionPct": 6.5,
+      "rsi": 69.42,
+      "beta": 1.42,
+      "avgVolume": 8505090,
+      "daysToEarnings": 25,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 69.42 outside 38–50"
+    },
+    {
+      "ticker": "EBAY",
+      "name": "eBay Inc.",
+      "price": 122.04,
+      "ema50": 111.44,
+      "ema20": 115.35,
+      "extensionPct": 9.51,
+      "rsi": 70.51,
+      "beta": 1.32,
+      "avgVolume": 3579966,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Extension 10.72% outside 0–10%"
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 70.51 outside 38–50"
+    },
+    {
+      "ticker": "CRL",
+      "name": "Charles River Laboratories Inte",
+      "price": 339.66,
+      "ema50": 288.37,
+      "ema20": 306.34,
+      "extensionPct": 17.79,
+      "rsi": 71.45,
+      "beta": 1.4,
+      "avgVolume": 1091355,
+      "daysToEarnings": 12,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $339.66 outside $20–$200"
+    },
+    {
+      "ticker": "WSM",
+      "name": "Williams-Sonoma, Inc.",
+      "price": 260.8,
+      "ema50": 236.58,
+      "ema20": 243.77,
+      "extensionPct": 10.24,
+      "rsi": 72.91,
+      "beta": 1.47,
+      "avgVolume": 1110970,
+      "daysToEarnings": 26,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $260.80 outside $20–$200"
+    },
+    {
+      "ticker": "CSX",
+      "name": "CSX Corporation",
+      "price": 51.67,
+      "ema50": 48.35,
+      "ema20": 48.25,
+      "extensionPct": 6.87,
+      "rsi": 73.26,
+      "beta": 1.2,
+      "avgVolume": 10160020,
+      "daysToEarnings": 97,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 73.26 outside 38–50"
+    },
+    {
+      "ticker": "MSCI",
+      "name": "MSCI Inc.",
+      "price": 620.24,
+      "ema50": 566.24,
+      "ema20": 571.42,
+      "extensionPct": 9.54,
+      "rsi": 73.5,
+      "beta": 1.24,
+      "avgVolume": 636186,
+      "daysToEarnings": 95,
+      "filterChecks": {
+        "price": false,
+        "beta": true,
+        "volume": false,
+        "extension": true,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Price $620.24 outside $20–$200"
+    },
+    {
+      "ticker": "MAS",
+      "name": "Masco Corporation",
+      "price": 78.05,
+      "ema50": 71.37,
+      "ema20": 71.61,
+      "extensionPct": 9.36,
+      "rsi": 75.13,
+      "beta": 1.29,
+      "avgVolume": 2020084,
+      "daysToEarnings": 5,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": true,
+        "rsi": false,
+        "earnings": false
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "RSI 75.13 outside 38–50"
+    },
+    {
+      "ticker": "EFX",
+      "name": "Equifax, Inc.",
+      "price": 187.14,
+      "ema50": 162.92,
+      "ema20": 160.11,
+      "extensionPct": 14.87,
+      "rsi": 75.2,
+      "beta": 1.34,
+      "avgVolume": 2253596,
+      "daysToEarnings": 103,
+      "filterChecks": {
+        "price": true,
+        "beta": true,
+        "volume": true,
+        "extension": false,
+        "rsi": false,
+        "earnings": true
+      },
+      "lastBarDate": "2026-10-22",
+      "failReason": "Extension 14.87% outside 0–10%"
     },
     {
       "ticker": "WBD",
@@ -2866,7 +2932,7 @@
       "rsi": 75.22,
       "beta": 1.54,
       "avgVolume": 72001518,
-      "daysToEarnings": 14,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2881,14 +2947,14 @@
     {
       "ticker": "EPAM",
       "name": "EPAM Systems, Inc.",
-      "price": 134,
-      "ema50": 112.94,
-      "ema20": 118.34,
-      "extensionPct": 18.65,
-      "rsi": 75.27,
+      "price": 138.67,
+      "ema50": 113.94,
+      "ema20": 120.27,
+      "extensionPct": 21.7,
+      "rsi": 78.24,
       "beta": 1.39,
-      "avgVolume": 960464,
-      "daysToEarnings": 14,
+      "avgVolume": 988167,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2897,30 +2963,8 @@
         "rsi": false,
         "earnings": false
       },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Avg volume 960,464 not above 1M"
-    },
-    {
-      "ticker": "CRL",
-      "name": "Charles River Laboratories Inte",
-      "price": 344.87,
-      "ema50": 286.27,
-      "ema20": 302.84,
-      "extensionPct": 20.47,
-      "rsi": 75.59,
-      "beta": 1.4,
-      "avgVolume": 1037775,
-      "daysToEarnings": 13,
-      "filterChecks": {
-        "price": false,
-        "beta": true,
-        "volume": true,
-        "extension": false,
-        "rsi": false,
-        "earnings": false
-      },
-      "lastBarDate": "2026-10-21",
-      "failReason": "Price $344.87 outside $20–$200"
+      "lastBarDate": "2026-10-22",
+      "failReason": "Avg volume 988,167 not above 1M"
     }
   ],
   "excludedLowBeta": [
@@ -2933,6 +2977,11 @@
       "ticker": "ABBV",
       "name": "AbbVie Inc.",
       "beta": 0.23
+    },
+    {
+      "ticker": "ABT",
+      "name": "Abbott Laboratories",
+      "beta": 0.58
     },
     {
       "ticker": "ACGL",
@@ -2998,11 +3047,6 @@
       "ticker": "ALL",
       "name": "Allstate Corporation (The)",
       "beta": 0.14
-    },
-    {
-      "ticker": "ALLE",
-      "name": "Allegion plc",
-      "beta": 0.82
     },
     {
       "ticker": "ALNY",
@@ -3175,6 +3219,11 @@
       "beta": 0.5
     },
     {
+      "ticker": "CB",
+      "name": "Chubb Limited",
+      "beta": 0.37
+    },
+    {
       "ticker": "CBOE",
       "name": "Cboe Global Markets, Inc.",
       "beta": 0.41
@@ -3183,11 +3232,6 @@
       "ticker": "CCEP",
       "name": "Coca-Cola Europacific Partners ",
       "beta": 0.47
-    },
-    {
-      "ticker": "CCI",
-      "name": "Crown Castle Inc.",
-      "beta": 0.96
     },
     {
       "ticker": "CDNS",
@@ -3250,9 +3294,9 @@
       "beta": 0.57
     },
     {
-      "ticker": "CMCSA",
-      "name": "Comcast Corporation",
-      "beta": 0.67
+      "ticker": "CME",
+      "name": "CME Group Inc.",
+      "beta": 0.27
     },
     {
       "ticker": "CMG",
@@ -3273,6 +3317,11 @@
       "ticker": "CNP",
       "name": "CenterPoint Energy, Inc (Holdin",
       "beta": 0.46
+    },
+    {
+      "ticker": "COF",
+      "name": "Capital One Financial Corporati",
+      "beta": 1.04
     },
     {
       "ticker": "COO",
@@ -3380,9 +3429,9 @@
       "beta": 0.23
     },
     {
-      "ticker": "DGX",
-      "name": "Quest Diagnostics Incorporated",
-      "beta": 0.54
+      "ticker": "DHR",
+      "name": "Danaher Corporation",
+      "beta": 0.8
     },
     {
       "ticker": "DLR",
@@ -3398,16 +3447,6 @@
       "ticker": "DOC",
       "name": "Healthpeak Properties, Inc.",
       "beta": 0.99
-    },
-    {
-      "ticker": "DOV",
-      "name": "Dover Corporation",
-      "beta": 1.13
-    },
-    {
-      "ticker": "DOW",
-      "name": "Dow Inc.",
-      "beta": 0.41
     },
     {
       "ticker": "DPZ",
@@ -3463,11 +3502,6 @@
       "ticker": "EIX",
       "name": "Edison International",
       "beta": 0.61
-    },
-    {
-      "ticker": "ELV",
-      "name": "Elevance Health, Inc.",
-      "beta": 0.71
     },
     {
       "ticker": "EME",
@@ -3650,6 +3684,11 @@
       "beta": 1.12
     },
     {
+      "ticker": "GPC",
+      "name": "Genuine Parts Company",
+      "beta": 0.68
+    },
+    {
       "ticker": "GPN",
       "name": "Global Payments Inc.",
       "beta": 0.81
@@ -3665,14 +3704,14 @@
       "beta": 1.01
     },
     {
+      "ticker": "HAL",
+      "name": "Halliburton Company",
+      "beta": 0.84
+    },
+    {
       "ticker": "HAS",
       "name": "Hasbro, Inc.",
       "beta": 0.44
-    },
-    {
-      "ticker": "HBAN",
-      "name": "Huntington Bancshares Incorpora",
-      "beta": 0.97
     },
     {
       "ticker": "HCA",
@@ -3698,11 +3737,6 @@
       "ticker": "HLT",
       "name": "Hilton Worldwide Holdings Inc.",
       "beta": 1.11
-    },
-    {
-      "ticker": "HON",
-      "name": "Honeywell International Inc.",
-      "beta": 0.89
     },
     {
       "ticker": "HPQ",
@@ -3835,6 +3869,11 @@
       "beta": 0.41
     },
     {
+      "ticker": "KEY",
+      "name": "KeyCorp",
+      "beta": 1.09
+    },
+    {
       "ticker": "KEYS",
       "name": "Keysight Technologies Inc.",
       "beta": 1.18
@@ -3910,11 +3949,6 @@
       "beta": 0.45
     },
     {
-      "ticker": "LMT",
-      "name": "Lockheed Martin Corporation",
-      "beta": 0.1
-    },
-    {
       "ticker": "LNT",
       "name": "Alliant Energy Corporation",
       "beta": 0.52
@@ -3933,11 +3967,6 @@
       "ticker": "LUV",
       "name": "Southwest Airlines Company",
       "beta": 1.16
-    },
-    {
-      "ticker": "LVS",
-      "name": "Las Vegas Sands Corp.",
-      "beta": 0.77
     },
     {
       "ticker": "LYB",
@@ -4065,11 +4094,6 @@
       "beta": 1.19
     },
     {
-      "ticker": "NDAQ",
-      "name": "Nasdaq, Inc.",
-      "beta": 1
-    },
-    {
       "ticker": "NDSN",
       "name": "Nordson Corporation",
       "beta": 0.99
@@ -4095,6 +4119,11 @@
       "beta": 1.1
     },
     {
+      "ticker": "NOC",
+      "name": "Northrop Grumman Corporation",
+      "beta": -0.11
+    },
+    {
       "ticker": "NOW",
       "name": "ServiceNow, Inc.",
       "beta": 0.99
@@ -4103,11 +4132,6 @@
       "ticker": "NRG",
       "name": "NRG Energy, Inc.",
       "beta": 1.16
-    },
-    {
-      "ticker": "NVR",
-      "name": "NVR, Inc.",
-      "beta": 0.9
     },
     {
       "ticker": "NWS",
@@ -4195,11 +4219,6 @@
       "beta": 0.87
     },
     {
-      "ticker": "PG",
-      "name": "Procter & Gamble Company (The)",
-      "beta": 0.38
-    },
-    {
       "ticker": "PGR",
       "name": "Progressive Corporation (The)",
       "beta": 0.24
@@ -4208,11 +4227,6 @@
       "ticker": "PH",
       "name": "Parker-Hannifin Corporation",
       "beta": 1.12
-    },
-    {
-      "ticker": "PHM",
-      "name": "PulteGroup, Inc.",
-      "beta": 1.16
     },
     {
       "ticker": "PKG",
@@ -4238,11 +4252,6 @@
       "ticker": "PODD",
       "name": "Insulet Corporation",
       "beta": 1.1
-    },
-    {
-      "ticker": "POOL",
-      "name": "Pool Corporation",
-      "beta": 1.04
     },
     {
       "ticker": "PPG",
@@ -4305,11 +4314,6 @@
       "beta": 0.73
     },
     {
-      "ticker": "ROP",
-      "name": "Roper Technologies, Inc.",
-      "beta": 0.75
-    },
-    {
       "ticker": "ROST",
       "name": "Ross Stores, Inc.",
       "beta": 0.84
@@ -4358,11 +4362,6 @@
       "ticker": "SLB",
       "name": "SLB Limited",
       "beta": 0.84
-    },
-    {
-      "ticker": "SNA",
-      "name": "Snap-On Incorporated",
-      "beta": 0.7
     },
     {
       "ticker": "SO",
@@ -4415,6 +4414,11 @@
       "beta": 0.64
     },
     {
+      "ticker": "T",
+      "name": "AT&T Inc.",
+      "beta": 0.44
+    },
+    {
       "ticker": "TAP",
       "name": "Molson Coors Beverage Company",
       "beta": 0.43
@@ -4423,6 +4427,11 @@
       "ticker": "TDG",
       "name": "Transdigm Group Incorporated",
       "beta": 0.94
+    },
+    {
+      "ticker": "TDY",
+      "name": "Teledyne Technologies Incorpora",
+      "beta": 0.9
     },
     {
       "ticker": "TEL",
@@ -4450,6 +4459,11 @@
       "beta": 0.69
     },
     {
+      "ticker": "TMO",
+      "name": "Thermo Fisher Scientific Inc",
+      "beta": 0.88
+    },
+    {
       "ticker": "TMUS",
       "name": "T-Mobile US, Inc.",
       "beta": 0.32
@@ -4473,11 +4487,6 @@
       "ticker": "TRV",
       "name": "The Travelers Companies, Inc.",
       "beta": 0.44
-    },
-    {
-      "ticker": "TSCO",
-      "name": "Tractor Supply Company",
-      "beta": 0.51
     },
     {
       "ticker": "TSN",
@@ -4530,11 +4539,6 @@
       "beta": 0.62
     },
     {
-      "ticker": "UNP",
-      "name": "Union Pacific Corporation",
-      "beta": 0.95
-    },
-    {
       "ticker": "UPS",
       "name": "United Parcel Service, Inc.",
       "beta": 1.05
@@ -4553,11 +4557,6 @@
       "ticker": "VICI",
       "name": "VICI Properties Inc.",
       "beta": 0.67
-    },
-    {
-      "ticker": "VLO",
-      "name": "Valero Energy Corporation",
-      "beta": 0.59
     },
     {
       "ticker": "VLTO",
@@ -4598,6 +4597,11 @@
       "ticker": "VZ",
       "name": "Verizon Communications Inc.",
       "beta": 0.25
+    },
+    {
+      "ticker": "WAB",
+      "name": "Westinghouse Air Brake Technolo",
+      "beta": 0.92
     },
     {
       "ticker": "WAT",
@@ -4702,34 +4706,39 @@
   ],
   "errors": [
     {
-      "ticker": "ABT",
-      "name": "Abbott Laboratories",
+      "ticker": "ALLE",
+      "name": "Allegion plc",
       "reason": "missing Beta from yfinance"
     },
     {
       "ticker": "BK",
       "name": "BK",
-      "reason": "insufficient bars (100)"
+      "reason": "insufficient bars (99)"
     },
     {
-      "ticker": "CB",
-      "name": "Chubb Limited",
+      "ticker": "BX",
+      "name": "Blackstone Inc.",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "CME",
-      "name": "CME Group Inc.",
+      "ticker": "CBRE",
+      "name": "CBRE Group Inc",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "COF",
-      "name": "Capital One Financial Corporati",
+      "ticker": "CCI",
+      "name": "Crown Castle Inc.",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "CMCSA",
+      "name": "Comcast Corporation",
       "reason": "missing Beta from yfinance"
     },
     {
       "ticker": "CTRA",
       "name": "CTRA",
-      "reason": "insufficient bars (90)"
+      "reason": "insufficient bars (89)"
     },
     {
       "ticker": "CTVA",
@@ -4737,8 +4746,23 @@
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "DHR",
-      "name": "Danaher Corporation",
+      "ticker": "DGX",
+      "name": "Quest Diagnostics Incorporated",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "DOV",
+      "name": "Dover Corporation",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "DOW",
+      "name": "Dow Inc.",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "ELV",
+      "name": "Elevance Health, Inc.",
       "reason": "missing Beta from yfinance"
     },
     {
@@ -4752,58 +4776,38 @@
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "GE",
-      "name": "GE Aerospace",
-      "reason": "missing Beta from yfinance"
-    },
-    {
-      "ticker": "GM",
-      "name": "General Motors Company",
-      "reason": "missing Beta from yfinance"
-    },
-    {
-      "ticker": "GPC",
-      "name": "Genuine Parts Company",
-      "reason": "missing Beta from yfinance"
-    },
-    {
-      "ticker": "HAL",
-      "name": "Halliburton Company",
+      "ticker": "HBAN",
+      "name": "Huntington Bancshares Incorpora",
       "reason": "missing Beta from yfinance"
     },
     {
       "ticker": "HOLX",
       "name": "HOLX",
-      "reason": "insufficient bars (68)"
+      "reason": "insufficient bars (67)"
     },
     {
-      "ticker": "ISRG",
-      "name": "Intuitive Surgical, Inc.",
+      "ticker": "HON",
+      "name": "Honeywell International Inc.",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "KEY",
-      "name": "KeyCorp",
+      "ticker": "LMT",
+      "name": "Lockheed Martin Corporation",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "MCO",
-      "name": "Moody's Corporation",
+      "ticker": "LVS",
+      "name": "Las Vegas Sands Corp.",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "MSCI",
-      "name": "MSCI Inc.",
+      "ticker": "NDAQ",
+      "name": "Nasdaq, Inc.",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "NFLX",
-      "name": "Netflix, Inc.",
-      "reason": "missing Beta from yfinance"
-    },
-    {
-      "ticker": "NOC",
-      "name": "Northrop Grumman Corporation",
+      "ticker": "NSC",
+      "name": "Norfolk Southern Corporation",
       "reason": "missing Beta from yfinance"
     },
     {
@@ -4812,8 +4816,28 @@
       "reason": "missing Beta from yfinance"
     },
     {
+      "ticker": "NVR",
+      "name": "NVR, Inc.",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "PG",
+      "name": "Procter & Gamble Company (The)",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "PHM",
+      "name": "PulteGroup, Inc.",
+      "reason": "missing Beta from yfinance"
+    },
+    {
       "ticker": "PM",
       "name": "Philip Morris International Inc",
+      "reason": "missing Beta from yfinance"
+    },
+    {
+      "ticker": "POOL",
+      "name": "Pool Corporation",
       "reason": "missing Beta from yfinance"
     },
     {
@@ -4822,9 +4846,19 @@
       "reason": "missing Beta from yfinance"
     },
     {
+      "ticker": "ROP",
+      "name": "Roper Technologies, Inc.",
+      "reason": "missing Beta from yfinance"
+    },
+    {
       "ticker": "SATS",
-      "name": "Strive, Inc. 15% Series A Perpetual SATS Preferred Stock",
+      "name": "Strive, Inc. - 15.00% Series A ",
       "reason": "insufficient bars (124)"
+    },
+    {
+      "ticker": "SNA",
+      "name": "Snap-On Incorporated",
+      "reason": "missing Beta from yfinance"
     },
     {
       "ticker": "SNDK",
@@ -4832,23 +4866,23 @@
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "T",
-      "name": "AT&T Inc.",
+      "ticker": "SYF",
+      "name": "Synchrony Financial",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "TDY",
-      "name": "Teledyne Technologies Incorpora",
+      "ticker": "TSCO",
+      "name": "Tractor Supply Company",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "TMO",
-      "name": "Thermo Fisher Scientific Inc",
+      "ticker": "UNP",
+      "name": "Union Pacific Corporation",
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "WAB",
-      "name": "Westinghouse Air Brake Technolo",
+      "ticker": "VLO",
+      "name": "Valero Energy Corporation",
       "reason": "missing Beta from yfinance"
     }
   ]
