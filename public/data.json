@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T19:39:13.928Z",
+  "generatedAt": "2026-11-27T19:22:55.369Z",
   "dataAsOf": "2026-11-25",
   "demo": false,
   "marketHealth": {
@@ -13,8 +13,8 @@
   "counts": {
     "passed": 4,
     "rejected": 137,
-    "excludedLowBeta": 366,
-    "errors": 10
+    "excludedLowBeta": 367,
+    "errors": 9
   },
   "results": [
     {
@@ -28,7 +28,7 @@
       "rsi": 48.14,
       "beta": 1.27,
       "avgVolume": 3470516,
-      "daysToEarnings": 75,
+      "daysToEarnings": 74,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -749,7 +749,7 @@
       "rsi": 49.03,
       "beta": 2.46,
       "avgVolume": 17544220,
-      "daysToEarnings": 22,
+      "daysToEarnings": 21,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -1470,7 +1470,7 @@
       "rsi": 49.03,
       "beta": 1.49,
       "avgVolume": 4205745,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2191,7 +2191,7 @@
       "rsi": 49.59,
       "beta": 3.65,
       "avgVolume": 11052255,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2913,7 +2913,7 @@
       "rsi": 27.03,
       "beta": 3.61,
       "avgVolume": 21275549,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2935,7 +2935,7 @@
       "rsi": 28.68,
       "beta": 3.35,
       "avgVolume": 9716705,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2957,7 +2957,7 @@
       "rsi": 29.94,
       "beta": 1.51,
       "avgVolume": 5286863,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -2979,7 +2979,7 @@
       "rsi": 30.62,
       "beta": 2.53,
       "avgVolume": 19920993,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3001,7 +3001,7 @@
       "rsi": 31.24,
       "beta": 1.37,
       "avgVolume": 16837069,
-      "daysToEarnings": 56,
+      "daysToEarnings": 55,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3023,7 +3023,7 @@
       "rsi": 32.03,
       "beta": 1.36,
       "avgVolume": 2561061,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3045,7 +3045,7 @@
       "rsi": 33.45,
       "beta": 1.49,
       "avgVolume": 1321489,
-      "daysToEarnings": 111,
+      "daysToEarnings": 110,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3067,7 +3067,7 @@
       "rsi": 34.28,
       "beta": 1.24,
       "avgVolume": 1900202,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3089,7 +3089,7 @@
       "rsi": 34.57,
       "beta": 1.64,
       "avgVolume": 4246789,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3111,7 +3111,7 @@
       "rsi": 34.66,
       "beta": 1.27,
       "avgVolume": 2518463,
-      "daysToEarnings": 54,
+      "daysToEarnings": 53,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3133,7 +3133,7 @@
       "rsi": 34.76,
       "beta": 1.71,
       "avgVolume": 3686381,
-      "daysToEarnings": 89,
+      "daysToEarnings": 88,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3155,7 +3155,7 @@
       "rsi": 35.12,
       "beta": 2.33,
       "avgVolume": 35249483,
-      "daysToEarnings": 5,
+      "daysToEarnings": 4,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3177,7 +3177,7 @@
       "rsi": 35.16,
       "beta": 1.22,
       "avgVolume": 6835529,
-      "daysToEarnings": 49,
+      "daysToEarnings": 48,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3199,7 +3199,7 @@
       "rsi": 35.24,
       "beta": 1.65,
       "avgVolume": 6368182,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3221,7 +3221,7 @@
       "rsi": 35.39,
       "beta": 1.4,
       "avgVolume": 5005169,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3243,7 +3243,7 @@
       "rsi": 35.49,
       "beta": 1.75,
       "avgVolume": 4528398,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3265,7 +3265,7 @@
       "rsi": 35.68,
       "beta": 2.4,
       "avgVolume": 37052801,
-      "daysToEarnings": 21,
+      "daysToEarnings": 20,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3287,7 +3287,7 @@
       "rsi": 35.93,
       "beta": 2.43,
       "avgVolume": 161499547,
-      "daysToEarnings": 63,
+      "daysToEarnings": 62,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3309,7 +3309,7 @@
       "rsi": 35.93,
       "beta": 2.01,
       "avgVolume": 14710370,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3331,7 +3331,7 @@
       "rsi": 36.14,
       "beta": 1.23,
       "avgVolume": 30067680,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3353,7 +3353,7 @@
       "rsi": 36.21,
       "beta": 1.33,
       "avgVolume": 1949359,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3375,7 +3375,7 @@
       "rsi": 36.69,
       "beta": 2.18,
       "avgVolume": 49550538,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3397,7 +3397,7 @@
       "rsi": 36.75,
       "beta": 1.47,
       "avgVolume": 19052138,
-      "daysToEarnings": 96,
+      "daysToEarnings": 95,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3419,7 +3419,7 @@
       "rsi": 36.81,
       "beta": 1.34,
       "avgVolume": 1157076,
-      "daysToEarnings": 20,
+      "daysToEarnings": 19,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3441,7 +3441,7 @@
       "rsi": 36.85,
       "beta": 1.44,
       "avgVolume": 10328518,
-      "daysToEarnings": 91,
+      "daysToEarnings": 90,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3463,7 +3463,7 @@
       "rsi": 36.93,
       "beta": 1.23,
       "avgVolume": 45476522,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3485,7 +3485,7 @@
       "rsi": 37.2,
       "beta": 1.67,
       "avgVolume": 9175521,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3507,7 +3507,7 @@
       "rsi": 37.45,
       "beta": 2.25,
       "avgVolume": 350980044,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3529,7 +3529,7 @@
       "rsi": 37.48,
       "beta": 2.2,
       "avgVolume": 5435381,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3551,7 +3551,7 @@
       "rsi": 37.74,
       "beta": 1.78,
       "avgVolume": 40600493,
-      "daysToEarnings": 18,
+      "daysToEarnings": 17,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3573,7 +3573,7 @@
       "rsi": 38.01,
       "beta": 2.54,
       "avgVolume": 47114220,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3595,7 +3595,7 @@
       "rsi": 38.17,
       "beta": 1.51,
       "avgVolume": 1970729,
-      "daysToEarnings": 5,
+      "daysToEarnings": 4,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3617,7 +3617,7 @@
       "rsi": 38.18,
       "beta": 3.94,
       "avgVolume": 6737353,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3639,7 +3639,7 @@
       "rsi": 38.29,
       "beta": 1.85,
       "avgVolume": 19020355,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3661,7 +3661,7 @@
       "rsi": 38.41,
       "beta": 1.23,
       "avgVolume": 10408042,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3683,7 +3683,7 @@
       "rsi": 38.6,
       "beta": 1.23,
       "avgVolume": 7356380,
-      "daysToEarnings": 6,
+      "daysToEarnings": 5,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3705,7 +3705,7 @@
       "rsi": 38.62,
       "beta": 1.26,
       "avgVolume": 6216026,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3727,7 +3727,7 @@
       "rsi": 38.78,
       "beta": 1.61,
       "avgVolume": 40441329,
-      "daysToEarnings": 54,
+      "daysToEarnings": 53,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3749,7 +3749,7 @@
       "rsi": 38.93,
       "beta": 1.21,
       "avgVolume": 1791677,
-      "daysToEarnings": 89,
+      "daysToEarnings": 88,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3771,7 +3771,7 @@
       "rsi": 39.03,
       "beta": 1.3,
       "avgVolume": 3755948,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3793,7 +3793,7 @@
       "rsi": 39.16,
       "beta": 1.39,
       "avgVolume": 2199501,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3815,7 +3815,7 @@
       "rsi": 39.18,
       "beta": 2.66,
       "avgVolume": 8643383,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3837,7 +3837,7 @@
       "rsi": 39.23,
       "beta": 1.2,
       "avgVolume": 1776224,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": false,
@@ -3859,7 +3859,7 @@
       "rsi": 39.59,
       "beta": 1.33,
       "avgVolume": 7986039,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3881,7 +3881,7 @@
       "rsi": 39.73,
       "beta": 2.34,
       "avgVolume": 7862729,
-      "daysToEarnings": 63,
+      "daysToEarnings": 62,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3903,7 +3903,7 @@
       "rsi": 39.82,
       "beta": 1.35,
       "avgVolume": 3298684,
-      "daysToEarnings": 14,
+      "daysToEarnings": 13,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3925,7 +3925,7 @@
       "rsi": 39.94,
       "beta": 1.44,
       "avgVolume": 941657,
-      "daysToEarnings": 60,
+      "daysToEarnings": 59,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -3947,7 +3947,7 @@
       "rsi": 39.99,
       "beta": 2.11,
       "avgVolume": 8149736,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3969,7 +3969,7 @@
       "rsi": 40.52,
       "beta": 2.15,
       "avgVolume": 11900200,
-      "daysToEarnings": 74,
+      "daysToEarnings": 73,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -3991,7 +3991,7 @@
       "rsi": 40.69,
       "beta": 1.5,
       "avgVolume": 15706902,
-      "daysToEarnings": 63,
+      "daysToEarnings": 62,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4013,7 +4013,7 @@
       "rsi": 40.7,
       "beta": 1.39,
       "avgVolume": 729079,
-      "daysToEarnings": 91,
+      "daysToEarnings": 90,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4035,7 +4035,7 @@
       "rsi": 40.75,
       "beta": 1.51,
       "avgVolume": 32387516,
-      "daysToEarnings": 13,
+      "daysToEarnings": 12,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4057,7 +4057,7 @@
       "rsi": 40.86,
       "beta": 1.37,
       "avgVolume": 1520656,
-      "daysToEarnings": 50,
+      "daysToEarnings": 49,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4079,7 +4079,7 @@
       "rsi": 41.25,
       "beta": 1.64,
       "avgVolume": 9655657,
-      "daysToEarnings": 75,
+      "daysToEarnings": 74,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4101,7 +4101,7 @@
       "rsi": 41.31,
       "beta": 1.38,
       "avgVolume": 6642681,
-      "daysToEarnings": 91,
+      "daysToEarnings": 90,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4123,7 +4123,7 @@
       "rsi": 41.52,
       "beta": 1.63,
       "avgVolume": 792392,
-      "daysToEarnings": 75,
+      "daysToEarnings": 74,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4145,7 +4145,7 @@
       "rsi": 41.72,
       "beta": 1.81,
       "avgVolume": 560417,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4167,7 +4167,7 @@
       "rsi": 41.95,
       "beta": 1.5,
       "avgVolume": 55356656,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4189,7 +4189,7 @@
       "rsi": 42.55,
       "beta": 1.52,
       "avgVolume": 1151125,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4211,7 +4211,7 @@
       "rsi": 42.7,
       "beta": 1.38,
       "avgVolume": 5274549,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4233,7 +4233,7 @@
       "rsi": 43.04,
       "beta": 1.64,
       "avgVolume": 770458,
-      "daysToEarnings": 84,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4255,7 +4255,7 @@
       "rsi": 43.11,
       "beta": 2.23,
       "avgVolume": 10730719,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4277,7 +4277,7 @@
       "rsi": 43.53,
       "beta": 1.28,
       "avgVolume": 16292868,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4299,7 +4299,7 @@
       "rsi": 43.74,
       "beta": 1.39,
       "avgVolume": 9597708,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4321,7 +4321,7 @@
       "rsi": 44.15,
       "beta": 1.34,
       "avgVolume": 670494,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4343,7 +4343,7 @@
       "rsi": 44.39,
       "beta": 1.97,
       "avgVolume": 6692606,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4365,7 +4365,7 @@
       "rsi": 44.42,
       "beta": 1.29,
       "avgVolume": 5110281,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4387,7 +4387,7 @@
       "rsi": 44.52,
       "beta": 1.28,
       "avgVolume": 1782563,
-      "daysToEarnings": 84,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4409,7 +4409,7 @@
       "rsi": 44.62,
       "beta": 1.21,
       "avgVolume": 2971574,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4431,7 +4431,7 @@
       "rsi": 44.73,
       "beta": 1.45,
       "avgVolume": 2220517,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4453,7 +4453,7 @@
       "rsi": 44.81,
       "beta": 1.82,
       "avgVolume": 1595883,
-      "daysToEarnings": 60,
+      "daysToEarnings": 59,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4475,7 +4475,7 @@
       "rsi": 44.87,
       "beta": 1.27,
       "avgVolume": 4398723,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4497,7 +4497,7 @@
       "rsi": 45.06,
       "beta": 1.73,
       "avgVolume": 1232362,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4519,7 +4519,7 @@
       "rsi": 45.09,
       "beta": 1.21,
       "avgVolume": 1038817,
-      "daysToEarnings": 56,
+      "daysToEarnings": 55,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4541,7 +4541,7 @@
       "rsi": 45.13,
       "beta": 1.61,
       "avgVolume": 25829262,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4563,7 +4563,7 @@
       "rsi": 45.22,
       "beta": 1.55,
       "avgVolume": 28193480,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4585,7 +4585,7 @@
       "rsi": 45.34,
       "beta": 1.31,
       "avgVolume": 19733359,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4607,7 +4607,7 @@
       "rsi": 45.51,
       "beta": 1.38,
       "avgVolume": 3971415,
-      "daysToEarnings": 13,
+      "daysToEarnings": 12,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4629,7 +4629,7 @@
       "rsi": 45.7,
       "beta": 1.28,
       "avgVolume": 18298410,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4651,7 +4651,7 @@
       "rsi": 45.76,
       "beta": 1.37,
       "avgVolume": 5449614,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4673,7 +4673,7 @@
       "rsi": 46.01,
       "beta": 1.33,
       "avgVolume": 3010856,
-      "daysToEarnings": 75,
+      "daysToEarnings": 74,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4695,7 +4695,7 @@
       "rsi": 46.22,
       "beta": 2.56,
       "avgVolume": 7232280,
-      "daysToEarnings": 95,
+      "daysToEarnings": 94,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4717,7 +4717,7 @@
       "rsi": 46.56,
       "beta": 1.2,
       "avgVolume": 4185454,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4739,7 +4739,7 @@
       "rsi": 46.58,
       "beta": 1.27,
       "avgVolume": 5293552,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4761,7 +4761,7 @@
       "rsi": 46.63,
       "beta": 1.86,
       "avgVolume": 5777506,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4783,7 +4783,7 @@
       "rsi": 46.7,
       "beta": 1.25,
       "avgVolume": 2169529,
-      "daysToEarnings": 91,
+      "daysToEarnings": 90,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4805,7 +4805,7 @@
       "rsi": 47.03,
       "beta": 1.38,
       "avgVolume": 680246,
-      "daysToEarnings": 49,
+      "daysToEarnings": 48,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4827,7 +4827,7 @@
       "rsi": 47.34,
       "beta": 1.3,
       "avgVolume": 4078166,
-      "daysToEarnings": 84,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4849,7 +4849,7 @@
       "rsi": 47.61,
       "beta": 1.47,
       "avgVolume": 1867204,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4871,7 +4871,7 @@
       "rsi": 47.66,
       "beta": 1.31,
       "avgVolume": 1443397,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4893,7 +4893,7 @@
       "rsi": 47.84,
       "beta": 1.65,
       "avgVolume": 5978704,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4915,7 +4915,7 @@
       "rsi": 47.93,
       "beta": 1.42,
       "avgVolume": 5934857,
-      "daysToEarnings": 48,
+      "daysToEarnings": 47,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -4937,7 +4937,7 @@
       "rsi": 48.23,
       "beta": 1.3,
       "avgVolume": 872230,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4959,7 +4959,7 @@
       "rsi": 48.44,
       "beta": 1.44,
       "avgVolume": 2528008,
-      "daysToEarnings": 56,
+      "daysToEarnings": 55,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -4981,7 +4981,7 @@
       "rsi": 48.45,
       "beta": 1.41,
       "avgVolume": 4645043,
-      "daysToEarnings": 56,
+      "daysToEarnings": 55,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5003,7 +5003,7 @@
       "rsi": 48.45,
       "beta": 1.29,
       "avgVolume": 3789904,
-      "daysToEarnings": 55,
+      "daysToEarnings": 54,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5025,7 +5025,7 @@
       "rsi": 49.22,
       "beta": 1.72,
       "avgVolume": 4925100,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5047,7 +5047,7 @@
       "rsi": 49.42,
       "beta": 1.96,
       "avgVolume": 21070215,
-      "daysToEarnings": 95,
+      "daysToEarnings": 94,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5069,7 +5069,7 @@
       "rsi": 49.6,
       "beta": 1.76,
       "avgVolume": 15630092,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5091,7 +5091,7 @@
       "rsi": 50.24,
       "beta": 1.34,
       "avgVolume": 1028766,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5113,7 +5113,7 @@
       "rsi": 50.26,
       "beta": 1.42,
       "avgVolume": 6852673,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5135,7 +5135,7 @@
       "rsi": 50.31,
       "beta": 1.74,
       "avgVolume": 35570151,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5157,7 +5157,7 @@
       "rsi": 50.52,
       "beta": 1.2,
       "avgVolume": 645781,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5179,7 +5179,7 @@
       "rsi": 50.55,
       "beta": 1.6,
       "avgVolume": 4169557,
-      "daysToEarnings": 64,
+      "daysToEarnings": 63,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5201,7 +5201,7 @@
       "rsi": 51.02,
       "beta": 1.33,
       "avgVolume": 7498871,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5223,7 +5223,7 @@
       "rsi": 51.12,
       "beta": 1.26,
       "avgVolume": 862952,
-      "daysToEarnings": 50,
+      "daysToEarnings": 49,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5245,7 +5245,7 @@
       "rsi": 51.8,
       "beta": 1.53,
       "avgVolume": 4904190,
-      "daysToEarnings": 63,
+      "daysToEarnings": 62,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5267,7 +5267,7 @@
       "rsi": 52.35,
       "beta": 1.32,
       "avgVolume": 10124813,
-      "daysToEarnings": 68,
+      "daysToEarnings": 67,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5289,7 +5289,7 @@
       "rsi": 52.71,
       "beta": 1.86,
       "avgVolume": 1978689,
-      "daysToEarnings": 61,
+      "daysToEarnings": 60,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5311,7 +5311,7 @@
       "rsi": 53.09,
       "beta": 1.44,
       "avgVolume": 2489462,
-      "daysToEarnings": 84,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5333,7 +5333,7 @@
       "rsi": 53.39,
       "beta": 1.5,
       "avgVolume": 3945103,
-      "daysToEarnings": 74,
+      "daysToEarnings": 73,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5355,7 +5355,7 @@
       "rsi": 53.7,
       "beta": 1.91,
       "avgVolume": 46514322,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5377,7 +5377,7 @@
       "rsi": 54.01,
       "beta": 1.85,
       "avgVolume": 1360715,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5399,7 +5399,7 @@
       "rsi": 54.14,
       "beta": 1.24,
       "avgVolume": 2188865,
-      "daysToEarnings": 90,
+      "daysToEarnings": 89,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5421,7 +5421,7 @@
       "rsi": 55.37,
       "beta": 1.44,
       "avgVolume": 4341954,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5443,7 +5443,7 @@
       "rsi": 55.73,
       "beta": 1.38,
       "avgVolume": 3524543,
-      "daysToEarnings": 19,
+      "daysToEarnings": 18,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5465,7 +5465,7 @@
       "rsi": 55.74,
       "beta": 1.23,
       "avgVolume": 4050645,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5487,7 +5487,7 @@
       "rsi": 55.95,
       "beta": 1.22,
       "avgVolume": 5262628,
-      "daysToEarnings": 62,
+      "daysToEarnings": 61,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5509,7 +5509,7 @@
       "rsi": 56,
       "beta": 1.74,
       "avgVolume": 1209709,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5531,7 +5531,7 @@
       "rsi": 56.23,
       "beta": 1.46,
       "avgVolume": 2989132,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5553,7 +5553,7 @@
       "rsi": 57.01,
       "beta": 1.21,
       "avgVolume": 3294057,
-      "daysToEarnings": 96,
+      "daysToEarnings": 95,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5575,7 +5575,7 @@
       "rsi": 57.29,
       "beta": 1.3,
       "avgVolume": 667511,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5597,7 +5597,7 @@
       "rsi": 57.39,
       "beta": 1.51,
       "avgVolume": 2324005,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5619,7 +5619,7 @@
       "rsi": 57.44,
       "beta": 1.21,
       "avgVolume": 15804850,
-      "daysToEarnings": 89,
+      "daysToEarnings": 88,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5641,7 +5641,7 @@
       "rsi": 57.47,
       "beta": 1.27,
       "avgVolume": 1384836,
-      "daysToEarnings": 69,
+      "daysToEarnings": 68,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5663,7 +5663,7 @@
       "rsi": 58.32,
       "beta": 2.5,
       "avgVolume": 6444303,
-      "daysToEarnings": 76,
+      "daysToEarnings": 75,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5685,7 +5685,7 @@
       "rsi": 58.48,
       "beta": 1.23,
       "avgVolume": 2231477,
-      "daysToEarnings": 77,
+      "daysToEarnings": 76,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5707,7 +5707,7 @@
       "rsi": 59.2,
       "beta": 1.24,
       "avgVolume": 7461366,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5729,7 +5729,7 @@
       "rsi": 60.74,
       "beta": 1.22,
       "avgVolume": 5649271,
-      "daysToEarnings": 83,
+      "daysToEarnings": 82,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5751,7 +5751,7 @@
       "rsi": 62.65,
       "beta": 1.37,
       "avgVolume": 3212751,
-      "daysToEarnings": 54,
+      "daysToEarnings": 53,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5773,7 +5773,7 @@
       "rsi": 63.8,
       "beta": 1.32,
       "avgVolume": 5614097,
-      "daysToEarnings": 70,
+      "daysToEarnings": 69,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5795,7 +5795,7 @@
       "rsi": 65.84,
       "beta": 1.21,
       "avgVolume": 2099807,
-      "daysToEarnings": 75,
+      "daysToEarnings": 74,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5817,7 +5817,7 @@
       "rsi": 66.01,
       "beta": 1.27,
       "avgVolume": 1492676,
-      "daysToEarnings": 84,
+      "daysToEarnings": 83,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -5839,7 +5839,7 @@
       "rsi": 66.18,
       "beta": 1.54,
       "avgVolume": 708166,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5861,7 +5861,7 @@
       "rsi": 66.35,
       "beta": 1.31,
       "avgVolume": 1411164,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": false,
         "beta": true,
@@ -5883,7 +5883,7 @@
       "rsi": 68.86,
       "beta": 1.43,
       "avgVolume": 10761198,
-      "daysToEarnings": 67,
+      "daysToEarnings": 66,
       "filterChecks": {
         "price": true,
         "beta": true,
@@ -6383,6 +6383,11 @@
       "ticker": "DD",
       "name": "DuPont de Nemours, Inc.",
       "beta": 1.1
+    },
+    {
+      "ticker": "DE",
+      "name": "Deere & Company",
+      "beta": 0.9
     },
     {
       "ticker": "DECK",
@@ -7754,12 +7759,12 @@
     {
       "ticker": "BK",
       "name": "BK",
-      "reason": "insufficient bars (77)"
+      "reason": "insufficient bars (76)"
     },
     {
       "ticker": "CTRA",
       "name": "CTRA",
-      "reason": "insufficient bars (67)"
+      "reason": "insufficient bars (66)"
     },
     {
       "ticker": "CTVA",
@@ -7767,14 +7772,9 @@
       "reason": "missing Beta from yfinance"
     },
     {
-      "ticker": "DE",
-      "name": "Deere & Company",
-      "reason": "missing Beta from yfinance"
-    },
-    {
       "ticker": "EA",
       "name": "Electronic Arts Inc.",
-      "reason": "insufficient bars (128)"
+      "reason": "insufficient bars (127)"
     },
     {
       "ticker": "FISV",
@@ -7784,7 +7784,7 @@
     {
       "ticker": "HOLX",
       "name": "HOLX",
-      "reason": "insufficient bars (45)"
+      "reason": "insufficient bars (44)"
     },
     {
       "ticker": "Q",
@@ -7794,7 +7794,7 @@
     {
       "ticker": "SATS",
       "name": "Strive, Inc. - 15.00% Series A ",
-      "reason": "insufficient bars (126)"
+      "reason": "insufficient bars (125)"
     },
     {
       "ticker": "SNDK",
